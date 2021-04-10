@@ -122,7 +122,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -158,6 +158,80 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/10/POJ%202828/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="c4Lnn">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="c4Lnn 的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/10/POJ%202828/" class="post-title-link" itemprop="url">POJ 2828. Buy Tickets</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-10 23:50:11 / Modified: 23:51:13" itemprop="dateCreated datePublished" datetime="2021-04-10T23:50:11+08:00">2021-04-10</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="链接">链接</h1>
+<p><a target="_blank" rel="noopener" href="http://poj.org/problem?id=2828" class="uri">http://poj.org/problem?id=2828</a></p>
+<h1 id="题意">题意</h1>
+<p>有 <span class="math inline">\(N\)</span> 个人排队，每一个人都有一个权值 <span class="math inline">\(val\)</span> ，每一个人都会按顺序插入到当前队伍的某一个位置 <span class="math inline">\(pos\)</span>。</p>
+<p>要求按队伍最后顺序输出权值。</p>
+<h1 id="思路">思路</h1>
+<p>从最后一个操作开始插入，每次插入即为最终位置，在插入的位置前还要留 <span class="math inline">\(pos\)</span> 个空位子。</p>
+<p>树状数组维护空位子，二分查找插入位置。</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">2e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,a[N],val[N],x[N],y[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&amp;-x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=n;i+=<span class="built_in">lowbit</span>(i)) ++a[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i;i-=<span class="built_in">lowbit</span>(i)) ret+=a[i];</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n)) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) a[i]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x[i],&amp;y[i]);</span><br><span class="line">            ++x[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--) &#123;</span><br><span class="line">            <span class="keyword">int</span> l=x[i],r=n;</span><br><span class="line">            <span class="keyword">while</span>(l&lt;r) &#123;</span><br><span class="line">                <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(mid-<span class="built_in">query</span>(mid)&gt;=x[i]) r=mid;</span><br><span class="line">                <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">update</span>(l);</span><br><span class="line">            val[l]=y[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,val[i]);</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -344,7 +418,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-04-10 21:45:20 / Modified: 22:57:13" itemprop="dateCreated datePublished" datetime="2021-04-10T21:45:20+08:00">2021-04-10</time>
+      <time title="Created: 2021-04-10 21:45:20 / Modified: 23:57:05" itemprop="dateCreated datePublished" datetime="2021-04-10T21:45:20+08:00">2021-04-10</time>
     </span>
 
   
@@ -357,11 +431,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="积性函数">积性函数</h2>
-<h3 id="定义">定义</h3>
+          <h1 id="积性函数">积性函数</h1>
+<h2 id="定义">定义</h2>
 <p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+,\gcd(x,y)=1\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为积性函数。</p>
 <p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为完全积性函数。</p>
-<h3 id="性质">性质</h3>
+<h2 id="性质">性质</h2>
 <p>若 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 均为积性函数，则以下函数也为积性函数：</p>
 <ul>
 <li><span class="math inline">\(h(x)=f(x^p)\)</span></li>
@@ -374,7 +448,7 @@
 <li><p>若 <span class="math inline">\(F(x)\)</span> 为积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i^{k_i})\)</span>。</p></li>
 <li><p>若 <span class="math inline">\(F(x)\)</span> 为完全积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i)^{k_i}\)</span>。</p></li>
 </ul>
-<h3 id="例子">例子</h3>
+<h2 id="例子">例子</h2>
 <ul>
 <li>单位函数：<span class="math inline">\(\varepsilon(n)=[n=1]\)</span>（完全积性）</li>
 <li>恒等函数：<span class="math inline">\(\operatorname{id}_k(n)=n^k\)</span>，<span class="math inline">\(\operatorname{id}_1(n)\)</span> 通常简记作 <span class="math inline">\(\operatorname{id}(n)\)</span>（完全积性）</li>
@@ -383,33 +457,33 @@
 <li>欧拉函数：<span class="math inline">\(\varphi(n)=\sum_{i=1}^n[\gcd(i,n)=1]\)</span></li>
 <li>莫比乌斯函数：<span class="math inline">\(\mu(n)=\begin{cases} 1 &amp; n=1 \\ 0 &amp; \exists d&gt;1,d^2\mid n \\ (-1)^k &amp; k\;为\;n\;的不同质因子个数 \end{cases}\)</span></li>
 </ul>
-<h2 id="dirichlet-卷积">Dirichlet 卷积</h2>
-<h3 id="定义-1">定义</h3>
+<h1 id="dirichlet-卷积">Dirichlet 卷积</h1>
+<h2 id="定义-1">定义</h2>
 <p>对于两个数论函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span>，则它们的 Dirichlet 卷积得到的结果 <span class="math inline">\(h(x)\)</span> 定义为：</p>
 <p><span class="math display">\[h(x)=\sum_{d\mid x}f(d)g(x/d)=\sum_{ab=x}f(a)g(b)\]</span></p>
-<p>简记为：<span class="math inline">\(h=f \ast g\)</span>。</p>
-<h3 id="性质-1">性质</h3>
+<p>简记为：<span class="math inline">\(h=f*g\)</span>。</p>
+<h2 id="性质-1">性质</h2>
 <ul>
-<li>交换律：<span class="math inline">\(f \ast g=g \ast f\)</span>。</li>
-<li>结合律：<span class="math inline">\((f \ast g) \ast h=f \ast (g \ast h)\)</span>。</li>
-<li>分配律：<span class="math inline">\((f+g) \ast h=f \ast h+g \ast h\)</span>。</li>
-<li>等式的性质：<span class="math inline">\(f=g\)</span> 的充要条件是 <span class="math inline">\(f \ast g=g \ast h\)</span>，其中数论函数 <span class="math inline">\(h(x)\)</span> 要满足 <span class="math inline">\(h(1)\neq 0\)</span>。</li>
-<li>单位元：单位函数 <span class="math inline">\(\varepsilon\)</span> 是 Dirichlet 卷积运算中的单位元，即对于任何数论函数 <span class="math inline">\(f\)</span>，都有 <span class="math inline">\(f \ast \varepsilon=f\)</span>。</li>
+<li>交换律：<span class="math inline">\(f*g=g*f\)</span>。</li>
+<li>结合律：<span class="math inline">\((f*g)*h=f*(g*h)\)</span>。</li>
+<li>分配律：<span class="math inline">\((f+g)*h=f*h+g*h\)</span>。</li>
+<li>等式的性质：<span class="math inline">\(f=g\)</span> 的充要条件是 <span class="math inline">\(f*g=g*h\)</span>，其中数论函数 <span class="math inline">\(h(x)\)</span> 要满足 <span class="math inline">\(h(1)\neq 0\)</span>。</li>
+<li>单位元：单位函数 <span class="math inline">\(\varepsilon\)</span> 是 Dirichlet 卷积运算中的单位元，即对于任何数论函数 <span class="math inline">\(f\)</span>，都有 <span class="math inline">\(f*\varepsilon=f\)</span>。</li>
 </ul>
-<h3 id="结论">结论</h3>
+<h2 id="结论">结论</h2>
 <p><strong>两个积性函数的 Dirichlet 卷积也是积性函数。</strong></p>
-<p>设两个积性函数为 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span>，再记 <span class="math inline">\(h=f \ast g\)</span>。</p>
+<p>设两个积性函数为 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span>，再记 <span class="math inline">\(h=f*g\)</span>。</p>
 <p>设 <span class="math inline">\(\gcd(a,b)=1\)</span>，则 <span class="math inline">\(h(a)=\sum_{d_1\mid a}f(a)g(a/d_1),h(b)=\sum_{d_2\mid b}f(b)g(b/d_2)\)</span>，</p>
 <p>所以 <span class="math inline">\(h(a)h(b)=\sum_{d_1\mid a}f(a)g(a/d_1)\sum_{d_2\mid b}f(b)g(b/d_2)=\sum_{d\mid ab}f(d)g(ab/d)=h(ab)\)</span>。</p>
-<h2 id="莫比乌斯反演">莫比乌斯反演</h2>
-<h3 id="定义-2">定义</h3>
+<h1 id="莫比乌斯反演">莫比乌斯反演</h1>
+<h2 id="定义-2">定义</h2>
 <p><span class="math inline">\(\mu\)</span> 为莫比乌斯函数，定义为：</p>
 <p><span class="math display">\[\mu(n)=
 \begin{cases} 1 &amp; n=1 \\
 0 &amp; \exists d&gt;1,d^2\mid n \\
 (-1)^k &amp; k\;为\;n\;的不同质因子个数
 \end{cases}\]</span></p>
-<h3 id="定理">定理</h3>
+<h2 id="定理">定理</h2>
 <p><strong>定理一：莫比乌斯函数 <span class="math inline">\(\mu(n)\)</span> 是积性函数。</strong></p>
 <p>假设 <span class="math inline">\(\gcd(n,m)=1\)</span></p>
 <ul>
@@ -429,7 +503,7 @@
 <p><span class="math inline">\(\sum_{d \mid n}(\mu(d)F(n/d))=\sum_{d \mid n}(\mu(d)\sum_{e \mid (n/d)}{f(e)})=\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})\)</span>，</p>
 <p>根据定理二，当 <span class="math inline">\(e=n\)</span> 时，<span class="math inline">\(\sum_{d \mid (n/e)}{\mu(d)}=1\)</span>，否则为 <span class="math inline">\(0\)</span>，</p>
 <p>所以 <span class="math inline">\(\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})=f(n)\)</span>。</p>
-<h2 id="例题">例题</h2>
+<h1 id="例题">例题</h1>
 <p><strong><a target="_blank" rel="noopener" href="https://darkbzoj.tk/problem/2301">BZOJ 2301. Problem b</a></strong></p>
 <blockquote>
 <p>求 <span class="math inline">\(\sum_{i=a}^{n}\sum_{j=b}^{m}[gcd(i,j)=k]\)</span>。</p>
@@ -449,7 +523,7 @@
 = & n\sum_{i=1}^n\frac{i}{\gcd(i,n)} \\
 = & n\sum_{i=1}^n\sum_{j=1}^n i|j
 \end{aligned}$ -->
-<h2 id="参考文献">参考文献</h2>
+<h1 id="参考文献">参考文献</h1>
 <p><a target="_blank" rel="noopener" href="https://oi-wiki.org/math/mobius/">OI Wiki</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/skywalkert/article/details/50500009">浅谈一类积性函数的前缀和</a></p>
 <p>初等数论及其应用（原书第 6 版）</p>
