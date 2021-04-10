@@ -124,14 +124,14 @@
 <h2 id="Dirichlet-卷积"><a href="#Dirichlet-卷积" class="headerlink" title="Dirichlet 卷积"></a>Dirichlet 卷积</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>对于两个数论函数 $f(x)$ 和 $g(x)$，则它们的 Dirichlet 卷积得到的结果 $h(x)$ 定义为：</p>
 <script type="math/tex; mode=display">h(x)=\sum_{d\mid x}f(d)g(x/d)=\sum_{ab=x}f(a)g(b)</script><p>简记为：$h=f*g$。</p>
 <h3 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h3><ul>
-<li>交换律：$f<em>g=g</em>f$。</li>
-<li>结合律：$(f<em>g)</em>h=f<em>(g</em>h)$。</li>
-<li>分配律：$(f+g)<em>h=f</em>h+g*h$。</li>
-<li>等式的性质：$f=g$ 的充要条件是 $f<em>g=g</em>h$，其中数论函数 $h(x)$ 要满足 $h(1)\neq 0$。</li>
-<li>单位元：单位函数 $\varepsilon$ 是 Dirichlet 卷积运算中的单位元，即对于任何数论函数 $f$，都有 $f*\varepsilon=f$。</li>
+<li>交换律：$f <em> g=g </em> f$。</li>
+<li>结合律：$(f <em> g) </em> h=f <em> (g </em> h)$。</li>
+<li>分配律：$(f+g) <em> h=f </em> h+g * h$。</li>
+<li>等式的性质：$f=g$ 的充要条件是 $f <em> g=g </em> h$，其中数论函数 $h(x)$ 要满足 $h(1)\neq 0$。</li>
+<li>单位元：单位函数 $\varepsilon$ 是 Dirichlet 卷积运算中的单位元，即对于任何数论函数 $f$，都有 $f * \varepsilon=f$。</li>
 </ul>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><strong>两个积性函数的 Dirichlet 卷积也是积性函数。</strong></p>
-<p>设两个积性函数为 $f(x)$ 和 $g(x)$，再记 $h=f*g$。</p>
+<p>设两个积性函数为 $f(x)$ 和 $g(x)$，再记 $h=f * g$。</p>
 <p>设 $\gcd(a,b)=1$，则 $h(a)=\sum_{d_1\mid a}f(a)g(a/d_1),h(b)=\sum_{d_2\mid b}f(b)g(b/d_2)$，</p>
 <p>所以 $h(a)h(b)=\sum_{d_1\mid a}f(a)g(a/d_1)\sum_{d_2\mid b}f(b)g(b/d_2)=\sum_{d\mid ab}f(d)g(ab/d)=h(ab)$。</p>
 <h2 id="莫比乌斯反演"><a href="#莫比乌斯反演" class="headerlink" title="莫比乌斯反演"></a>莫比乌斯反演</h2><h3 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h3><p>$\mu$ 为莫比乌斯函数，定义为：</p>
@@ -294,21 +294,5 @@
 
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
-"></script>
 </body>
 </html>
