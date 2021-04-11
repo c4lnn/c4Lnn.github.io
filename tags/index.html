@@ -216,7 +216,8 @@
     
     
 
-<script src="/js/comments.js"></script>
+
+    <div class="comments" id="SOHUCS"></div><script src="/js/comments.js"></script>
 </div>
   </main>
 
@@ -275,6 +276,18 @@
 
   
 
+
+  <script>
+  NexT.utils.loadComments('#SOHUCS', () => {
+    NexT.utils.getScript('https://changyan.sohu.com/upload/changyan.js', () => {
+      window.changyan.api.config({
+        appid: 'cyvoPcLGD',
+        conf : 'ec89dda88ea5191aa739a720a8f19f3b'
+      });
+    });
+  });
+  </script>
+  <script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
 
 </body>
 </html>
