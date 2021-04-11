@@ -20,15 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
 <meta name="hexo-config" content="{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;/&quot;,&quot;images&quot;:&quot;/images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;always&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;},&quot;path&quot;:&quot;/search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}">
-<meta name="description" content="题意 对于序列中第 \(i\) 大的数，其在序列中位置为 \(pos_i\)，翻转区间 \([i,pos_i]\)，最终使序列升序排列。 对于一样大的数，在初始序列中下标较小的定义为较小的那一个。 思路 用 Splay 树维护区间翻转，先对下标建树。 对于翻转操作，记当前要翻转第 \(i\) 大的数，将 \(i\) 上旋至树根，给左子树打上翻转标记，然后将树根删除。 注意下传翻转标记。">
+<meta name="description" content="题意 对于序列中第 \(i\) 大的数，其在序列中位置为 \(pos_i\)，翻转区间 \([i,pos_i]\)，最终使序列升序排列。 对于一样大的数，在初始序列中下标较小的定义为较小的那一个。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDU 1890. Robotic Sort">
 <meta property="og:url" content="http://example.com/2021/04/10/HDU%201890/index.html">
 <meta property="og:site_name" content="c4Lnn 的个人博客">
-<meta property="og:description" content="题意 对于序列中第 \(i\) 大的数，其在序列中位置为 \(pos_i\)，翻转区间 \([i,pos_i]\)，最终使序列升序排列。 对于一样大的数，在初始序列中下标较小的定义为较小的那一个。 思路 用 Splay 树维护区间翻转，先对下标建树。 对于翻转操作，记当前要翻转第 \(i\) 大的数，将 \(i\) 上旋至树根，给左子树打上翻转标记，然后将树根删除。 注意下传翻转标记。">
+<meta property="og:description" content="题意 对于序列中第 \(i\) 大的数，其在序列中位置为 \(pos_i\)，翻转区间 \([i,pos_i]\)，最终使序列升序排列。 对于一样大的数，在初始序列中下标较小的定义为较小的那一个。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-10T15:19:41.000Z">
-<meta property="article:modified_time" content="2021-04-11T02:25:15.363Z">
+<meta property="article:modified_time" content="2021-04-11T04:44:01.392Z">
 <meta property="article:author" content="c4Lnn">
 <meta property="article:tag" content="Splay 树">
 <meta name="twitter:card" content="summary">
@@ -250,7 +250,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-04-11 10:25:15" itemprop="dateModified" datetime="2021-04-11T10:25:15+08:00">2021-04-11</time>
+        <time title="Modified: 2021-04-11 12:44:01" itemprop="dateModified" datetime="2021-04-11T12:44:01+08:00">2021-04-11</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -298,6 +298,7 @@
         <h1 id="题意">题意</h1>
 <p>对于序列中第 <span class="math inline">\(i\)</span> 大的数，其在序列中位置为 <span class="math inline">\(pos_i\)</span>，翻转区间 <span class="math inline">\([i,pos_i]\)</span>，最终使序列升序排列。</p>
 <p>对于一样大的数，在初始序列中下标较小的定义为较小的那一个。</p>
+<span id="more"></span>
 <h1 id="思路">思路</h1>
 <p>用 Splay 树维护区间翻转，先对下标建树。</p>
 <p>对于翻转操作，记当前要翻转第 <span class="math inline">\(i\)</span> 大的数，将 <span class="math inline">\(i\)</span> 上旋至树根，给左子树打上翻转标记，然后将树根删除。</p>
