@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="c4Lnn 的个人博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-10T13:45:20.000Z">
-<meta property="article:modified_time" content="2021-04-12T10:00:51.971Z">
+<meta property="article:modified_time" content="2021-04-12T15:45:34.407Z">
 <meta property="article:author" content="c4Lnn">
 <meta property="article:tag" content="莫比乌斯反演">
 <meta name="twitter:card" content="summary">
@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -167,7 +167,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -264,7 +264,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-04-12 18:00:51" itemprop="dateModified" datetime="2021-04-12T18:00:51+08:00">2021-04-12</time>
+        <time title="修改时间：2021-04-12 23:45:34" itemprop="dateModified" datetime="2021-04-12T23:45:34+08:00">2021-04-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -342,14 +342,14 @@
 (-1)^k &amp; k\;为\;n\;的不同质因子个数
 \end{cases}\]</span></p>
 <h2 id="定理">定理</h2>
-<p><strong>定理一：莫比乌斯函数 <span class="math inline">\(\mu(n)\)</span> 是积性函数。</strong></p>
+<p><strong>1. 莫比乌斯函数 <span class="math inline">\(\mu(n)\)</span> 是积性函数。</strong></p>
 <p>假设 <span class="math inline">\(\gcd(n,m)=1\)</span></p>
 <ul>
 <li>当 <span class="math inline">\(n=1\)</span> 或 <span class="math inline">\(m=1\)</span> 时，若 <span class="math inline">\(n=1\)</span>，<span class="math inline">\(\mu(nm)=\mu(n)\mu(m)=\mu(m)\)</span>，<span class="math inline">\(m=1\)</span> 时同理；</li>
 <li>当 <span class="math inline">\(n\)</span> 和 <span class="math inline">\(m\)</span> 中至少有一个数含有平方质因子时，<span class="math inline">\(nm\)</span> 也有平方质因子，<span class="math inline">\(\mu(nm)=\mu(n)\mu(m)=0\)</span>；</li>
 <li>当 <span class="math inline">\(n,m\)</span> 都没有平方质因子且都不为 <span class="math inline">\(1\)</span> 时，假设 <span class="math inline">\(n\)</span> 有 <span class="math inline">\(p\)</span> 个不同质因子个数，<span class="math inline">\(m\)</span> 有 <span class="math inline">\(q\)</span> 个不同质因子个数，<span class="math inline">\(\mu(nm)=(-1)^{p+q}=(-1)^p+(-1)^q=\mu(n)\mu(m)\)</span>。</li>
 </ul>
-<p><strong>定理二：<span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}=\begin{cases}1 &amp; n=1 \\0 &amp; n&gt;1\end{cases}=\varepsilon(n)=[n=1]\)</span></strong></p>
+<p><strong>2. <span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}=\begin{cases}1 &amp; n=1 \\0 &amp; n&gt;1\end{cases}=\varepsilon(n)=[n=1]\)</span></strong></p>
 <ul>
 <li><p>当 <span class="math inline">\(n=1\)</span> 时，<span class="math inline">\(F(1)=\sum_{d \mid 1}{\mu(d)}=\mu(1)=1\)</span>；</p></li>
 <li><p>当 <span class="math inline">\(n&gt;1\)</span> 时，因为 <span class="math inline">\(\mu(n)\)</span> 是积性函数，所以 <span class="math inline">\(\mu(n)\)</span> 的因数和函数 <span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}\)</span> 也是积性函数,</p>
@@ -357,7 +357,7 @@
 <p>而 <span class="math inline">\(F(p^k)=\sum_{d \mid p^k}{\mu(d)}=\mu(1)+\mu(p)+\mu(p^2)+\cdots+\mu(p^k)=1+(-1)+0+\cdots+0=0\)</span>，</p>
 <p>所以 <span class="math inline">\(F(n)=0\)</span>。</p></li>
 </ul>
-<p><strong>定理三：若 <span class="math inline">\(f\)</span> 是数论函数，<span class="math inline">\(F(n)=\sum_{d \mid n}{f(d)}\)</span>，则 <span class="math inline">\(f(n)=\sum_{d \mid n}(\mu(d)F(n/d))\)</span>。</strong></p>
+<p><strong>3. 若 <span class="math inline">\(f\)</span> 是数论函数，<span class="math inline">\(F(n)=\sum_{d \mid n}{f(d)}\)</span>，则 <span class="math inline">\(f(n)=\sum_{d \mid n}(\mu(d)F(n/d))\)</span>。</strong></p>
 <p><span class="math inline">\(\sum_{d \mid n}(\mu(d)F(n/d))=\sum_{d \mid n}(\mu(d)\sum_{e \mid (n/d)}{f(e)})=\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})\)</span>，</p>
 <p>根据定理二，当 <span class="math inline">\(e=n\)</span> 时，<span class="math inline">\(\sum_{d \mid (n/e)}{\mu(d)}=1\)</span>，否则为 <span class="math inline">\(0\)</span>，</p>
 <p>所以 <span class="math inline">\(\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})=f(n)\)</span>。</p>
