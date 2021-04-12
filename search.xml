@@ -718,114 +718,6 @@ x &amp; \equiv a_k \pmod {m_k}
 ]]></content>
   </entry>
   <entry>
-    <title>莫比乌斯反演</title>
-    <url>/2021/04/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</url>
-    <content><![CDATA[<h1 id="积性函数">积性函数</h1>
-<h2 id="定义">定义</h2>
-<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+,\gcd(x,y)=1\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为积性函数。</p>
-<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为完全积性函数。</p>
-<span id="more"></span>
-<h2 id="性质">性质</h2>
-<p>若 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 均为积性函数，则以下函数也为积性函数：</p>
-<ul>
-<li><span class="math inline">\(h(x)=f(x^p)\)</span></li>
-<li><span class="math inline">\(h(x)=f^p(x)\)</span></li>
-<li><span class="math inline">\(h(x)=f(x)g(x)\)</span></li>
-<li><span class="math inline">\(h(x)=\sum_{d \mid x}f(x)g(\frac{x}{d})\)</span></li>
-</ul>
-<p>设 <span class="math inline">\(x=\prod p_i^{k_i}\)</span>，</p>
-<ul>
-<li><p>若 <span class="math inline">\(F(x)\)</span> 为积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i^{k_i})\)</span>。</p></li>
-<li><p>若 <span class="math inline">\(F(x)\)</span> 为完全积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i)^{k_i}\)</span>。</p></li>
-</ul>
-<h2 id="例子">例子</h2>
-<ul>
-<li>单位函数：<span class="math inline">\(\varepsilon(n)=[n=1]\)</span>（完全积性）</li>
-<li>恒等函数：<span class="math inline">\(\operatorname{id}_k(n)=n^k\)</span>，<span class="math inline">\(\operatorname{id}_1(n)\)</span> 通常简记作 <span class="math inline">\(\operatorname{id}(n)\)</span>（完全积性）</li>
-<li>常数函数：<span class="math inline">\(1(n)=1\)</span>（完全积性）</li>
-<li>除数函数：<span class="math inline">\(\sigma_{k}(n)=\sum_{d\mid n}d^k\)</span>，<span class="math inline">\(\sigma_{0}(n)\)</span> 通常简记为 <span class="math inline">\(\operatorname{d}(n)\)</span> 或 <span class="math inline">\(\tau(n)\)</span>，<span class="math inline">\(\sigma_{1}(n)\)</span> 通常简记为 <span class="math inline">\(\sigma(n)\)</span></li>
-<li>欧拉函数：<span class="math inline">\(\varphi(n)=\sum_{i=1}^n[\gcd(i,n)=1]\)</span></li>
-<li>莫比乌斯函数：<span class="math inline">\(\mu(n)=\begin{cases} 1 &amp; n=1 \\ 0 &amp; \exists d&gt;1,d^2\mid n \\ (-1)^k &amp; k\;为\;n\;的不同质因子个数 \end{cases}\)</span></li>
-</ul>
-<h1 id="dirichlet-卷积">Dirichlet 卷积</h1>
-<h2 id="定义-1">定义</h2>
-<p>对于两个数论函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span>，则它们的 Dirichlet 卷积得到的结果 <span class="math inline">\(h(x)\)</span> 定义为：</p>
-<p><span class="math display">\[h(x)=\sum_{d\mid x}f(d)g(x/d)=\sum_{ab=x}f(a)g(b)\]</span></p>
-<p>简记为：<span class="math inline">\(h=f*g\)</span>。</p>
-<h2 id="性质-1">性质</h2>
-<ul>
-<li>交换律：<span class="math inline">\(f*g=g*f\)</span>。</li>
-<li>结合律：<span class="math inline">\((f*g)*h=f*(g*h)\)</span>。</li>
-<li>分配律：<span class="math inline">\((f+g)*h=f*h+g*h\)</span>。</li>
-<li>等式的性质：<span class="math inline">\(f=g\)</span> 的充要条件是 <span class="math inline">\(f*g=g*h\)</span>，其中数论函数 <span class="math inline">\(h(x)\)</span> 要满足 <span class="math inline">\(h(1)\neq 0\)</span>。</li>
-<li>单位元：单位函数 <span class="math inline">\(\varepsilon\)</span> 是 Dirichlet 卷积运算中的单位元，即对于任何数论函数 <span class="math inline">\(f\)</span>，都有 <span class="math inline">\(f*\varepsilon=f\)</span>。</li>
-</ul>
-<h2 id="结论">结论</h2>
-<p><strong>两个积性函数的 Dirichlet 卷积也是积性函数。</strong></p>
-<p>设两个积性函数为 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span>，再记 <span class="math inline">\(h=f*g\)</span>。</p>
-<p>设 <span class="math inline">\(\gcd(a,b)=1\)</span>，则 <span class="math inline">\(h(a)=\sum_{d_1\mid a}f(a)g(a/d_1),h(b)=\sum_{d_2\mid b}f(b)g(b/d_2)\)</span>，</p>
-<p>所以 <span class="math inline">\(h(a)h(b)=\sum_{d_1\mid a}f(a)g(a/d_1)\sum_{d_2\mid b}f(b)g(b/d_2)=\sum_{d\mid ab}f(d)g(ab/d)=h(ab)\)</span>。</p>
-<h1 id="莫比乌斯反演">莫比乌斯反演</h1>
-<h2 id="定义-2">定义</h2>
-<p><span class="math inline">\(\mu\)</span> 为莫比乌斯函数，定义为：</p>
-<p><span class="math display">\[\mu(n)=
-\begin{cases} 1 &amp; n=1 \\
-0 &amp; \exists d&gt;1,d^2\mid n \\
-(-1)^k &amp; k\;为\;n\;的不同质因子个数
-\end{cases}\]</span></p>
-<h2 id="定理">定理</h2>
-<p><strong>定理一：莫比乌斯函数 <span class="math inline">\(\mu(n)\)</span> 是积性函数。</strong></p>
-<p>假设 <span class="math inline">\(\gcd(n,m)=1\)</span></p>
-<ul>
-<li>当 <span class="math inline">\(n=1\)</span> 或 <span class="math inline">\(m=1\)</span> 时，若 <span class="math inline">\(n=1\)</span>，<span class="math inline">\(\mu(nm)=\mu(n)\mu(m)=\mu(m)\)</span>，<span class="math inline">\(m=1\)</span> 时同理；</li>
-<li>当 <span class="math inline">\(n\)</span> 和 <span class="math inline">\(m\)</span> 中至少有一个数含有平方质因子时，<span class="math inline">\(nm\)</span> 也有平方质因子，<span class="math inline">\(\mu(nm)=\mu(n)\mu(m)=0\)</span>；</li>
-<li>当 <span class="math inline">\(n,m\)</span> 都没有平方质因子且都不为 <span class="math inline">\(1\)</span> 时，假设 <span class="math inline">\(n\)</span> 有 <span class="math inline">\(p\)</span> 个不同质因子个数，<span class="math inline">\(m\)</span> 有 <span class="math inline">\(q\)</span> 个不同质因子个数，<span class="math inline">\(\mu(nm)=(-1)^{p+q}=(-1)^p+(-1)^q=\mu(n)\mu(m)\)</span>。</li>
-</ul>
-<p><strong>定理二：<span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}=\begin{cases}1 &amp; n=1 \\0 &amp; n&gt;1\end{cases}=\varepsilon(n)=[n=1]\)</span></strong></p>
-<ul>
-<li><p>当 <span class="math inline">\(n=1\)</span> 时，<span class="math inline">\(F(1)=\sum_{d \mid 1}{\mu(d)}=\mu(1)=1\)</span>；</p></li>
-<li><p>当 <span class="math inline">\(n&gt;1\)</span> 时，因为 <span class="math inline">\(\mu(n)\)</span> 是积性函数，所以 <span class="math inline">\(\mu(n)\)</span> 的因数和函数 <span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}\)</span> 也是积性函数,</p>
-<p>现在假设 <span class="math inline">\(p\)</span> 是质数，<span class="math inline">\(F(n)=F(p_1^{k_1})F(p_2^{k_2})\cdots F(p_t^{k_t})\)</span>，</p>
-<p>而 <span class="math inline">\(F(p^k)=\sum_{d \mid p^k}{\mu(d)}=\mu(1)+\mu(p)+\mu(p^2)+\cdots+\mu(p^k)=1+(-1)+0+\cdots+0=0\)</span>，</p>
-<p>所以 <span class="math inline">\(F(n)=0\)</span>。</p></li>
-</ul>
-<p><strong>定理三：若 <span class="math inline">\(f\)</span> 是数论函数，<span class="math inline">\(F(n)=\sum_{d \mid n}{f(d)}\)</span>，则 <span class="math inline">\(f(n)=\sum_{d \mid n}(\mu(d)F(n/d))\)</span>。</strong></p>
-<p><span class="math inline">\(\sum_{d \mid n}(\mu(d)F(n/d))=\sum_{d \mid n}(\mu(d)\sum_{e \mid (n/d)}{f(e)})=\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})\)</span>，</p>
-<p>根据定理二，当 <span class="math inline">\(e=n\)</span> 时，<span class="math inline">\(\sum_{d \mid (n/e)}{\mu(d)}=1\)</span>，否则为 <span class="math inline">\(0\)</span>，</p>
-<p>所以 <span class="math inline">\(\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})=f(n)\)</span>。</p>
-<h1 id="例题">例题</h1>
-<p><strong><a href="https://darkbzoj.tk/problem/2301">BZOJ 2301. Problem b</a></strong></p>
-<blockquote>
-<p>求 <span class="math inline">\(\sum_{i=a}^{n}\sum_{j=b}^{m}[gcd(i,j)=k]\)</span>。</p>
-</blockquote>
-<p>根据容斥原理：</p>
-<p><span class="math inline">\(\begin{aligned} &amp; \sum_{i=a}^{n}\sum_{j=b}^{m}[gcd(i,j)=k] \\ = &amp; \sum_{i=1}^{n}\sum_{j=1}^{m}[gcd(i,j)=k]-\sum_{i=1}^{a-1}\sum_{j=1}^{m}[gcd(i,j)=k]-\sum_{i=1}^{n}\sum_{j=1}^{b-1}[gcd(i,j)=k]+\sum_{i=1}^{a-1}\sum_{j=1}^{b-1}[gcd(i,j)=k]\end{aligned}\)</span></p>
-<p>原式被分成了四个相似的式子，可推得：</p>
-<p><span class="math inline">\(\begin{aligned} &amp; \sum_{i=1}^{n}\sum_{j=1}^{m}[gcd(i,j)=k] \\ = &amp; \sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}[gcd(i,j)=1] \\ = &amp; \sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}\sum_{d \mid gcd(i,j)}{\mu(d)} \\ = &amp; \sum_{d=1}(\mu(d)\sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}([d \mid i]\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}[d \mid j])) \\ = &amp; \sum_{d=1}(\mu(d) \lfloor \frac{n}{kd} \rfloor \lfloor \frac{m}{kd} \rfloor) \end{aligned}\)</span></p>
-<p>对四个式子分别数论分块求解。</p>
-<p><strong><a href="https://www.spoj.com/problems/LCMSUM/en/">SPOJ LCMSUM</a></strong></p>
-<blockquote>
-<p>求 <span class="math inline">\(\sum_{i=1}^n \operatorname{lcm} (i,n)\)</span>。</p>
-</blockquote>
-<!-- $\begin{aligned}
-& \sum_{i=1}^n \operatorname{lcm} (i,n) \\
-= & \sum_{i=1}^n\frac{in}{\gcd(i,n)} \\
-= & n\sum_{i=1}^n\frac{i}{\gcd(i,n)} \\
-= & n\sum_{i=1}^n\sum_{j=1}^n i|j
-\end{aligned}$ -->
-<h1 id="参考资料">参考资料</h1>
-<p><a href="https://oi-wiki.org/math/mobius/">OI Wiki</a></p>
-<p><a href="https://blog.csdn.net/skywalkert/article/details/50500009">浅谈一类积性函数的前缀和</a></p>
-<p>初等数论及其应用（原书第 6 版）</p>
-]]></content>
-      <categories>
-        <category>算法学习笔记</category>
-      </categories>
-      <tags>
-        <tag>莫比乌斯反演</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AtCoder Beginner Contest 194 E. Mex Min</title>
     <url>/2021/04/12/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ABC%20194E/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
@@ -1151,6 +1043,114 @@ x &amp; \equiv a_k \pmod {m_k}
       <tags>
         <tag>树状数组</tag>
         <tag>二分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>莫比乌斯反演</title>
+    <url>/2021/04/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</url>
+    <content><![CDATA[<h1 id="积性函数">积性函数</h1>
+<h2 id="定义">定义</h2>
+<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+,\gcd(x,y)=1\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为积性函数。</p>
+<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为完全积性函数。</p>
+<span id="more"></span>
+<h2 id="性质">性质</h2>
+<p>若 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 均为积性函数，则以下函数也为积性函数：</p>
+<ul>
+<li><span class="math inline">\(h(x)=f(x^p)\)</span></li>
+<li><span class="math inline">\(h(x)=f^p(x)\)</span></li>
+<li><span class="math inline">\(h(x)=f(x)g(x)\)</span></li>
+<li><span class="math inline">\(h(x)=\sum_{d \mid x}f(x)g(\frac{x}{d})\)</span></li>
+</ul>
+<p>设 <span class="math inline">\(x=\prod p_i^{k_i}\)</span>，</p>
+<ul>
+<li><p>若 <span class="math inline">\(F(x)\)</span> 为积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i^{k_i})\)</span>。</p></li>
+<li><p>若 <span class="math inline">\(F(x)\)</span> 为完全积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i)^{k_i}\)</span>。</p></li>
+</ul>
+<h2 id="例子">例子</h2>
+<ul>
+<li>单位函数：<span class="math inline">\(\varepsilon(n)=[n=1]\)</span>（完全积性）</li>
+<li>恒等函数：<span class="math inline">\(\operatorname{id}_k(n)=n^k\)</span>，<span class="math inline">\(\operatorname{id}_1(n)\)</span> 通常简记作 <span class="math inline">\(\operatorname{id}(n)\)</span>（完全积性）</li>
+<li>常数函数：<span class="math inline">\(1(n)=1\)</span>（完全积性）</li>
+<li>除数函数：<span class="math inline">\(\sigma_{k}(n)=\sum_{d\mid n}d^k\)</span>，<span class="math inline">\(\sigma_{0}(n)\)</span> 通常简记为 <span class="math inline">\(\operatorname{d}(n)\)</span> 或 <span class="math inline">\(\tau(n)\)</span>，<span class="math inline">\(\sigma_{1}(n)\)</span> 通常简记为 <span class="math inline">\(\sigma(n)\)</span></li>
+<li>欧拉函数：<span class="math inline">\(\varphi(n)=\sum_{i=1}^n[\gcd(i,n)=1]\)</span></li>
+<li>莫比乌斯函数：<span class="math inline">\(\mu(n)=\begin{cases} 1 &amp; n=1 \\ 0 &amp; \exists d&gt;1,d^2\mid n \\ (-1)^k &amp; k\;为\;n\;的不同质因子个数 \end{cases}\)</span></li>
+</ul>
+<h1 id="dirichlet-卷积">Dirichlet 卷积</h1>
+<h2 id="定义-1">定义</h2>
+<p>对于两个数论函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span>，则它们的 Dirichlet 卷积得到的结果 <span class="math inline">\(h(x)\)</span> 定义为：</p>
+<p><span class="math display">\[h(x)=\sum_{d\mid x}f(d)g(x/d)=\sum_{ab=x}f(a)g(b)\]</span></p>
+<p>简记为：<span class="math inline">\(h=f*g\)</span>。</p>
+<h2 id="性质-1">性质</h2>
+<ul>
+<li>交换律：<span class="math inline">\(f*g=g*f\)</span>。</li>
+<li>结合律：<span class="math inline">\((f*g)*h=f*(g*h)\)</span>。</li>
+<li>分配律：<span class="math inline">\((f+g)*h=f*h+g*h\)</span>。</li>
+<li>等式的性质：<span class="math inline">\(f=g\)</span> 的充要条件是 <span class="math inline">\(f*g=g*h\)</span>，其中数论函数 <span class="math inline">\(h(x)\)</span> 要满足 <span class="math inline">\(h(1)\neq 0\)</span>。</li>
+<li>单位元：单位函数 <span class="math inline">\(\varepsilon\)</span> 是 Dirichlet 卷积运算中的单位元，即对于任何数论函数 <span class="math inline">\(f\)</span>，都有 <span class="math inline">\(f*\varepsilon=f\)</span>。</li>
+</ul>
+<h2 id="结论">结论</h2>
+<p><strong>两个积性函数的 Dirichlet 卷积也是积性函数。</strong></p>
+<p>设两个积性函数为 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span>，再记 <span class="math inline">\(h=f*g\)</span>。</p>
+<p>设 <span class="math inline">\(\gcd(a,b)=1\)</span>，则 <span class="math inline">\(h(a)=\sum_{d_1\mid a}f(a)g(a/d_1),h(b)=\sum_{d_2\mid b}f(b)g(b/d_2)\)</span>，</p>
+<p>所以 <span class="math inline">\(h(a)h(b)=\sum_{d_1\mid a}f(a)g(a/d_1)\sum_{d_2\mid b}f(b)g(b/d_2)=\sum_{d\mid ab}f(d)g(ab/d)=h(ab)\)</span>。</p>
+<h1 id="莫比乌斯反演">莫比乌斯反演</h1>
+<h2 id="定义-2">定义</h2>
+<p><span class="math inline">\(\mu\)</span> 为莫比乌斯函数，定义为：</p>
+<p><span class="math display">\[\mu(n)=
+\begin{cases} 1 &amp; n=1 \\
+0 &amp; \exists d&gt;1,d^2\mid n \\
+(-1)^k &amp; k\;为\;n\;的不同质因子个数
+\end{cases}\]</span></p>
+<h2 id="定理">定理</h2>
+<p><strong>定理一：莫比乌斯函数 <span class="math inline">\(\mu(n)\)</span> 是积性函数。</strong></p>
+<p>假设 <span class="math inline">\(\gcd(n,m)=1\)</span></p>
+<ul>
+<li>当 <span class="math inline">\(n=1\)</span> 或 <span class="math inline">\(m=1\)</span> 时，若 <span class="math inline">\(n=1\)</span>，<span class="math inline">\(\mu(nm)=\mu(n)\mu(m)=\mu(m)\)</span>，<span class="math inline">\(m=1\)</span> 时同理；</li>
+<li>当 <span class="math inline">\(n\)</span> 和 <span class="math inline">\(m\)</span> 中至少有一个数含有平方质因子时，<span class="math inline">\(nm\)</span> 也有平方质因子，<span class="math inline">\(\mu(nm)=\mu(n)\mu(m)=0\)</span>；</li>
+<li>当 <span class="math inline">\(n,m\)</span> 都没有平方质因子且都不为 <span class="math inline">\(1\)</span> 时，假设 <span class="math inline">\(n\)</span> 有 <span class="math inline">\(p\)</span> 个不同质因子个数，<span class="math inline">\(m\)</span> 有 <span class="math inline">\(q\)</span> 个不同质因子个数，<span class="math inline">\(\mu(nm)=(-1)^{p+q}=(-1)^p+(-1)^q=\mu(n)\mu(m)\)</span>。</li>
+</ul>
+<p><strong>定理二：<span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}=\begin{cases}1 &amp; n=1 \\0 &amp; n&gt;1\end{cases}=\varepsilon(n)=[n=1]\)</span></strong></p>
+<ul>
+<li><p>当 <span class="math inline">\(n=1\)</span> 时，<span class="math inline">\(F(1)=\sum_{d \mid 1}{\mu(d)}=\mu(1)=1\)</span>；</p></li>
+<li><p>当 <span class="math inline">\(n&gt;1\)</span> 时，因为 <span class="math inline">\(\mu(n)\)</span> 是积性函数，所以 <span class="math inline">\(\mu(n)\)</span> 的因数和函数 <span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}\)</span> 也是积性函数,</p>
+<p>现在假设 <span class="math inline">\(p\)</span> 是质数，<span class="math inline">\(F(n)=F(p_1^{k_1})F(p_2^{k_2})\cdots F(p_t^{k_t})\)</span>，</p>
+<p>而 <span class="math inline">\(F(p^k)=\sum_{d \mid p^k}{\mu(d)}=\mu(1)+\mu(p)+\mu(p^2)+\cdots+\mu(p^k)=1+(-1)+0+\cdots+0=0\)</span>，</p>
+<p>所以 <span class="math inline">\(F(n)=0\)</span>。</p></li>
+</ul>
+<p><strong>定理三：若 <span class="math inline">\(f\)</span> 是数论函数，<span class="math inline">\(F(n)=\sum_{d \mid n}{f(d)}\)</span>，则 <span class="math inline">\(f(n)=\sum_{d \mid n}(\mu(d)F(n/d))\)</span>。</strong></p>
+<p><span class="math inline">\(\sum_{d \mid n}(\mu(d)F(n/d))=\sum_{d \mid n}(\mu(d)\sum_{e \mid (n/d)}{f(e)})=\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})\)</span>，</p>
+<p>根据定理二，当 <span class="math inline">\(e=n\)</span> 时，<span class="math inline">\(\sum_{d \mid (n/e)}{\mu(d)}=1\)</span>，否则为 <span class="math inline">\(0\)</span>，</p>
+<p>所以 <span class="math inline">\(\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})=f(n)\)</span>。</p>
+<h1 id="例题">例题</h1>
+<p><strong><a href="https://darkbzoj.tk/problem/2301">BZOJ 2301. Problem b</a></strong></p>
+<blockquote>
+<p>求 <span class="math inline">\(\sum_{i=a}^{n}\sum_{j=b}^{m}[gcd(i,j)=k]\)</span>。</p>
+</blockquote>
+<p>根据容斥原理：</p>
+<p><span class="math inline">\(\begin{aligned} &amp; \sum_{i=a}^{n}\sum_{j=b}^{m}[gcd(i,j)=k] \\ = &amp; \sum_{i=1}^{n}\sum_{j=1}^{m}[gcd(i,j)=k]-\sum_{i=1}^{a-1}\sum_{j=1}^{m}[gcd(i,j)=k]-\sum_{i=1}^{n}\sum_{j=1}^{b-1}[gcd(i,j)=k]+\sum_{i=1}^{a-1}\sum_{j=1}^{b-1}[gcd(i,j)=k]\end{aligned}\)</span></p>
+<p>原式被分成了四个相似的式子，可推得：</p>
+<p><span class="math inline">\(\begin{aligned} &amp; \sum_{i=1}^{n}\sum_{j=1}^{m}[gcd(i,j)=k] \\ = &amp; \sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}[gcd(i,j)=1] \\ = &amp; \sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}\sum_{d \mid gcd(i,j)}{\mu(d)} \\ = &amp; \sum_{d=1}(\mu(d)\sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}([d \mid i]\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}[d \mid j])) \\ = &amp; \sum_{d=1}(\mu(d) \lfloor \frac{n}{kd} \rfloor \lfloor \frac{m}{kd} \rfloor) \end{aligned}\)</span></p>
+<p>对四个式子分别数论分块求解。</p>
+<p><strong><a href="https://www.spoj.com/problems/LCMSUM/en/">SPOJ LCMSUM</a></strong></p>
+<blockquote>
+<p>求 <span class="math inline">\(\sum_{i=1}^n \operatorname{lcm} (i,n)\)</span>。</p>
+</blockquote>
+<!-- $\begin{aligned}
+& \sum_{i=1}^n \operatorname{lcm} (i,n) \\
+= & \sum_{i=1}^n\frac{in}{\gcd(i,n)} \\
+= & n\sum_{i=1}^n\frac{i}{\gcd(i,n)} \\
+= & n\sum_{i=1}^n\sum_{j=1}^n i|j
+\end{aligned}$ -->
+<h1 id="参考资料">参考资料</h1>
+<p><a href="https://oi-wiki.org/math/mobius/">OI Wiki</a></p>
+<p><a href="https://blog.csdn.net/skywalkert/article/details/50500009">浅谈一类积性函数的前缀和</a></p>
+<p>初等数论及其应用（原书第 6 版）</p>
+]]></content>
+      <categories>
+        <category>算法学习笔记</category>
+      </categories>
+      <tags>
+        <tag>莫比乌斯反演</tag>
       </tags>
   </entry>
 </search>
