@@ -1,6 +1,490 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>个人赛记录</title>
+    <url>/2021/04/13/%E4%B8%AA%E4%BA%BA%E8%B5%9B%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<ul>
+<li>O 赛中通过</li>
+<li>Ø 赛后通过</li>
+<li>! 尝试了但是失败了</li>
+<li>- 没有尝试</li>
+</ul>
+<h1 id="牛客小白月赛">牛客小白月赛</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/85">牛客小白月赛1</a></td>
+<td style="text-align: center;">Done</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/549">牛客小白月赛13</a></td>
+<td style="text-align: center;">7/10</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/879">牛客小白月赛14</a></td>
+<td style="text-align: center;">5/10</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4462">牛客小白月赛23</a></td>
+<td style="text-align: center;">9/10</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4784">牛客小白月赛24</a></td>
+<td style="text-align: center;">8/10</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest//5600">牛客小白月赛25</a></td>
+<td style="text-align: center;">Done</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+</tr>
+</tbody>
+</table>
+<h1 id="牛客练习赛">牛客练习赛</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/548">牛客练习赛43</a></td>
+<td style="text-align: center;">1/6</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/847">牛客练习赛45</a></td>
+<td style="text-align: center;">1/6</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/923">牛客练习赛48</a></td>
+<td style="text-align: center;">2/6</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4090">牛客练习赛58</a></td>
+<td style="text-align: center;">3/6</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4743">牛客练习赛59</a></td>
+<td style="text-align: center;">4/6</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4853">牛客练习赛60</a></td>
+<td style="text-align: center;">5/6</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5026">牛客练习赛61</a></td>
+<td style="text-align: center;">5/6</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/7079">牛客练习赛68</a></td>
+<td style="text-align: center;">3/6</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/7329">牛客练习赛69</a></td>
+<td style="text-align: center;">4/6</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/8282">牛客练习赛72</a></td>
+<td style="text-align: center;">3/6</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9700">牛客练习赛74</a></td>
+<td style="text-align: center;">5/6</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<h1 id="牛客寒假算法基础集训营">2021牛客寒假算法基础集训营</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9981">2021牛客寒假算法基础集训营1</a></td>
+<td style="text-align: center;">8/10</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9982">2021牛客寒假算法基础集训营2</a></td>
+<td style="text-align: center;">6/10</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9983">2021牛客寒假算法基础集训营3</a></td>
+<td style="text-align: center;">Done</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9984">2021牛客寒假算法基础集训营4</a></td>
+<td style="text-align: center;">7/10</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9985">2021牛客寒假算法基础集训营5</a></td>
+<td style="text-align: center;">3/10</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9986">2021牛客寒假算法基础集训营6</a></td>
+<td style="text-align: center;">8/10</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+</tr>
+</tbody>
+</table>
+<h1 id="eoj-monthly">EOJ Monthly</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://acm.ecnu.edu.cn/contest/255">EOJ Monthly 2020.3</a></td>
+<td style="text-align: center;">3/4</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://acm.ecnu.edu.cn/contest/292">EOJ Monthly 2020.7</a></td>
+<td style="text-align: center;">Done</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5278">2020年第18届上海大学程序设计联赛春季赛</a></td>
+<td style="text-align: center;">7/12</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://acm.ecnu.edu.cn/contest/273/">2020 年 “游族杯” 全国高校程序设计网络挑战赛</a></td>
+<td style="text-align: center;">3/9</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/6870">2020年第18届上海大学程序设计联赛夏季赛</a></td>
+<td style="text-align: center;">3/9</td>
+<td style="text-align: center;">!</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9692">2020年广东工业大学第10届新生程序设计竞赛</a></td>
+<td style="text-align: center;">9/12</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://acm.ecnu.edu.cn/contest/383/">2021年“图森未来杯”全国程序设计邀请赛</a></td>
+<td style="text-align: center;">6/11</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+  </entry>
+  <entry>
     <title>CP Templates</title>
     <url>/2021/04/12/CP%20Templates/</url>
     <content><![CDATA[<h1 id="准备">准备</h1>
@@ -718,499 +1202,13 @@ x &amp; \equiv a_k \pmod {m_k}
 ]]></content>
   </entry>
   <entry>
-    <title>个人赛记录</title>
-    <url>/2021/04/13/%E4%B8%AA%E4%BA%BA%E8%B5%9B%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<ul>
-<li>O 赛中通过</li>
-<li>Ø 赛后通过</li>
-<li>! 尝试了但是失败了</li>
-<li>- 没有尝试</li>
-</ul>
-<h1 id="牛客小白月赛">牛客小白月赛</h1>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/85">牛客小白月赛1</a></td>
-<td style="text-align: center;">Done</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/549">牛客小白月赛13</a></td>
-<td style="text-align: center;">7/10</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/879">牛客小白月赛14</a></td>
-<td style="text-align: center;">5/10</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4462">牛客小白月赛23</a></td>
-<td style="text-align: center;">9/10</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4784">牛客小白月赛24</a></td>
-<td style="text-align: center;">8/10</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest//5600">牛客小白月赛25</a></td>
-<td style="text-align: center;">Done</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-</tr>
-</tbody>
-</table>
-<h1 id="牛客练习赛">牛客练习赛</h1>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/548">牛客练习赛43</a></td>
-<td style="text-align: center;">1/6</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/847">牛客练习赛45</a></td>
-<td style="text-align: center;">1/6</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/923">牛客练习赛48</a></td>
-<td style="text-align: center;">2/6</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4090">牛客练习赛58</a></td>
-<td style="text-align: center;">3/6</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4743">牛客练习赛59</a></td>
-<td style="text-align: center;">4/6</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4853">牛客练习赛60</a></td>
-<td style="text-align: center;">5/6</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5026">牛客练习赛61</a></td>
-<td style="text-align: center;">5/6</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/7079">牛客练习赛68</a></td>
-<td style="text-align: center;">3/6</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/7329">牛客练习赛69</a></td>
-<td style="text-align: center;">4/6</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/8282">牛客练习赛72</a></td>
-<td style="text-align: center;">3/6</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9700">牛客练习赛74</a></td>
-<td style="text-align: center;">5/6</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h1 id="牛客寒假算法基础集训营">2021牛客寒假算法基础集训营</h1>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9981">2021牛客寒假算法基础集训营1</a></td>
-<td style="text-align: center;">8/10</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9982">2021牛客寒假算法基础集训营2</a></td>
-<td style="text-align: center;">6/10</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9983">2021牛客寒假算法基础集训营3</a></td>
-<td style="text-align: center;">Done</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9984">2021牛客寒假算法基础集训营4</a></td>
-<td style="text-align: center;">7/10</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9985">2021牛客寒假算法基础集训营5</a></td>
-<td style="text-align: center;">3/10</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9986">2021牛客寒假算法基础集训营6</a></td>
-<td style="text-align: center;">8/10</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-</tbody>
-</table>
-<h1 id="eoj-monthly">EOJ Monthly</h1>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://acm.ecnu.edu.cn/contest/255">EOJ Monthly 2020.3</a></td>
-<td style="text-align: center;">3/4</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://acm.ecnu.edu.cn/contest/292">EOJ Monthly 2020.7</a></td>
-<td style="text-align: center;">Done</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-<th style="text-align: center;">K</th>
-<th style="text-align: center;">L</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5278">2020年第18届上海大学程序设计联赛春季赛</a></td>
-<td style="text-align: center;">7/12</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://acm.ecnu.edu.cn/contest/273/">2020 年 “游族杯” 全国高校程序设计网络挑战赛</a></td>
-<td style="text-align: center;">3/9</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/6870">2020年第18届上海大学程序设计联赛夏季赛</a></td>
-<td style="text-align: center;">3/9</td>
-<td style="text-align: center;">!</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9692">2020年广东工业大学第10届新生程序设计竞赛</a></td>
-<td style="text-align: center;">9/12</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://acm.ecnu.edu.cn/contest/383/">2021年“图森未来杯”全国程序设计邀请赛</a></td>
-<td style="text-align: center;">6/11</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-  </entry>
-  <entry>
     <title>LibreOJ 6010.「网络流 24 题」数字梯形</title>
     <url>/2021/04/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/LibreOJ%206010/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://loj.ac/p/6010" class="uri">https://loj.ac/p/6010</a></p>
 <h1 id="题意">题意</h1>
 <p>给定一个由 <span class="math inline">\(n\)</span> 行数字组成的数字梯形如下方所示。梯形的第一行有 <span class="math inline">\(m\)</span> 个数字。从梯形的顶部的 <span class="math inline">\(m\)</span> 个数字开始，在每个数字处可以沿左下或右下方向移动，形成一条从梯形的顶至底的路径。</p>
-<figure>
-<img src="https://i.loli.net/2021/04/13/98cbhZ37AQXdHOF.png" alt="在这里插入图片描述" /><figcaption aria-hidden="true">在这里插入图片描述</figcaption>
-</figure>
+<p><img src="https://i.loli.net/2021/04/13/98cbhZ37AQXdHOF.png" /></p>
 <p>分别遵守以下规则：</p>
 <ol type="1">
 <li>从梯形的顶至底的 <span class="math inline">\(m\)</span> 条路径互不相交；</li>
