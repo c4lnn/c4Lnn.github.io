@@ -273,6 +273,20 @@
     </span>
 
   
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/04/12/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ABC%20145F/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/12/解题报告/ABC 145F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 </div>
 
 
@@ -335,7 +349,12 @@
 
 
 
-<script src="/js/comments.js"></script>
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  <script src="/js/comments.js"></script>
 </div>
   </main>
 
@@ -407,6 +426,37 @@
 </script>
 
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://c4Lnn.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://example.com/2021/04/12/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ABC%20145F/";
+    this.page.identifier = "2021/04/12/解题报告/ABC 145F/";
+    this.page.title = "AtCoder Beginner Contest 145 F. Laminate";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://c4Lnn.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
 </body>
 </html>
