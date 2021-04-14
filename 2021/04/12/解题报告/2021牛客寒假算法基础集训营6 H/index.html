@@ -30,8 +30,8 @@
 <meta property="article:published_time" content="2021-04-12T15:58:21.000Z">
 <meta property="article:modified_time" content="2021-04-12T16:10:53.606Z">
 <meta property="article:author" content="c4Lnn">
-<meta property="article:tag" content="线段树">
 <meta property="article:tag" content="最小生成树">
+<meta property="article:tag" content="线段树">
 <meta name="twitter:card" content="summary">
 
 
@@ -315,8 +315,8 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 线段树</a>
               <a href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 最小生成树</a>
+              <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 线段树</a>
           </div>
 
         
@@ -341,7 +341,8 @@
 
 
 
-<script src="/js/comments.js"></script>
+
+    <div class="comments gitalk-container"></div><script src="/js/comments.js"></script>
 </div>
   </main>
 
@@ -413,6 +414,27 @@
 </script>
 
 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments('.gitalk-container', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'c28f33d7cdbaa0b55dfc',
+      clientSecret: 'b0b0130b9489261c2cad9fe55eaca8a28b0bd5e1',
+      repo        : 'c4Lnn.github.io',
+      owner       : 'c4Lnn',
+      admin       : ['c4Lnn'],
+      id          : '8012b11807696c894b81261897fd3a7e',
+      proxy       : 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render(document.querySelector('.gitalk-container'));
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
