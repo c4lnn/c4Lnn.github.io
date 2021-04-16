@@ -2568,7 +2568,7 @@ x &amp; \equiv a_k \pmod {m_k}
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4008" class="uri">http://acm.hdu.edu.cn/showproblem.php?pid=4008</a></p>
 <h1 id="题意">题意</h1>
-<p>树形图上多次询问：以 <span class="math inline">\(x\)</span> 为树根，<span class="math inline">\(y\)</span> 的 <span class="math inline">\(id\)</span> 最小的儿子节点和子孙节点。</p>
+<p>树上多次询问：以 <span class="math inline">\(x\)</span> 为树根，<span class="math inline">\(y\)</span> 的 <span class="math inline">\(id\)</span> 最小的儿子节点和子孙节点。</p>
 <span id="more"></span>
 <h1 id="思路">思路</h1>
 <p>以 <span class="math inline">\(1\)</span> 为树根对树重链剖分，然后我们可以将询问分成两种情况：</p>
