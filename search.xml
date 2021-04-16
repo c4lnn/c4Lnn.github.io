@@ -2590,8 +2590,8 @@ x &amp; \equiv a_k \pmod {m_k}
       </categories>
       <tags>
         <tag>线段树</tag>
-        <tag>LCA</tag>
         <tag>重链剖分</tag>
+        <tag>LCA</tag>
       </tags>
   </entry>
   <entry>
