@@ -10,799 +10,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>团队赛记录</title>
-    <url>/2021/04/15/%E5%9B%A2%E9%98%9F%E8%B5%9B%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<ul>
-<li>O 赛中通过</li>
-<li>Ø 赛后通过</li>
-<li>! 尝试了但是失败了</li>
-<li>- 没有尝试</li>
-</ul>
-<h1 id="icpc">ICPC</h1>
-<h2 id="section">2019</h2>
-<h3 id="资格赛">资格赛</h3>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-<th style="text-align: center;">K</th>
-<th style="text-align: center;">L</th>
-<th style="text-align: center;">M</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/2991/challenges">The Preliminary Contest for ICPC Asia Yinchuan 2019</a></td>
-<td style="text-align: center;">6/13</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3004/challenges">The Preliminary Contest for ICPC Asia Nanjing 2019</a></td>
-<td style="text-align: center;">2/9</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3005/challenges">The Preliminary Contest for ICPC Asia Xuzhou 2019</a></td>
-<td style="text-align: center;">2/13</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3870/challenges">The Preliminary Contest for ICPC Asia Nanjing 2019</a></td>
-<td style="text-align: center;">3/9</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3007/challenges">The Preliminary Contest for ICPC Asia Shenyang 2019</a></td>
-<td style="text-align: center;">2/11</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3003/challenges">The Preliminary Contest for ICPC Asia Shanghai 2019</a></td>
-<td style="text-align: center;">4/12</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h3 id="正式赛">正式赛</h3>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-<th style="text-align: center;">K</th>
-<th style="text-align: center;">L</th>
-<th style="text-align: center;">M</th>
-<th style="text-align: center;">N</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/5527">The 2019 ICPC Asia Yinchuan Regional Contest</a></td>
-<td style="text-align: center;">0/14</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/5528">The 2019 ICPC Asia Nanjing Regional Contest</a></td>
-<td style="text-align: center;">0/11</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/5529">The 2019 ICPC Asia Xuzhou Regional Contest</a></td>
-<td style="text-align: center;">0/13</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/5530">The 2019 ICPC Asia Nanchang Regional Contest</a></td>
-<td style="text-align: center;">0/13</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4370">The 2019 ICPC Asia Shanghai Regional Contest</a></td>
-<td style="text-align: center;">3/13</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://codeforces.com/gym/102471">The 2019 ICPC Asia-East Continent Final Contest</a></td>
-<td style="text-align: center;">0/13</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="section-1">2020</h2>
-<h3 id="资格赛-1">资格赛</h3>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://pad.degrowth.net/fE4SMJLrTFKaDRNXIosW-w">第 45 届国际大学生程序设计竞赛（ICPC）亚洲网上区域赛模拟赛</a></td>
-<td style="text-align: center;">4/10</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h3 id="正式赛-1">正式赛</h3>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-<th style="text-align: center;">K</th>
-<th style="text-align: center;">L</th>
-<th style="text-align: center;">M</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9925">The 2020 ICPC Asia Shanghai Regional Contest</a></td>
-<td style="text-align: center;">4/13</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/10272">The 2020 ICPC Asia Nanjing Regional Contest</a></td>
-<td style="text-align: center;">0/13</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/10662">The 2020 ICPC Asia Jinan Regional Contest</a></td>
-<td style="text-align: center;">0/13</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/12548">The 2020 ICPC Asia Kunming Regional Contest</a></td>
-<td style="text-align: center;">3/13</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h1 id="ccpc">CCPC</h1>
-<h2 id="section-2">2018</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th>B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://vjudge.net/contest/395469">2018中国大学生程序设计竞赛 - 网络选拔赛</a></td>
-<td style="text-align: center;">3/10</td>
-<td style="text-align: center;">-</td>
-<td>-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-</tr>
-</tbody>
-</table>
-<h2 id="section-3">2020</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th>B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-<th style="text-align: center;">K</th>
-<th style="text-align: center;">L</th>
-<th style="text-align: center;">M</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://vjudge.net/contest/396304">2020中国大学生程序设计竞赛 - 网络选拔赛</a></td>
-<td style="text-align: center;">4/13</td>
-<td style="text-align: center;">-</td>
-<td>-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<h1 id="牛客暑期多校训练营">2020牛客暑期多校训练营</h1>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-<th style="text-align: center;">K</th>
-<th style="text-align: center;">L</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5666">2020牛客暑期多校训练营（第一场）</a></td>
-<td style="text-align: center;">4/10</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5667">2020牛客暑期多校训练营（第二场）</a></td>
-<td style="text-align: center;">6/11</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5668">2020牛客暑期多校训练营（第三场）</a></td>
-<td style="text-align: center;">6/12</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5669">2020牛客暑期多校训练营（第四场）</a></td>
-<td style="text-align: center;">3/10</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5670">2020牛客暑期多校训练营（第五场）</a></td>
-<td style="text-align: center;">3/11</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5671">2020牛客暑期多校训练营（第六场）</a></td>
-<td style="text-align: center;">2/11</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">!</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">!</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5672">2020牛客暑期多校训练营（第七场）</a></td>
-<td style="text-align: center;">3/10</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5673">2020牛客暑期多校训练营（第八场）</a></td>
-<td style="text-align: center;">3/11</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5674">2020牛客暑期多校训练营（第九场）</a></td>
-<td style="text-align: center;">5/12</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5675">2020牛客暑期多校训练营（第十场）</a></td>
-<td style="text-align: center;">2/10</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h1 id="ccpc-wannafly-winter-camp-div.12">2020 CCPC Wannafly Winter Camp Div.1＆2</h1>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-<th style="text-align: center;">K</th>
-<th style="text-align: center;">L</th>
-<th style="text-align: center;">M</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://pad.degrowth.net/oDxrrpx4Q_ahT4AvUQ1fAA">2020 CCPC Wannafly Winter Camp Day7 Div.1＆2</a></td>
-<td style="text-align: center;">1/12</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h2 id="年度训练联盟热身训练赛">2021年度训练联盟热身训练赛</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-<th style="text-align: center;">K</th>
-<th style="text-align: center;">L</th>
-<th style="text-align: center;">M</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/12606">2021年度训练联盟热身训练赛第一场</a></td>
-<td style="text-align: center;">9/11</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/12794">2021年度训练联盟热身训练赛第二场</a></td>
-<td style="text-align: center;">Done</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/13168">2021年度训练联盟热身训练赛第三场</a></td>
-<td style="text-align: center;">9/13</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/13506">2021年度训练联盟热身训练赛第四场</a></td>
-<td style="text-align: center;">6/12</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-  </entry>
-  <entry>
     <title>个人赛记录</title>
     <url>/2021/04/13/%E4%B8%AA%E4%BA%BA%E8%B5%9B%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<ul>
@@ -1839,6 +1046,799 @@
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">O</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+  </entry>
+  <entry>
+    <title>团队赛记录</title>
+    <url>/2021/04/15/%E5%9B%A2%E9%98%9F%E8%B5%9B%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<ul>
+<li>O 赛中通过</li>
+<li>Ø 赛后通过</li>
+<li>! 尝试了但是失败了</li>
+<li>- 没有尝试</li>
+</ul>
+<h1 id="icpc">ICPC</h1>
+<h2 id="section">2019</h2>
+<h3 id="资格赛">资格赛</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+<th style="text-align: center;">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/2991/challenges">The Preliminary Contest for ICPC Asia Yinchuan 2019</a></td>
+<td style="text-align: center;">6/13</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3004/challenges">The Preliminary Contest for ICPC Asia Nanjing 2019</a></td>
+<td style="text-align: center;">2/9</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3005/challenges">The Preliminary Contest for ICPC Asia Xuzhou 2019</a></td>
+<td style="text-align: center;">2/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3870/challenges">The Preliminary Contest for ICPC Asia Nanjing 2019</a></td>
+<td style="text-align: center;">3/9</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3007/challenges">The Preliminary Contest for ICPC Asia Shenyang 2019</a></td>
+<td style="text-align: center;">2/11</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3003/challenges">The Preliminary Contest for ICPC Asia Shanghai 2019</a></td>
+<td style="text-align: center;">4/12</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="正式赛">正式赛</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+<th style="text-align: center;">M</th>
+<th style="text-align: center;">N</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/5527">The 2019 ICPC Asia Yinchuan Regional Contest</a></td>
+<td style="text-align: center;">0/14</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/5528">The 2019 ICPC Asia Nanjing Regional Contest</a></td>
+<td style="text-align: center;">0/11</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/5529">The 2019 ICPC Asia Xuzhou Regional Contest</a></td>
+<td style="text-align: center;">0/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://www.jisuanke.com/contest/5530">The 2019 ICPC Asia Nanchang Regional Contest</a></td>
+<td style="text-align: center;">0/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4370">The 2019 ICPC Asia Shanghai Regional Contest</a></td>
+<td style="text-align: center;">3/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://codeforces.com/gym/102471">The 2019 ICPC Asia-East Continent Final Contest</a></td>
+<td style="text-align: center;">0/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-1">2020</h2>
+<h3 id="资格赛-1">资格赛</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://pad.degrowth.net/fE4SMJLrTFKaDRNXIosW-w">第 45 届国际大学生程序设计竞赛（ICPC）亚洲网上区域赛模拟赛</a></td>
+<td style="text-align: center;">4/10</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="正式赛-1">正式赛</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+<th style="text-align: center;">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/9925">The 2020 ICPC Asia Shanghai Regional Contest</a></td>
+<td style="text-align: center;">4/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/10272">The 2020 ICPC Asia Nanjing Regional Contest</a></td>
+<td style="text-align: center;">0/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/10662">The 2020 ICPC Asia Jinan Regional Contest</a></td>
+<td style="text-align: center;">0/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/12548">The 2020 ICPC Asia Kunming Regional Contest</a></td>
+<td style="text-align: center;">3/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ccpc">CCPC</h1>
+<h2 id="section-2">2018</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th>B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://vjudge.net/contest/395469">2018中国大学生程序设计竞赛 - 网络选拔赛</a></td>
+<td style="text-align: center;">3/10</td>
+<td style="text-align: center;">-</td>
+<td>-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section-3">2020</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th>B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+<th style="text-align: center;">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://vjudge.net/contest/396304">2020中国大学生程序设计竞赛 - 网络选拔赛</a></td>
+<td style="text-align: center;">4/13</td>
+<td style="text-align: center;">-</td>
+<td>-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<h1 id="牛客暑期多校训练营">2020牛客暑期多校训练营</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5666">2020牛客暑期多校训练营（第一场）</a></td>
+<td style="text-align: center;">4/10</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5667">2020牛客暑期多校训练营（第二场）</a></td>
+<td style="text-align: center;">6/11</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5668">2020牛客暑期多校训练营（第三场）</a></td>
+<td style="text-align: center;">6/12</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5669">2020牛客暑期多校训练营（第四场）</a></td>
+<td style="text-align: center;">3/10</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5670">2020牛客暑期多校训练营（第五场）</a></td>
+<td style="text-align: center;">3/11</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5671">2020牛客暑期多校训练营（第六场）</a></td>
+<td style="text-align: center;">2/11</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">!</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">!</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5672">2020牛客暑期多校训练营（第七场）</a></td>
+<td style="text-align: center;">3/10</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5673">2020牛客暑期多校训练营（第八场）</a></td>
+<td style="text-align: center;">3/11</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5674">2020牛客暑期多校训练营（第九场）</a></td>
+<td style="text-align: center;">5/12</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/5675">2020牛客暑期多校训练营（第十场）</a></td>
+<td style="text-align: center;">2/10</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="ccpc-wannafly-winter-camp-div.12">2020 CCPC Wannafly Winter Camp Div.1＆2</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+<th style="text-align: center;">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://pad.degrowth.net/oDxrrpx4Q_ahT4AvUQ1fAA">2020 CCPC Wannafly Winter Camp Day7 Div.1＆2</a></td>
+<td style="text-align: center;">1/12</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="年度训练联盟热身训练赛">2021年度训练联盟热身训练赛</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+<th style="text-align: center;">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/12606">2021年度训练联盟热身训练赛第一场</a></td>
+<td style="text-align: center;">9/11</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/12794">2021年度训练联盟热身训练赛第二场</a></td>
+<td style="text-align: center;">Done</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/13168">2021年度训练联盟热身训练赛第三场</a></td>
+<td style="text-align: center;">9/13</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/13506">2021年度训练联盟热身训练赛第四场</a></td>
+<td style="text-align: center;">6/12</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
