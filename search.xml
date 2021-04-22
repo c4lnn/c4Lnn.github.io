@@ -2617,8 +2617,8 @@ x &amp; \equiv a_k \pmod {m_k}
 <h1 id="思路">思路</h1>
 <p>从 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(v\)</span> 进行一次买卖只有三种情况：</p>
 <ul>
-<li>买卖在 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(LCA_{u,v}\)</span> 的路程中进行;</li>
-<li>在 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(LCA_{u,v}\)</span> 的路程中买入，在 <span class="math inline">\(LCA_{u,v}\)</span> 走到 <span class="math inline">\(v\)</span> 的路程中卖出;</li>
+<li>买卖在 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(LCA_{u,v}\)</span> 的路程中进行；</li>
+<li>在 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(LCA_{u,v}\)</span> 的路程中买入，在 <span class="math inline">\(LCA_{u,v}\)</span> 走到 <span class="math inline">\(v\)</span> 的路程中卖出；</li>
 <li>买卖在 <span class="math inline">\(LCA_{u,v}\)</span> 走到 <span class="math inline">\(v\)</span> 的路程中进行。</li>
 </ul>
 <p>重链剖分后维护线段树，需要维护：</p>
@@ -3785,8 +3785,8 @@ x &amp; \equiv a_k \pmod {m_k}
 <p>树上 Tarjan 离线求 LCA。</p>
 <p>从 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(v\)</span> 进行一次买卖只有三种情况：</p>
 <ul>
-<li>买卖在 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(LCA_{u,v}\)</span> 的路程中进行;</li>
-<li>在 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(LCA_{u,v}\)</span> 的路程中买入，在 <span class="math inline">\(LCA_{u,v}\)</span> 走到 <span class="math inline">\(v\)</span> 的路程中卖出;</li>
+<li>买卖在 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(LCA_{u,v}\)</span> 的路程中进行；</li>
+<li>在 <span class="math inline">\(u\)</span> 走到 <span class="math inline">\(LCA_{u,v}\)</span> 的路程中买入，在 <span class="math inline">\(LCA_{u,v}\)</span> 走到 <span class="math inline">\(v\)</span> 的路程中卖出；</li>
 <li>买卖在 <span class="math inline">\(LCA_{u,v}\)</span> 走到 <span class="math inline">\(v\)</span> 的路程中进行。</li>
 </ul>
 <p>路径压缩时维护当前点到祖先的最大点权，当前点到祖先的最小点权，当前点到祖先的最大收益，祖先到当前点的最大收益。</p>
