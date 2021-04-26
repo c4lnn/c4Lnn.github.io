@@ -3990,13 +3990,12 @@ x &amp; \equiv a_k \pmod {m_k}
       </tags>
   </entry>
   <entry>
-    <title>莫比乌斯反演</title>
-    <url>/2021/04/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</url>
+    <title>积性函数</title>
+    <url>/2021/04/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="积性函数">积性函数</h1>
 <h2 id="定义">定义</h2>
 <p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+,\gcd(x,y)=1\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为积性函数。</p>
 <p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为完全积性函数。</p>
-<span id="more"></span>
 <h2 id="性质">性质</h2>
 <p>若 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 均为积性函数，则以下函数也为积性函数：</p>
 <ul>
@@ -4007,10 +4006,15 @@ x &amp; \equiv a_k \pmod {m_k}
 </ul>
 <p>设 <span class="math inline">\(x=\prod p_i^{k_i}\)</span>，</p>
 <ul>
-<li><p>若 <span class="math inline">\(F(x)\)</span> 为积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i^{k_i})\)</span>。</p></li>
-<li><p>若 <span class="math inline">\(F(x)\)</span> 为完全积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i)^{k_i}\)</span>。</p></li>
+<li>若 <span class="math inline">\(F(x)\)</span> 为积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i^{k_i})\)</span>。</li>
+<li>若 <span class="math inline">\(F(x)\)</span> 为完全积性函数，则有 <span class="math inline">\(F(x)=\prod F(p_i)^{k_i}\)</span>。</li>
 </ul>
-<h2 id="例子">例子</h2>
+<h2 id="定理">定理</h2>
+<p><strong>定理 1.1：</strong></p>
+<p>如果 <span class="math inline">\(f\)</span> 是积性函数，那么 <span class="math inline">\(F(n)=\sum_{d\mid n}f(d)\)</span> 也是积性函数。</p>
+<p><strong>证明：</strong></p>
+<p>当 <span class="math inline">\(\gcd(n,m)=1\)</span> 时，<span class="math inline">\(nm\)</span> 的因子必能写成 <span class="math inline">\(n\)</span> 的因子 <span class="math inline">\(d_1\)</span> 与 <span class="math inline">\(m\)</span> 的因子 <span class="math inline">\(d_2\)</span> 之积，</p>
+<p>所以 <span class="math inline">\(F(nm)=\sum_{i\mid n}\sum_{j\mid m}f(ij)=\sum_{i\mid n}f(i)\sum_{j\mid m}f(j)=F(n)F(m)\)</span>。 ## 例子</p>
 <ul>
 <li>单位函数：<span class="math inline">\(\varepsilon(n)=[n=1]\)</span>（完全积性）</li>
 <li>恒等函数：<span class="math inline">\(\operatorname{id}_k(n)=n^k\)</span>，<span class="math inline">\(\operatorname{id}_1(n)\)</span> 通常简记作 <span class="math inline">\(\operatorname{id}(n)\)</span>（完全积性）</li>
@@ -4032,12 +4036,38 @@ x &amp; \equiv a_k \pmod {m_k}
 <li>等式的性质：<span class="math inline">\(f=g\)</span> 的充要条件是 <span class="math inline">\(f*g=g*h\)</span>，其中数论函数 <span class="math inline">\(h(x)\)</span> 要满足 <span class="math inline">\(h(1)\neq 0\)</span>。</li>
 <li>单位元：单位函数 <span class="math inline">\(\varepsilon\)</span> 是 Dirichlet 卷积运算中的单位元，即对于任何数论函数 <span class="math inline">\(f\)</span>，都有 <span class="math inline">\(f*\varepsilon=f\)</span>。</li>
 </ul>
-<h2 id="结论">结论</h2>
-<p><strong>两个积性函数的 Dirichlet 卷积也是积性函数。</strong></p>
+<h2 id="定理-1">定理</h2>
+<p><strong>定理 2.1：</strong></p>
+<p>两个积性函数的 Dirichlet 卷积也是积性函数。</p>
+<p><strong>证明：</strong></p>
 <p>设两个积性函数为 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span>，再记 <span class="math inline">\(h=f*g\)</span>。</p>
 <p>设 <span class="math inline">\(\gcd(a,b)=1\)</span>，则 <span class="math inline">\(h(a)=\sum_{d_1\mid a}f(a)g(a/d_1),h(b)=\sum_{d_2\mid b}f(b)g(b/d_2)\)</span>，</p>
 <p>所以 <span class="math inline">\(h(a)h(b)=\sum_{d_1\mid a}f(a)g(a/d_1)\sum_{d_2\mid b}f(b)g(b/d_2)=\sum_{d\mid ab}f(d)g(ab/d)=h(ab)\)</span>。</p>
-<h1 id="莫比乌斯反演">莫比乌斯反演</h1>
+<h2 id="例子">例子</h2>
+<ul>
+<li><span class="math inline">\(\varepsilon=\mu *1\iff\varepsilon(n)=\sum_{d\mid n}\mu(d)\)</span></li>
+<li><span class="math inline">\(d=1*1\iff d(n)=\sum_{d\mid n}1\)</span></li>
+<li><span class="math inline">\(\sigma=\operatorname{id}*1\iff \sigma(n)=\sum_{d\mid n}d\)</span></li>
+<li><span class="math inline">\(\varphi=\mu*\operatorname{id}\iff\varphi(n)=\sum_{d\mid n}{d\cdot\mu(n/d)}\)</span></li>
+</ul>
+<h1 id="欧拉函数">欧拉函数</h1>
+<h2 id="定理-2">定理</h2>
+<p><strong>定理 3.1：</strong></p>
+<p><span class="math inline">\(n=\sum_{d\mid n} \varphi(d)\)</span>。</p>
+<p><strong>证明：</strong></p>
+<p><span class="math inline">\(f(n)=\sum_{d\mid n} \varphi(d)\)</span> 为积性函数。</p>
+<p>证明：当 <span class="math inline">\(\gcd(n,m)=1\)</span> 时，</p>
+<p><span class="math inline">\(\begin{aligned} &amp; f(n)f(m) \\ = &amp; \sum_{i\mid n}\varphi(i)\sum_{j\mid m}\varphi(j) \\ = &amp; \sum_{i\mid n}\sum_{j\mid m}(\varphi(i)\varphi(j)) \\ = &amp; \sum_{i\mid n}\sum_{j\mid m}\varphi(ij) \\ = &amp; \sum_{d\mid nm}\varphi(d) \\ = &amp; f(nm) \end{aligned}\)</span></p>
+<p>证毕。</p>
+<p>那么根据算术基本定理 <span class="math inline">\(n=p_1^{c_1}p_2^{c_2}\cdots p_k^{c_k}\)</span>，</p>
+<p>由 <span class="math inline">\(f\)</span> 是积性函数可知 <span class="math inline">\(f(n)=f(p_1^{c_1})f(p_2^{c_2})\cdots f(p_k^{c_k})\)</span>，</p>
+<p>又因为 <span class="math inline">\(f(p^c)=\varphi(1)+\varphi(p)+\varphi(p^2)+\cdots+\varphi(p^c)=1+(p-1)+(p^2-p)+\cdots+(p^c-p^{c-1})=p^c\)</span>，</p>
+<p>所以 <span class="math inline">\(f(n)=f(p_1^{c_1})f(p_2^{c_2})\cdots f(p_k^{c_k})=p_1^{c_1}p_2^{c_2}\cdots p_k^{c_k}=n\)</span>。</p>
+<p><strong>定理 3.2：</strong></p>
+<p><span class="math inline">\(\varphi(n)=\sum_{d\mid n}(\mu(d)(n/d))\)</span>。</p>
+<p><strong>证明：</strong></p>
+<p>根据定理 3.1 可得 <span class="math inline">\(\varphi*1=\operatorname{id}\iff \varphi*\varepsilon=\operatorname{id}*\mu\iff \varphi(n)=\sum_{d\mid n}(\mu(d)(n/d))\)</span>。</p>
+<h1 id="莫比乌斯函数">莫比乌斯函数</h1>
 <h2 id="定义-2">定义</h2>
 <p><span class="math inline">\(\mu\)</span> 为莫比乌斯函数，定义为：</p>
 <p><span class="math display">\[\mu(n)=
@@ -4045,15 +4075,19 @@ x &amp; \equiv a_k \pmod {m_k}
 0 &amp; \exists d&gt;1,d^2\mid n \\
 (-1)^k &amp; k\;为\;n\;的不同质因子个数
 \end{cases}\]</span></p>
-<h2 id="定理">定理</h2>
-<p><strong>1. 莫比乌斯函数 <span class="math inline">\(\mu(n)\)</span> 是积性函数。</strong></p>
+<h2 id="定理-3">定理</h2>
+<p><strong>定理 4.1：</strong></p>
+<p><span class="math inline">\(\mu(n)\)</span> 是积性函数。</p>
+<p><strong>证明：</strong></p>
 <p>假设 <span class="math inline">\(\gcd(n,m)=1\)</span></p>
 <ul>
 <li>当 <span class="math inline">\(n=1\)</span> 或 <span class="math inline">\(m=1\)</span> 时，若 <span class="math inline">\(n=1\)</span>，<span class="math inline">\(\mu(nm)=\mu(n)\mu(m)=\mu(m)\)</span>，<span class="math inline">\(m=1\)</span> 时同理；</li>
 <li>当 <span class="math inline">\(n\)</span> 和 <span class="math inline">\(m\)</span> 中至少有一个数含有平方质因子时，<span class="math inline">\(nm\)</span> 也有平方质因子，<span class="math inline">\(\mu(nm)=\mu(n)\mu(m)=0\)</span>；</li>
 <li>当 <span class="math inline">\(n,m\)</span> 都没有平方质因子且都不为 <span class="math inline">\(1\)</span> 时，假设 <span class="math inline">\(n\)</span> 有 <span class="math inline">\(p\)</span> 个不同质因子个数，<span class="math inline">\(m\)</span> 有 <span class="math inline">\(q\)</span> 个不同质因子个数，<span class="math inline">\(\mu(nm)=(-1)^{p+q}=(-1)^p+(-1)^q=\mu(n)\mu(m)\)</span>。</li>
 </ul>
-<p><strong>2. <span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}=\begin{cases}1 &amp; n=1 \\0 &amp; n&gt;1\end{cases}=\varepsilon(n)=[n=1]\)</span></strong></p>
+<p><strong>定理 4.2：</strong></p>
+<p><span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}=\begin{cases}1 &amp; n=1 \\0 &amp; n&gt;1\end{cases}=\varepsilon(n)=[n=1]\)</span></p>
+<p><strong>证明：</strong></p>
 <ul>
 <li><p>当 <span class="math inline">\(n=1\)</span> 时，<span class="math inline">\(F(1)=\sum_{d \mid 1}{\mu(d)}=\mu(1)=1\)</span>；</p></li>
 <li><p>当 <span class="math inline">\(n&gt;1\)</span> 时，因为 <span class="math inline">\(\mu(n)\)</span> 是积性函数，所以 <span class="math inline">\(\mu(n)\)</span> 的因数和函数 <span class="math inline">\(F(n)=\sum_{d \mid n}{\mu(d)}\)</span> 也是积性函数,</p>
@@ -4061,9 +4095,11 @@ x &amp; \equiv a_k \pmod {m_k}
 <p>而 <span class="math inline">\(F(p^k)=\sum_{d \mid p^k}{\mu(d)}=\mu(1)+\mu(p)+\mu(p^2)+\cdots+\mu(p^k)=1+(-1)+0+\cdots+0=0\)</span>，</p>
 <p>所以 <span class="math inline">\(F(n)=0\)</span>。</p></li>
 </ul>
-<p><strong>3. 若 <span class="math inline">\(f\)</span> 是数论函数，<span class="math inline">\(F(n)=\sum_{d \mid n}{f(d)}\)</span>，则 <span class="math inline">\(f(n)=\sum_{d \mid n}(\mu(d)F(n/d))\)</span>。</strong></p>
+<p><strong>定理 4.3：</strong></p>
+<p>若 <span class="math inline">\(f\)</span> 是数论函数，<span class="math inline">\(F(n)=\sum_{d \mid n}{f(d)}\)</span>，则 <span class="math inline">\(f(n)=\sum_{d \mid n}(\mu(d)F(n/d))\)</span>。</p>
+<p><strong>证明：</strong></p>
 <p><span class="math inline">\(\sum_{d \mid n}(\mu(d)F(n/d))=\sum_{d \mid n}(\mu(d)\sum_{e \mid (n/d)}{f(e)})=\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})\)</span>，</p>
-<p>根据定理二，当 <span class="math inline">\(e=n\)</span> 时，<span class="math inline">\(\sum_{d \mid (n/e)}{\mu(d)}=1\)</span>，否则为 <span class="math inline">\(0\)</span>，</p>
+<p>根据定理 4.2，当 <span class="math inline">\(e=n\)</span> 时，<span class="math inline">\(\sum_{d \mid (n/e)}{\mu(d)}=1\)</span>，否则为 <span class="math inline">\(0\)</span>，</p>
 <p>所以 <span class="math inline">\(\sum_{e \mid n}(f(e)\sum_{d \mid (n/e)}{\mu(d)})=f(n)\)</span>。</p>
 <h1 id="例题">例题</h1>
 <p><strong><a href="https://darkbzoj.tk/problem/2301">BZOJ 2301. Problem b</a></strong></p>
@@ -4093,8 +4129,5 @@ x &amp; \equiv a_k \pmod {m_k}
       <categories>
         <category>算法学习笔记</category>
       </categories>
-      <tags>
-        <tag>莫比乌斯反演</tag>
-      </tags>
   </entry>
 </search>
