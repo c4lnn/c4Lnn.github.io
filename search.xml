@@ -3994,8 +3994,8 @@ x &amp; \equiv a_k \pmod {m_k}
     <url>/2021/04/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<h1 id="积性函数">积性函数</h1>
 <h2 id="定义">定义</h2>
-<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+,\gcd(x,y)=1\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为积性函数。</p>
-<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+\)</span> 都有 <span class="math inline">\(f(x,y)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为完全积性函数。</p>
+<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+,\gcd(x,y)=1\)</span> 都有 <span class="math inline">\(f(xy)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为积性函数。</p>
+<p>若函数 <span class="math inline">\(f(n)\)</span> 满足 <span class="math inline">\(f(1)=1\)</span> 且 <span class="math inline">\(\forall x,y \in \mathbb{N}^+\)</span> 都有 <span class="math inline">\(f(xy)=f(x)f(y)\)</span>，则 <span class="math inline">\(f(n)\)</span> 为完全积性函数。</p>
 <h2 id="性质">性质</h2>
 <p>若 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 均为积性函数，则以下函数也为积性函数：</p>
 <ul>
@@ -4104,12 +4104,12 @@ x &amp; \equiv a_k \pmod {m_k}
 <h1 id="例题">例题</h1>
 <p><strong><a href="https://darkbzoj.tk/problem/2301">BZOJ 2301. Problem b</a></strong></p>
 <blockquote>
-<p>求 <span class="math inline">\(\sum_{i=a}^{n}\sum_{j=b}^{m}[gcd(i,j)=k]\)</span>。</p>
+<p>求 <span class="math inline">\(\sum_{i=a}^{n}\sum_{j=b}^{m}[\gcd(i,j)=k]\)</span>。</p>
 </blockquote>
 <p>根据容斥原理：</p>
-<p><span class="math inline">\(\begin{aligned} &amp; \sum_{i=a}^{n}\sum_{j=b}^{m}[gcd(i,j)=k] \\ = &amp; \sum_{i=1}^{n}\sum_{j=1}^{m}[gcd(i,j)=k]-\sum_{i=1}^{a-1}\sum_{j=1}^{m}[gcd(i,j)=k]-\sum_{i=1}^{n}\sum_{j=1}^{b-1}[gcd(i,j)=k]+\sum_{i=1}^{a-1}\sum_{j=1}^{b-1}[gcd(i,j)=k]\end{aligned}\)</span></p>
+<p><span class="math inline">\(\begin{aligned} &amp; \sum_{i=a}^{n}\sum_{j=b}^{m}[\gcd(i,j)=k] \\ = &amp; \sum_{i=1}^{n}\sum_{j=1}^{m}[\gcd(i,j)=k]-\sum_{i=1}^{a-1}\sum_{j=1}^{m}[\gcd(i,j)=k]-\sum_{i=1}^{n}\sum_{j=1}^{b-1}[\gcd(i,j)=k]+\sum_{i=1}^{a-1}\sum_{j=1}^{b-1}[\gcd(i,j)=k]\end{aligned}\)</span></p>
 <p>原式被分成了四个相似的式子，可推得：</p>
-<p><span class="math inline">\(\begin{aligned} &amp; \sum_{i=1}^{n}\sum_{j=1}^{m}[gcd(i,j)=k] \\ = &amp; \sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}[gcd(i,j)=1] \\ = &amp; \sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}\sum_{d \mid gcd(i,j)}{\mu(d)} \\ = &amp; \sum_{d=1}(\mu(d)\sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}([d \mid i]\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}[d \mid j])) \\ = &amp; \sum_{d=1}(\mu(d) \lfloor \frac{n}{kd} \rfloor \lfloor \frac{m}{kd} \rfloor) \end{aligned}\)</span></p>
+<p><span class="math inline">\(\begin{aligned} &amp; \sum_{i=1}^{n}\sum_{j=1}^{m}[\gcd(i,j)=k] \\ = &amp; \sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}[\gcd(i,j)=1] \\ = &amp; \sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}\sum_{d \mid \gcd(i,j)}{\mu(d)} \\ = &amp; \sum_{d=1}(\mu(d)\sum_{i=1}^{\lfloor \frac{n}{k} \rfloor}([d \mid i]\sum_{j=1}^{\lfloor \frac{m}{k} \rfloor}[d \mid j])) \\ = &amp; \sum_{d=1}(\mu(d) \lfloor \frac{n}{kd} \rfloor \lfloor \frac{m}{kd} \rfloor) \end{aligned}\)</span></p>
 <p>对四个式子分别数论分块求解。</p>
 <p><strong><a href="https://www.spoj.com/problems/LCMSUM/en/">SPOJ LCMSUM</a></strong></p>
 <blockquote>
