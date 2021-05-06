@@ -2703,14 +2703,14 @@ x &amp; \equiv a_k \pmod {m_k}
   <entry>
     <title>AtCoder Beginner Contest 189 F. Sugoroku2</title>
     <url>/2021/05/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ABC%20189F/</url>
-    <content><![CDATA[<span id="more"></span>
-<h1 id="链接">链接</h1>
+    <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://atcoder.jp/contests/abc189/tasks/abc189_f" class="uri">https://atcoder.jp/contests/abc189/tasks/abc189_f</a></p>
 <h1 id="题意">题意</h1>
 <p>需要从 <span class="math inline">\(0\)</span> 走到 <span class="math inline">\(n\)</span>，有一个转盘，转盘上有 <span class="math inline">\(1\sim m\)</span>，转到哪个数走几步。</p>
 <p>当走到 <span class="math inline">\(a_i\)</span>，你要退回到 <span class="math inline">\(0\)</span>，总共有 <span class="math inline">\(k\)</span> 个这样的点。</p>
 <p>当到达 <span class="math inline">\(n\)</span> 或超过 <span class="math inline">\(n\)</span>，则获胜。</p>
 <p>问转动转盘直到获胜的期望次数。</p>
+<span id="more"></span>
 <h1 id="思路">思路</h1>
 <p>记 <span class="math inline">\(dp_i\)</span> 为从 <span class="math inline">\(i\)</span> 到达 <span class="math inline">\(n\)</span> 或超过 <span class="math inline">\(n\)</span> 的期望次数 <span class="math inline">\(dp_i= \begin{cases} 0 &amp; {i&gt;=n} \\ dp_0 &amp; {i \in a} \\ 1+\frac{\sum_{j=1}^{m}{dp_{i+j}}}{m} &amp; {else} \end{cases}\)</span></p>
 <p>倒推，将 <span class="math inline">\(dp_i\)</span> 化为 <span class="math inline">\(dp_i=kdp_0+b\)</span> 的形式。</p>
