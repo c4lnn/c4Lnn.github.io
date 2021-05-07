@@ -497,6 +497,7 @@
 <th style="text-align: center;">E</th>
 <th style="text-align: center;">F1</th>
 <th style="text-align: center;">F2</th>
+<th style="text-align: center;">G</th>
 </tr>
 </thead>
 <tbody>
@@ -510,6 +511,19 @@
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">Ø</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://codeforces.com/contest/1520">Codeforces Round #719 (Div. 3)</a></td>
+<td style="text-align: center;">6/8</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 </tr>
 </tbody>
 </table>
