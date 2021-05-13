@@ -28,7 +28,7 @@
 <meta property="og:description" content="链接 https:&#x2F;&#x2F;atcoder.jp&#x2F;contests&#x2F;abc200&#x2F;tasks&#x2F;abc200_e 题意 求第 \(k\) 个 \((a,b,c)\) \((0&lt;a,b,c\le n)\)，满足一下要求：  \(a+b+c\) 小的排在前面。 \(a+b+c\) 相同，\(a\) 小的排在前面。 \(a+b+c\) 相同，\(a\) 相同，\(b\) 小的排在前面。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-10T11:45:00.000Z">
-<meta property="article:modified_time" content="2021-05-10T12:17:25.469Z">
+<meta property="article:modified_time" content="2021-05-13T14:32:18.210Z">
 <meta property="article:author" content="c4Lnn">
 <meta property="article:tag" content="组合数学">
 <meta name="twitter:card" content="summary">
@@ -167,7 +167,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-count">79</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -269,10 +269,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-05-10 19:45:00 / 修改时间：20:17:25" itemprop="dateCreated datePublished" datetime="2021-05-10T19:45:00+08:00">2021-05-10</time>
+      <time title="创建时间：2021-05-10 19:45:00" itemprop="dateCreated datePublished" datetime="2021-05-10T19:45:00+08:00">2021-05-10</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-13 22:32:18" itemprop="dateModified" datetime="2021-05-13T22:32:18+08:00">2021-05-13</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -306,7 +312,7 @@
 <span id="more"></span>
 <h1 id="思路">思路</h1>
 <p>首先计算 <span class="math inline">\((a,b,c)\)</span> 满足 <span class="math inline">\(a+b+c=sum\)</span> <span class="math inline">\((0&lt;a,b,c\le n)\)</span> 的方案数。</p>
-<p>根据容斥原理：</p>
+<p>容斥原理：</p>
 <p><span class="math inline">\((a,b,c)\)</span> 满足 <span class="math inline">\(a+b+c=sum\)</span> <span class="math inline">\((a,b,c&gt;0)\)</span> 的方案数为<span class="math inline">\(\binom{sum-1}{2}\)</span>。</p>
 <p>考虑减去 <span class="math inline">\(a,b,c &gt; n\)</span> 的方案数 <span class="math inline">\(\binom{sum-3n-1}{3}\)</span>，因为 <span class="math inline">\(sum\le 3n\)</span>，所以不存在这样的方案。</p>
 <p>再考虑减去一个位置和两个位置大于 <span class="math inline">\(n\)</span> 的方案数：</p>
