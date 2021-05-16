@@ -1226,9 +1226,9 @@
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
-<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
@@ -1239,15 +1239,15 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3004/challenges">The Preliminary Contest for ICPC Asia Nanjing 2019</a></td>
-<td style="text-align: center;">2/9</td>
+<td style="text-align: center;">0/9</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -1273,14 +1273,14 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3870/challenges">The Preliminary Contest for ICPC Asia Nanjing 2019</a></td>
-<td style="text-align: center;">3/9</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">0/9</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
@@ -1290,13 +1290,13 @@
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3007/challenges">The Preliminary Contest for ICPC Asia Shenyang 2019</a></td>
-<td style="text-align: center;">2/11</td>
+<td style="text-align: center;">0/11</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
@@ -1307,19 +1307,19 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://www.jisuanke.com/contest/3003/challenges">The Preliminary Contest for ICPC Asia Shanghai 2019</a></td>
-<td style="text-align: center;">4/12</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">0/12</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
@@ -1841,47 +1841,6 @@
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h1 id="ccpc-wannafly-winter-camp-div.12">2020 CCPC Wannafly Winter Camp Div.1＆2</h1>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Name</th>
-<th style="text-align: center;">Solved</th>
-<th style="text-align: center;">A</th>
-<th style="text-align: center;">B</th>
-<th style="text-align: center;">C</th>
-<th style="text-align: center;">D</th>
-<th style="text-align: center;">E</th>
-<th style="text-align: center;">F</th>
-<th style="text-align: center;">G</th>
-<th style="text-align: center;">H</th>
-<th style="text-align: center;">I</th>
-<th style="text-align: center;">J</th>
-<th style="text-align: center;">K</th>
-<th style="text-align: center;">L</th>
-<th style="text-align: center;">M</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><a href="https://pad.degrowth.net/oDxrrpx4Q_ahT4AvUQ1fAA">2020 CCPC Wannafly Winter Camp Day7 Div.1＆2</a></td>
-<td style="text-align: center;">1/12</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
