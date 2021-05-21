@@ -407,6 +407,32 @@
 <th style="text-align: center;">Name</th>
 <th style="text-align: center;">Solved</th>
 <th style="text-align: center;">A</th>
+<th style="text-align: center;">B1</th>
+<th style="text-align: center;">B2</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://codeforces.com/contest/1527">Codeforces Round #721 (Div. 2)</a></td>
+<td style="text-align: center;">3/6</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">:---:</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
 <th style="text-align: center;">B</th>
 <th style="text-align: center;">C1</th>
 <th style="text-align: center;">C2</th>
@@ -2208,13 +2234,21 @@
 <p>对于无向图 <span class="math inline">\(G\)</span>，<span class="math inline">\(G\)</span> 是欧拉图当且仅当 <span class="math inline">\(G\)</span> 是连通的且没有奇度顶点</p>
 <p>对于无向图 <span class="math inline">\(G\)</span>，<span class="math inline">\(G\)</span> 是半欧拉图当且仅当 <span class="math inline">\(G\)</span> 是连通的且 <span class="math inline">\(G\)</span> 中恰有 <span class="math inline">\(0\)</span> 个或 <span class="math inline">\(2\)</span> 个奇度顶点</p>
 <p>对于有向图 <span class="math inline">\(G\)</span>，<span class="math inline">\(G\)</span> 是欧拉图当且仅当 <span class="math inline">\(G\)</span> 的所有顶点属于同一个强连通分量且每个顶点的入度和出度相同</p>
-<p>对于有向图 <span class="math inline">\(G\)</span>，<span class="math inline">\(G\)</span> 是半欧拉图当且仅当 <span class="math inline">\(G\)</span> 的所有顶点属于同一个强连通分量且</p>
+<p>对于有向图 <span class="math inline">\(G\)</span>，<span class="math inline">\(G\)</span> 是半欧拉图当且仅当</p>
 <ul>
-<li><p>最多只有一个顶点的出度与入度差为 <span class="math inline">\(1\)</span></p></li>
-<li><p>最多只有一个顶点的入度与出度差为 <span class="math inline">\(1\)</span></p></li>
-<li><p>所有其他顶点的入度和出度相同</p></li>
+<li><p>如果将 <span class="math inline">\(G\)</span> 中的所有有向边退化为无向边时，那么 <span class="math inline">\(G\)</span> 的所有顶点属于同一个连通分量。</p></li>
+<li><p>有一个顶点的出度与入度差为 <span class="math inline">\(1\)</span>，有一个顶点的入度与出度差为 <span class="math inline">\(1\)</span>，其他顶点的入度和出度相同或者所有顶点入度和出度相同。</p></li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> cnt,nxt[M&lt;&lt;<span class="number">1</span>],to[M&lt;&lt;<span class="number">1</span>],head[N];</span><br><span class="line"><span class="keyword">int</span> top,stk[M&lt;&lt;<span class="number">1</span>],t,ans[M&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="keyword">bool</span> st[M&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cnt=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) head[i]=<span class="number">0</span>;</span><br><span class="line">    top=t=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    nxt[++cnt]=head[u];</span><br><span class="line">    to[cnt]=v;</span><br><span class="line">    head[u]=cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">hierholzer</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">    stk[++top]=s;</span><br><span class="line">    <span class="keyword">while</span>(top) &#123;</span><br><span class="line">        <span class="keyword">int</span> u=stk[top],i=head[u];</span><br><span class="line">        <span class="keyword">while</span>(i&amp;&amp;st[i]) i=nxt[i];</span><br><span class="line">        <span class="keyword">if</span>(i) &#123;</span><br><span class="line">            stk[++top]=to[i];</span><br><span class="line">            st[i]=st[i^<span class="number">1</span>]=<span class="literal">true</span>;</span><br><span class="line">            head[u]=nxt[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> top--,ans[++t]=u; <span class="comment">// 倒序输出</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于混合图 <span class="math inline">\(G\)</span>，先将无向边随意规定一个方向，计算出各个顶点的入度和出度。</p>
+<p>欧拉图：</p>
+<p>如果将 <span class="math inline">\(G\)</span> 中的所有有向边退化为无向边时， <span class="math inline">\(G\)</span> 的所有顶点不属于同一个连通分量或者入度出度差是奇数的顶点个数不是 <span class="math inline">\(0\)</span> 个（对于无向边，无论方向如何，入度出度差奇偶性不变），则图 <span class="math inline">\(G\)</span> 不可能是欧拉图。</p>
+<p>接下来可以用网络流确定无向边方向判断图 <span class="math inline">\(G\)</span> 是否是欧拉图。</p>
+<p>建立起点 <span class="math inline">\(s\)</span> 和终点 <span class="math inline">\(t\)</span>，将 <span class="math inline">\(s\)</span> 与出度大于入度的顶点与相连，出度小于入度的顶点与 <span class="math inline">\(t\)</span> 相连，容量为出度入度差的绝对值的 <span class="math inline">\(\frac{1}{2}\)</span>，将之前定向的无向边之间建立一条容量为 <span class="math inline">\(1\)</span> 的边，当网络流中与起点相连的边都满流时存在欧拉图。</p>
+<p>我们的目的是调整无向边的方向使所有点的出度等于入度，假设网络流中经过 <span class="math inline">\((a,b)\)</span> 这条边，意味着 <span class="math inline">\((a,b)\)</span> 需要改变方向，使 <span class="math inline">\(a\)</span> 的出度 <span class="math inline">\(-1\)</span>，入度 <span class="math inline">\(+1\)</span> ，<span class="math inline">\(b\)</span> 的入度 <span class="math inline">\(-1\)</span>，出度 <span class="math inline">\(+1\)</span>，所以网络流中与起点相连的边都满流时存在欧拉图。</p>
+<p>半欧拉图：</p>
+<p>如果将 <span class="math inline">\(G\)</span> 中的所有有向边退化为无向边时， <span class="math inline">\(G\)</span> 的所有顶点不属于同一个连通分量或者入度出度差是奇数的顶点个数不是 <span class="math inline">\(0\)</span> 或 <span class="math inline">\(2\)</span> 个，则图 <span class="math inline">\(G\)</span> 不可能是半欧拉图。</p>
+<p>将入度出度差是奇数的顶点之间加一条容量为 <span class="math inline">\(1\)</span> 的边，这样则所有顶点入度出度差都为偶数，这样只要判断是否是欧拉图即可。</p>
 <h2 id="拓扑排序">拓扑排序</h2>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> n,in[N];</span><br><span class="line">VI g[N];</span><br><span class="line">VI res; <span class="comment">// 排序后的结果</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    g[u].<span class="built_in">PB</span>(v);</span><br><span class="line">    in[v]++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">topo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    queue&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">if</span>(!in[i]) q.<span class="built_in">push</span>(i);</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">SZ</span>(q)) &#123;</span><br><span class="line">        <span class="keyword">int</span> u=q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        res.<span class="built_in">PB</span>(u);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> v:g[u])</span><br><span class="line">            <span class="keyword">if</span>(--in[v]==<span class="number">0</span>)</span><br><span class="line">                q.<span class="built_in">push</span>(v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">SZ</span>(res)==n) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 如果res长度不等于结点个数说明存在环,无拓扑排序</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="sat">2 - SAT</h2>
