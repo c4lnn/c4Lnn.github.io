@@ -20,27 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
 <meta name="hexo-config" content="{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;/&quot;,&quot;images&quot;:&quot;/images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;width&quot;:250,&quot;display&quot;:&quot;always&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;gitalk&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null,&quot;activeClass&quot;:&quot;gitalk&quot;},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;/search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}">
-<meta name="description" content="链接 https:&#x2F;&#x2F;atcoder.jp&#x2F;contests&#x2F;abc200&#x2F;tasks&#x2F;abc200_e 题意 求第 \(k\) 个 \((a,b,c)\) \((0&lt;a,b,c\le n)\)，满足一下要求：  \(a+b+c\) 小的排在前面。 \(a+b+c\) 相同，\(a\) 小的排在前面。 \(a+b+c\) 相同，\(a\) 相同，\(b\) 小的排在前面。">
+<meta name="description" content="链接 http:&#x2F;&#x2F;acm.hdu.edu.cn&#x2F;showproblem.php?pid&#x3D;4185 题意 求 \(n*n\) 的 \(01\) 矩阵中覆盖最多的 \(1*2\) 的只包含 \(1\) 的块的数量，每个点只能在一个块中。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AtCoder Beginner Contest 200 E. Patisserie ABC 2">
-<meta property="og:url" content="http://example.com/2021/05/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ABC%20200E/index.html">
+<meta property="og:title" content="HDU 4185. Oil Skimming">
+<meta property="og:url" content="http://example.com/2021/05/23/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/HDU%204185/index.html">
 <meta property="og:site_name" content="c4Lnn 的个人博客">
-<meta property="og:description" content="链接 https:&#x2F;&#x2F;atcoder.jp&#x2F;contests&#x2F;abc200&#x2F;tasks&#x2F;abc200_e 题意 求第 \(k\) 个 \((a,b,c)\) \((0&lt;a,b,c\le n)\)，满足一下要求：  \(a+b+c\) 小的排在前面。 \(a+b+c\) 相同，\(a\) 小的排在前面。 \(a+b+c\) 相同，\(a\) 相同，\(b\) 小的排在前面。">
+<meta property="og:description" content="链接 http:&#x2F;&#x2F;acm.hdu.edu.cn&#x2F;showproblem.php?pid&#x3D;4185 题意 求 \(n*n\) 的 \(01\) 矩阵中覆盖最多的 \(1*2\) 的只包含 \(1\) 的块的数量，每个点只能在一个块中。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-10T11:45:00.000Z">
-<meta property="article:modified_time" content="2021-05-13T14:32:18.210Z">
+<meta property="article:published_time" content="2021-05-23T15:17:57.000Z">
+<meta property="article:modified_time" content="2021-05-23T15:18:06.042Z">
 <meta property="article:author" content="c4Lnn">
-<meta property="article:tag" content="组合数学">
+<meta property="article:tag" content="二分图最大匹配">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/05/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ABC%20200E/">
+<link rel="canonical" href="http://example.com/2021/05/23/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/HDU%204185/">
 
 
 
 <meta name="hexo-config-page" content="{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;}">
 <meta name="hexo-config-calendar" content="">
-<title>AtCoder Beginner Contest 200 E. Patisserie ABC 2 | c4Lnn 的个人博客</title><script data-pjax src="/js/load-config.js"></script>
+<title>HDU 4185. Oil Skimming | c4Lnn 的个人博客</title><script data-pjax src="/js/load-config.js"></script>
   
 
   <script>
@@ -167,7 +167,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -243,7 +243,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ABC%20200E/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/23/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/HDU%204185/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -256,7 +256,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          AtCoder Beginner Contest 200 E. Patisserie ABC 2
+          HDU 4185. Oil Skimming
         </h1>
 
         <div class="post-meta-container">
@@ -269,16 +269,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-05-10 19:45:00" itemprop="dateCreated datePublished" datetime="2021-05-10T19:45:00+08:00">2021-05-10</time>
+      <time title="创建时间：2021-05-23 23:17:57 / 修改时间：23:18:06" itemprop="dateCreated datePublished" datetime="2021-05-23T23:17:57+08:00">2021-05-23</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-13 22:32:18" itemprop="dateModified" datetime="2021-05-13T22:32:18+08:00">2021-05-13</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -301,27 +295,15 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="链接">链接</h1>
-<p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc200/tasks/abc200_e" class="uri">https://atcoder.jp/contests/abc200/tasks/abc200_e</a></p>
+<p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=4185" class="uri">http://acm.hdu.edu.cn/showproblem.php?pid=4185</a></p>
 <h1 id="题意">题意</h1>
-<p>求第 <span class="math inline">\(k\)</span> 个 <span class="math inline">\((a,b,c)\)</span> <span class="math inline">\((0&lt;a,b,c\le n)\)</span>，满足一下要求：</p>
-<ul>
-<li><span class="math inline">\(a+b+c\)</span> 小的排在前面。</li>
-<li><span class="math inline">\(a+b+c\)</span> 相同，<span class="math inline">\(a\)</span> 小的排在前面。</li>
-<li><span class="math inline">\(a+b+c\)</span> 相同，<span class="math inline">\(a\)</span> 相同，<span class="math inline">\(b\)</span> 小的排在前面。</li>
-</ul>
+<p>求 <span class="math inline">\(n*n\)</span> 的 <span class="math inline">\(01\)</span> 矩阵中覆盖最多的 <span class="math inline">\(1*2\)</span> 的只包含 <span class="math inline">\(1\)</span> 的块的数量，每个点只能在一个块中。</p>
 <span id="more"></span>
 <h1 id="思路">思路</h1>
-<p>首先计算 <span class="math inline">\((a,b,c)\)</span> 满足 <span class="math inline">\(a+b+c=sum\)</span> <span class="math inline">\((0&lt;a,b,c\le n)\)</span> 的方案数。</p>
-<p>容斥原理：</p>
-<p><span class="math inline">\((a,b,c)\)</span> 满足 <span class="math inline">\(a+b+c=sum\)</span> <span class="math inline">\((a,b,c&gt;0)\)</span> 的方案数为<span class="math inline">\(\binom{sum-1}{2}\)</span>。</p>
-<p>考虑减去 <span class="math inline">\(a,b,c &gt; n\)</span> 的方案数 <span class="math inline">\(\binom{sum-3n-1}{3}\)</span>，因为 <span class="math inline">\(sum\le 3n\)</span>，所以不存在这样的方案。</p>
-<p>再考虑减去一个位置和两个位置大于 <span class="math inline">\(n\)</span> 的方案数：</p>
-<p>因为 <span class="math inline">\(sum \le 3n \longrightarrow sum-n \le 2n\)</span>，所以最多只有一个位置会大于 <span class="math inline">\(n\)</span>，</p>
-<p>将一个位置 <span class="math inline">\(+n\)</span> 后，最多有两个位置大于 <span class="math inline">\(n\)</span>，其中两个位置大于 <span class="math inline">\(n\)</span> 算了两遍，因此要加上 <span class="math inline">\(3\)</span> 次有两个位置大于 <span class="math inline">\(n\)</span> 的，即 <span class="math inline">\(\binom{sum-2n-1}{3}\)</span>。</p>
-<p>因此 <span class="math inline">\((a,b,c)\)</span> 满足 <span class="math inline">\(a+b+c=sum\)</span> <span class="math inline">\((a,b,c\le n)\)</span> 的方案数为 <span class="math inline">\(\binom{sum-1}{2}-\binom{sum-n-1}{3}+3\binom{sum-2n-1}{3}\)</span>。</p>
-<p>根据 <span class="math inline">\(k\)</span> 确定 <span class="math inline">\(sum\)</span>，然后枚举 <span class="math inline">\(a\)</span> 的值求出答案。</p>
+<p>判断右和下是否能和当前点构成 <span class="math inline">\(1*2\)</span> 的块，能则在两点间连边。</p>
+<p>建完图后，易发现这是个二分图，求二分图最大匹配。</p>
 <h1 id="代码">代码</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line">LL n,k;</span><br><span class="line"><span class="function">LL <span class="title">calc</span><span class="params">(LL sum)</span> </span>&#123;</span><br><span class="line">    LL ret=(sum<span class="number">-1</span>)*(sum<span class="number">-2</span>)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(sum-n<span class="number">-2</span>&gt;<span class="number">0</span>) ret-=<span class="number">3</span>*(sum-n<span class="number">-1</span>)*(sum-n<span class="number">-2</span>)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(sum<span class="number">-2</span>*n<span class="number">-2</span>&gt;<span class="number">0</span>) ret+=<span class="number">3</span>*(sum<span class="number">-2</span>*n<span class="number">-1</span>)*(sum<span class="number">-2</span>*n<span class="number">-2</span>)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="keyword">for</span>(LL i=<span class="number">3</span>;i&lt;=<span class="number">3</span>*n;i++) &#123;</span><br><span class="line">        LL ret=<span class="built_in">calc</span>(i);</span><br><span class="line">        <span class="keyword">if</span>(ret&lt;k) k-=ret;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span>(LL j=<span class="built_in">max</span>(<span class="number">1ll</span>,i<span class="number">-2</span>*n);j&lt;=n;j++) &#123;</span><br><span class="line">                LL t=<span class="built_in">min</span>(n,i-j<span class="number">-1</span>)-<span class="built_in">max</span>(<span class="number">1ll</span>,i-j-n)+<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(t&lt;k) k-=t;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">return</span> cout&lt;&lt;j&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;<span class="built_in">max</span>(<span class="number">1ll</span>,i-j-n)+k<span class="number">-1</span>&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;i-j-(<span class="built_in">max</span>(<span class="number">1ll</span>,i-j-n)+k<span class="number">-1</span>)&lt;&lt;<span class="string">&#x27;\n&#x27;</span>,<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">//head</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">605</span>;</span><br><span class="line"><span class="keyword">int</span> n,match[N*N];</span><br><span class="line"><span class="keyword">bool</span> st[N*N];</span><br><span class="line"><span class="keyword">char</span> s[N][N];</span><br><span class="line">VI g[N*N];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> v:g[u]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(st[v]) <span class="keyword">continue</span>;</span><br><span class="line">        st[v]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(match[v]==<span class="number">-1</span>||<span class="built_in">dfs</span>(match[v])) &#123;</span><br><span class="line">            match[v]=u;</span><br><span class="line">            match[u]=v;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;D:/Sublime Text 3/in.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;T);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> cs=<span class="number">1</span>;cs&lt;=T;cs++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">                g[i*n+j].<span class="built_in">clear</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i][j]==<span class="string">&#x27;.&#x27;</span>) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(j+<span class="number">1</span>&lt;n&amp;&amp;s[i][j+<span class="number">1</span>]==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">                    g[i*n+j].<span class="built_in">PB</span>(i*n+j+<span class="number">1</span>);</span><br><span class="line">                    g[i*n+j+<span class="number">1</span>].<span class="built_in">PB</span>(i*n+j);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(i+<span class="number">1</span>&lt;n&amp;&amp;s[i+<span class="number">1</span>][j]==<span class="string">&#x27;#&#x27;</span>) &#123;</span><br><span class="line">                    g[i*n+j].<span class="built_in">PB</span>((i+<span class="number">1</span>)*n+j);</span><br><span class="line">                    g[(i+<span class="number">1</span>)*n+j].<span class="built_in">PB</span>(i*n+j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n*n;i++) match[i]=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n*n;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(match[i]!=<span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n*n;j++) st[j]=<span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">dfs</span>(i)) res++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Case %d: %d\n&quot;</span>,cs,res);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -331,20 +313,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 组合数学</a>
+              <a href="/tags/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/" rel="tag"><i class="fa fa-tag"></i> 二分图最大匹配</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/05/09/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ABC%20200D/" rel="prev" title="AtCoder Beginner Contest 200 D. Happy Birthday! 2">
-                  <i class="fa fa-chevron-left"></i> AtCoder Beginner Contest 200 D. Happy Birthday! 2
+                <a href="/2021/05/18/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/HDU%204675/" rel="prev" title="HDU 4675. GCD of Sequence">
+                  <i class="fa fa-chevron-left"></i> HDU 4675. GCD of Sequence
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/05/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/HDU%206447/" rel="next" title="HDU 6447. YJJ‘s Salesman">
-                  HDU 6447. YJJ‘s Salesman <i class="fa fa-chevron-right"></i>
+                <a href="/2021/05/23/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/HDU%202819/" rel="next" title="HDU 2819. Swap">
+                  HDU 2819. Swap <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -441,7 +423,7 @@ NexT.utils.loadComments('.gitalk-container', () => {
       repo        : 'c4Lnn.github.io',
       owner       : 'c4Lnn',
       admin       : ['c4Lnn'],
-      id          : '51190dd68563acf7293ee59dc580c36c',
+      id          : 'dc5cc21bd776d18bb1b078f307feeccb',
       proxy       : 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
         language: 'zh-CN',
       distractionFreeMode: true
