@@ -2918,9 +2918,9 @@ x &amp; \equiv a_k \pmod {m_k}
     <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ZOJ%203430/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://zoj.pintia.cn/problem-sets/91827364500/problems/91827368613" class="uri">https://zoj.pintia.cn/problem-sets/91827364500/problems/91827368613</a></p>
-<span id="more"></span>
 <h1 id="题意">题意</h1>
 <p>找文本串中有多少种不同的模式串</p>
+<span id="more"></span>
 <h1 id="思路">思路</h1>
 <p>AC 自动机</p>
 <p>按要求转码后套板子</p>
