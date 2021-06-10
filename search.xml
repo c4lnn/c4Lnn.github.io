@@ -2914,15 +2914,267 @@ x &amp; \equiv a_k \pmod {m_k}
 ]]></content>
   </entry>
   <entry>
+    <title>ZOJ 3430. Detect the Virus</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/ZOJ%203430/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://zoj.pintia.cn/problem-sets/91827364500/problems/91827368613" class="uri">https://zoj.pintia.cn/problem-sets/91827364500/problems/91827368613</a></p>
+<span id="more"></span>
+<h1 id="题意">题意</h1>
+<p>找文本串中有多少种不同的模式串</p>
+<h1 id="思路">思路</h1>
+<p>AC 自动机</p>
+<p>按要求转码后套板子</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">5e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M=<span class="number">256</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,mp[M],temp[N],cnt,tr[N][M],tot[N],fail[N];</span><br><span class="line"><span class="keyword">char</span> s[N];</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">decode</span><span class="params">(<span class="keyword">char</span> *s)</span> </span>&#123;</span><br><span class="line">    temp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,len=<span class="number">0</span>,x=<span class="number">0</span>;s[i]&amp;&amp;s[i]!=<span class="string">&#x27;=&#x27;</span>;i++) &#123;</span><br><span class="line">        len+=<span class="number">6</span>;</span><br><span class="line">        x=(x&lt;&lt;<span class="number">6</span>)|mp[s[i]];</span><br><span class="line">        <span class="keyword">if</span>(len&gt;=<span class="number">8</span>) &#123;</span><br><span class="line">            temp[++temp[<span class="number">0</span>]]=(x&gt;&gt;(len<span class="number">-8</span>))&amp;<span class="number">0xff</span>;</span><br><span class="line">            len-=<span class="number">8</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(tr,<span class="number">0</span>,<span class="keyword">sizeof</span> tr);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=cnt;i++) tot[i]=<span class="number">0</span>,fail[i]=<span class="number">0</span>;</span><br><span class="line">    cnt=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> *s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> u=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=s[<span class="number">0</span>];i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> v=s[i];</span><br><span class="line">        <span class="keyword">if</span>(!tr[u][v]) tr[u][v]=++cnt;</span><br><span class="line">        u=tr[u][v];</span><br><span class="line">    &#125;</span><br><span class="line">    tot[u]++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    queue&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M;i++) <span class="keyword">if</span>(tr[<span class="number">0</span>][i]) q.<span class="built_in">push</span>(tr[<span class="number">0</span>][i]);</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u=q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(tr[u][i]) fail[tr[u][i]]=tr[fail[u]][i],q.<span class="built_in">push</span>(tr[u][i]);</span><br><span class="line">            <span class="keyword">else</span> tr[u][i]=tr[fail[u]][i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> *s)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="literal">false</span>,<span class="keyword">sizeof</span> vis);</span><br><span class="line">    <span class="keyword">int</span> res=<span class="number">0</span>,u=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=s[<span class="number">0</span>];i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> v=s[i];</span><br><span class="line">        u=tr[u][v];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=u;j;j=fail[j]) <span class="keyword">if</span>(tot[j]&amp;&amp;!vis[j]) vis[j]=<span class="literal">true</span>,res++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++) mp[i+<span class="string">&#x27;A&#x27;</span>]=i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">26</span>;i&lt;<span class="number">52</span>;i++) mp[i<span class="number">-26</span>+<span class="string">&#x27;a&#x27;</span>]=i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">52</span>;i&lt;<span class="number">62</span>;i++) mp[i<span class="number">-52</span>+<span class="string">&#x27;0&#x27;</span>]=i;</span><br><span class="line">    mp[<span class="string">&#x27;+&#x27;</span>]=<span class="number">62</span>,mp[<span class="string">&#x27;/&#x27;</span>]=<span class="number">63</span>;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n)) &#123;</span><br><span class="line">        <span class="built_in">init</span>();</span><br><span class="line">        <span class="keyword">while</span>(n--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line">            <span class="built_in">decode</span>(s);</span><br><span class="line">            <span class="built_in">insert</span>(temp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">build</span>();</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;m);</span><br><span class="line">        <span class="keyword">while</span>(m--) &#123;</span><br><span class="line">             <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s);</span><br><span class="line">             <span class="built_in">decode</span>(s);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">query</span>(temp));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>AC 自动机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>POJ 2253. Frogger</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/POJ%202253/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="http://poj.org/problem?id=2253" class="uri">http://poj.org/problem?id=2253</a></p>
+<h1 id="题意">题意</h1>
+<p>找从起点到终点所有可能的路径中的最大边权的最小值</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>最短路变形</p>
+<p>将松弛操作判断条件 <code>dist[v]&gt;dist[u]+w[u][v]</code> 改为 <code>dist[v]&gt;max(dist[u],w[u][v])</code></p>
+<p>更新操作 <code>dist[v]=dist[u]+w[u][v]</code> 改为 <code>dist[v]=max(dist[u],w[u][v])</code></p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">205</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">bool</span> st[N];</span><br><span class="line"><span class="keyword">double</span> dist[N];</span><br><span class="line">vector&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">double</span>&gt; &gt; G[N];</span><br><span class="line">pair&lt;<span class="keyword">double</span>,<span class="keyword">double</span>&gt; a[N];</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">dijkstra</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    priority_queue&lt;pair&lt;<span class="keyword">double</span>,<span class="keyword">int</span>&gt;,vector&lt;pair&lt;<span class="keyword">double</span>,<span class="keyword">int</span>&gt; &gt;,greater&lt;pair&lt;<span class="keyword">double</span>,<span class="keyword">int</span> &gt; &gt; &gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) dist[i]=<span class="number">2e9</span>,st[i]=<span class="literal">false</span>;</span><br><span class="line">    q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>,<span class="number">1</span>));</span><br><span class="line">    dist[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        <span class="keyword">int</span> u=q.<span class="built_in">top</span>().second;</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">if</span>(u==<span class="number">2</span>) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">if</span>(st[u]) <span class="keyword">continue</span>;</span><br><span class="line">        st[u]=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;G[u].<span class="built_in">size</span>();i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> v=G[u][i].first;</span><br><span class="line">            <span class="keyword">double</span> w=G[u][i].second;</span><br><span class="line">            <span class="keyword">if</span>(st[v]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(dist[v]&gt;<span class="built_in">max</span>(dist[u],w)) &#123;</span><br><span class="line">                dist[v]=<span class="built_in">max</span>(dist[u],w);</span><br><span class="line">                q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(dist[v],v));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dist[<span class="number">2</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;;k++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">        <span class="keyword">if</span>(!n) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) G[i].<span class="built_in">clear</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf&quot;</span>,&amp;a[i].first,&amp;a[i].second);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;i;j++) &#123;</span><br><span class="line">                <span class="keyword">double</span> w=<span class="built_in">sqrt</span>((a[i].first-a[j].first)*(a[i].first-a[j].first)+(a[i].second-a[j].second)*(a[i].second-a[j].second));</span><br><span class="line">                G[i].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(j,w));</span><br><span class="line">                G[j].<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(i,w));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Scenario #%d\n&quot;</span>,k);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Frog Distance = %.3f\n\n&quot;</span>,<span class="built_in">dijkstra</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>最短路</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>牛客小白月赛 5 C. 水题(water)</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%205C/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://ac.nowcoder.com/acm/contest/135/C" class="uri">https://ac.nowcoder.com/acm/contest/135/C</a></p>
+<h1 id="题意">题意</h1>
+<p>存在一个函数 <span class="math inline">\(f(n),n \in \mathbb{N}^{*}\)</span>，且这个函数满足下面的一个关系：</p>
+<p><span class="math inline">\(\sum\limits_{i=1}^{n}{f(i)^2}=f(n) \times f(n+1)\)</span></p>
+<p>对于一个正整数 <span class="math inline">\(x\)</span>，若存在一个数 <span class="math inline">\(k \in \mathbb{N}^{*}\)</span>，使得 <span class="math inline">\(f(k)=x\)</span>，则求出 <span class="math inline">\(x\)</span>的阶乘在 <span class="math inline">\(m\)</span> 进制下的末尾 <span class="math inline">\(0\)</span> 的个数；若不满足上述条件，输出 <span class="math inline">\(z(z=x\%\min(13,m)+1)\)</span>皇后的方案数</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>打表可得 <span class="math inline">\(f(n)\)</span> 是斐波那契数列</p>
+<p>若 <span class="math inline">\(x\)</span> 是斐波那契数列中的一项：</p>
+<p>若 <span class="math inline">\(x!\)</span> 在 <span class="math inline">\(m\)</span> 进制下的末尾有 <span class="math inline">\(k\)</span> 个 <span class="math inline">\(0\)</span>，那么 <span class="math inline">\(x!\)</span> 一定是 <span class="math inline">\(m^k\)</span> 的倍数</p>
+<p>假设 <span class="math inline">\(m=p_1^{a_1}*p_2^{a_2}*\dots*p_k^{a_k}\)</span></p>
+<p>对于每个 <span class="math inline">\(p_i^{a_i}\)</span>，我们只要求出 <span class="math inline">\(x!\)</span> 中有几个 <span class="math inline">\(p_i^{a_i}\)</span>，取最小值即可</p>
+<p>若 <span class="math inline">\(x\)</span> 不是斐波那契数列中的一项：</p>
+<p>将z皇后方案数打表即可</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> q[]=&#123;<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">4</span>,<span class="number">40</span>,<span class="number">92</span>,<span class="number">352</span>,<span class="number">724</span>,<span class="number">2680</span>,<span class="number">14200</span>,<span class="number">73712</span>&#125;;</span><br><span class="line">ll f[<span class="number">100</span>];</span><br><span class="line">vector&lt;pii&gt;pf;</span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_f</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    f[<span class="number">1</span>]=f[<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;;i++) &#123;</span><br><span class="line">        f[i]=f[i<span class="number">-1</span>]+f[i<span class="number">-2</span>];</span><br><span class="line">            <span class="keyword">if</span>(f[i]&gt;<span class="number">1e18</span>)&#123;cnt=i;<span class="keyword">break</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">calc</span><span class="params">(ll x,ll y,ll tot)</span> </span>&#123;</span><br><span class="line">    ll t=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x) t+=x/y,x/=y;</span><br><span class="line">    <span class="keyword">return</span> t/tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">solve</span><span class="params">(ll x,ll m)</span> </span>&#123;</span><br><span class="line">    ll res=<span class="number">1e18</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=<span class="number">2</span>;i*i&lt;=m;i++) &#123;</span><br><span class="line">        ll tot=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(m%i==<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span>(m%i==<span class="number">0</span>) tot++,m/=i;</span><br><span class="line">        res=<span class="built_in">min</span>(res,<span class="built_in">calc</span>(x,i,tot));</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(m&gt;<span class="number">1</span>) res=<span class="built_in">min</span>(res,<span class="built_in">calc</span>(x,m,<span class="number">1</span>));</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">get_f</span>();</span><br><span class="line">    ll x,m;</span><br><span class="line">    cin&gt;&gt;x&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=cnt;i++) <span class="keyword">if</span>(f[i]==x)&#123;cout&lt;&lt;<span class="built_in">solve</span>(x,m)&lt;&lt;endl;<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line">    cout&lt;&lt;q[x%<span class="built_in">min</span>(m,<span class="number">13ll</span>)+<span class="number">1</span>]&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>牛客挑战赛10 B. 小H和游戏</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E6%8C%91%E6%88%98%E8%B5%9B%2010C/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://ac.nowcoder.com/acm/contest/72/C" class="uri">https://ac.nowcoder.com/acm/contest/72/C</a></p>
+<h1 id="题意">题意</h1>
+<p>树形图上，对某点进行轰炸，会波及到距离该点不超过 <span class="math inline">\(2\)</span> 的点</p>
+<p><span class="math inline">\(q\)</span> 次轰炸，每次都要输出该点受损次数</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>记 <span class="math inline">\(tot[x][0]\)</span> 为 <span class="math inline">\(x\)</span> 受损的次数，<span class="math inline">\(tot[x][1]\)</span> 为 <span class="math inline">\(x\)</span> 的孩子受损的次数，<span class="math inline">\(tot[x][2]\)</span> 的孩子的孩子受损的次数</p>
+<p>假如轰炸 <span class="math inline">\(x\)</span>：</p>
+<p><span class="math inline">\(x\)</span> 的父亲的父亲受损：<span class="math inline">\(tot[fa[fa[x]]][0]++\)</span></p>
+<p><span class="math inline">\(x\)</span> 的父亲受损：<span class="math inline">\(tot[fa[x]][0]++\)</span></p>
+<p><span class="math inline">\(x\)</span> 以及 <span class="math inline">\(x\)</span> 的兄弟受损：<span class="math inline">\(tot[fa[x]][1]++\)</span></p>
+<p><span class="math inline">\(x\)</span> 的孩子受损：<span class="math inline">\(tot[x][1]++\)</span></p>
+<p><span class="math inline">\(x\)</span> 的孩子的孩子受损：<span class="math inline">\(tot[x][2]++\)</span></p>
+<p><span class="math inline">\(x\)</span> 的总受损次数为：<span class="math inline">\(tot[x][0]+tot[fa[x]][1]+tot[fa[fa[x]]][2]\)</span></p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">750005</span>;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;g[N];</span><br><span class="line"><span class="keyword">int</span> fa[N],tot[N][<span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> v:g[u]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(v==fa[u]) <span class="keyword">continue</span>;</span><br><span class="line">        fa[v]=u;</span><br><span class="line">        <span class="built_in">dfs</span>(v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> n,q;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> u,v;</span><br><span class="line">        cin&gt;&gt;u&gt;&gt;v;</span><br><span class="line">        g[u].<span class="built_in">pb</span>(v);</span><br><span class="line">        g[v].<span class="built_in">pb</span>(u);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=q;i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        cin&gt;&gt;x;</span><br><span class="line">        tot[x][<span class="number">1</span>]++,tot[x][<span class="number">2</span>]++;</span><br><span class="line">        <span class="keyword">if</span>(fa[fa[x]]) tot[fa[fa[x]]][<span class="number">0</span>]++;</span><br><span class="line">        <span class="keyword">if</span>(fa[x]) tot[fa[x]][<span class="number">0</span>]++,tot[fa[x]][<span class="number">1</span>]++;</span><br><span class="line">        <span class="keyword">else</span> tot[x][<span class="number">0</span>]++;</span><br><span class="line">        cout&lt;&lt;tot[x][<span class="number">0</span>]+tot[fa[x]][<span class="number">1</span>]+tot[fa[fa[x]]][<span class="number">2</span>]&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>树形 DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NC 13885. Music Problem</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%2013885/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://ac.nowcoder.com/acm/problem/13885" class="uri">https://ac.nowcoder.com/acm/problem/13885</a></p>
+<h1 id="题意">题意</h1>
+<p>问在 <span class="math inline">\(n\)</span> 个数中是否能找出几个数，让它们的和是 <span class="math inline">\(3600\)</span> 的倍数</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>我们只要判断是否能找到一些数的和取模后是 <span class="math inline">\(0\)</span> 就可</p>
+<p>取模后有 <span class="math inline">\(3600\)</span> 个值，我们用 bitset 存储，第 <span class="math inline">\(x\)</span> 位为 <span class="math inline">\(1\)</span> 表示当前存在一些数的和取模后为 <span class="math inline">\(x\)</span></p>
+<p>当我们加入一个数 <span class="math inline">\(a\)</span> 时：<span class="math inline">\(b|=(b&lt;&lt;a)|(b&gt;&gt;(3600-a))\)</span>，前者记录当前值加上 <span class="math inline">\(a\)</span> 后不超过 <span class="math inline">\(3600\)</span> 的和，后者记录超过 <span class="math inline">\(3600\)</span> 取模后的和</p>
+<p>最后判断 <span class="math inline">\(b[0]\)</span> 是否为 <span class="math inline">\(1\)</span> 即可</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        cin&gt;&gt;n;</span><br><span class="line">        bitset&lt;3600&gt;b;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            cin&gt;&gt;x;</span><br><span class="line">            x%=<span class="number">3600</span>;</span><br><span class="line">            b|=(b&lt;&lt;x)|(b&gt;&gt;(<span class="number">3600</span>-x));</span><br><span class="line">            b.<span class="built_in">set</span>(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(b.<span class="built_in">test</span>(<span class="number">0</span>)) cout&lt;&lt;<span class="string">&quot;YES&quot;</span>&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">else</span> cout&lt;&lt;<span class="string">&quot;NO&quot;</span>&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>枚举</tag>
+        <tag>状态压缩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>POJ 3273. Monthly Expense</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/POJ%203273/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="http://poj.org/problem?id=3273" class="uri">http://poj.org/problem?id=3273</a></p>
+<h1 id="题意">题意</h1>
+<p>将长度为 n 的序列分为连续的 m 段，使每段和的最大值最小，求这个最小值</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>求出序列中的最大值，答案肯定大于等于它</p>
+<p>求出序列和，答案肯定小于等于它</p>
+<p>二分答案即可</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>,t=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(sum+a[i]&lt;=x) &#123;</span><br><span class="line">            sum+=a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            sum=a[i];</span><br><span class="line">            t++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> t&lt;=m;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">       cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        l=<span class="built_in">max</span>(l,a[i]);</span><br><span class="line">        r+=a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(l&lt;r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">check</span>(mid)) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;l&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>二分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NC 13250. 景区路线规划</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%2013250/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://ac.nowcoder.com/acm/problem/13250" class="uri">https://ac.nowcoder.com/acm/problem/13250</a></p>
+<h1 id="题意">题意</h1>
+<p>对于一个景区道路网，求出游客的满意度的期望值。基于用户的喜好差异，需要对男性游客和女性游客的满意度分别计算。</p>
+<p>景区被描述成一张 <span class="math inline">\(n\)</span> 个点、<span class="math inline">\(m\)</span> 条边的无向图（无重边，无自环）。每个点代表一个景点，第 <span class="math inline">\(i\)</span> 个景点游览需要耗费<span class="math inline">\(c_i\)</span> 分钟，会让男性游客和女性游客的满意度分别增加 <span class="math inline">\(h1\)</span> 和 <span class="math inline">\(h2\)</span>（满意度初始值都为 <span class="math inline">\(0\)</span>）。每条边代表一条路，第 <span class="math inline">\(i\)</span> 条边连接编号为 <span class="math inline">\(x_i,y_i\)</span> 的两个景点，从景点 <span class="math inline">\(x_i\)</span> 走到 <span class="math inline">\(y_i\)</span>和从 <span class="math inline">\(y_i\)</span>走到<span class="math inline">\(x_i\)</span> 的时间都是 <span class="math inline">\(t_i\)</span> 分钟</p>
+<p>每个游客在景区中最长可以游览 <span class="math inline">\(k\)</span> 分钟，最开始会随机的通过不同大门进入到一个景点开始游览，每游览完一个项目，游客会等概率随机选择一个可以从当前景点直达且来得及游览的景点作为下一个游览目标（已经游览过的景点也会被作为目标）。如果游览完一个景点后，周围没有来得及游览的景点，本次游玩就结束了</p>
+<p>分别计算男性和女性在游玩结束后开心度的期望。</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>期望 DP，记忆化搜索</p>
+<p>设 <span class="math inline">\(f[0/1][i][j]\)</span> 为男性/女性到达景点 <span class="math inline">\(i\)</span> 还剩 <span class="math inline">\(j\)</span> 分钟的期望值</p>
+<p><span class="math inline">\(f[0/1][i][j]=(\sum \limits_{j-c[i]&gt;=dist[i][k]+c[k]}f[0/1][k][j-dist[i][k]])/cnt\)</span></p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">110</span>;</span><br><span class="line"><span class="keyword">int</span> c[N];</span><br><span class="line"><span class="keyword">double</span> h[<span class="number">2</span>][N];</span><br><span class="line"><span class="keyword">double</span> f[<span class="number">2</span>][N][<span class="number">5</span>*N];</span><br><span class="line">vector&lt;pii&gt; g[N];</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> t,<span class="keyword">int</span> gender)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(f[gender][u][t]) <span class="keyword">return</span> f[gender][u][t];</span><br><span class="line">    <span class="keyword">double</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> x:g[u]) &#123;</span><br><span class="line">        <span class="keyword">int</span> v=x.fi,w=x.se;</span><br><span class="line">        <span class="keyword">if</span>(w+c[v]&gt;t-c[u]) <span class="keyword">continue</span>;</span><br><span class="line">        cnt++;</span><br><span class="line">        res+=<span class="built_in">dfs</span>(v,t-c[u]-w,gender);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(cnt) res/=cnt;</span><br><span class="line">    <span class="keyword">return</span> f[gender][u][t]=res+h[gender][u];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> n,m,k;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;c[i]&gt;&gt;h[<span class="number">0</span>][i]&gt;&gt;h[<span class="number">1</span>][i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> u,v,w;</span><br><span class="line">        cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;</span><br><span class="line">        g[u].<span class="built_in">pb</span>(&#123;v,w&#125;);</span><br><span class="line">        g[v].<span class="built_in">pb</span>(&#123;u,w&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> ans1=<span class="number">0</span>,ans2=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">if</span>(c[i]&lt;=k) &#123;</span><br><span class="line">            ans1+=<span class="built_in">dfs</span>(i,k,<span class="number">0</span>);</span><br><span class="line">            ans2+=<span class="built_in">dfs</span>(i,k,<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    cout&lt;&lt;fixed&lt;&lt;<span class="built_in">setprecision</span>(<span class="number">5</span>)&lt;&lt;ans1/n&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;ans2/n&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>期望 DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NC 13249. 黑白树</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%2013249/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://ac.nowcoder.com/acm/problem/13249" class="uri">https://ac.nowcoder.com/acm/problem/13249</a></p>
+<h1 id="题意">题意</h1>
+<p>有一颗树，开始时每个节点都是白色，每个节点 <span class="math inline">\(i\)</span> 可以将 <span class="math inline">\(i\)</span> 到根的链上（包括 <span class="math inline">\(i\)</span> 与根）所有与 <span class="math inline">\(i\)</span> 距离小于 <span class="math inline">\(k[i]\)</span> 的点变黑，问最少操作几次能把整棵树变黑</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>我们考虑每次操作的起始节点 <span class="math inline">\(x\)</span> 与能够染色的最远的那个节点 <span class="math inline">\(y\)</span> 之间的这些节点如何操作</p>
+<p>易得最优操作是找到 <span class="math inline">\(fa[x]\)</span> 与 <span class="math inline">\(y\)</span> 之间的节点能染色到最远的那个节点，这个节点就是下次操作的起始位置</p>
+<p>考虑如何维护</p>
+<p>设 <span class="math inline">\(f[i]\)</span> 为从 <span class="math inline">\(i\)</span> 点开始往上还有多少节点已经被染色:</p>
+<p><span class="math inline">\(f[i]=max(f[i],f[j]-1)(j \in son(i))\)</span></p>
+<p>我们还要维护子树上的节点如果操作后能到达的最远点，我们可以利用 <span class="math inline">\(k[i]\)</span> 来维护：</p>
+<p><span class="math inline">\(k[i]=max(k[i],k[j]-1)(j \in son(i))\)</span></p>
+<p>当 <span class="math inline">\(f[i]=0\)</span> 时，我们就要进行一次操作，我们并不需要知道操作的起始位置，操作后 <span class="math inline">\(f[i]=k[i]\)</span></p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;edge[N];</span><br><span class="line"><span class="keyword">int</span> res;</span><br><span class="line"><span class="keyword">int</span> k[N],f[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> v:edge[u]) &#123;</span><br><span class="line">        <span class="built_in">dfs</span>(v);</span><br><span class="line">        f[u]=<span class="built_in">max</span>(f[u],f[v]<span class="number">-1</span>);</span><br><span class="line">        k[u]=<span class="built_in">max</span>(k[u],k[v]<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!f[u]) res++,f[u]=k[u];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> a;</span><br><span class="line">        cin&gt;&gt;a;</span><br><span class="line">        edge[a].<span class="built_in">pb</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;k[i];</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">    cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>树形 DP</tag>
+        <tag>贪心</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>牛客练习赛 1 B. 树</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%201B/</url>
+    <content><![CDATA[<h1 id="题目链接">题目链接</h1>
+<p><a href="https://ac.nowcoder.com/acm/contest/2/B" class="uri">https://ac.nowcoder.com/acm/contest/2/B</a></p>
+<h1 id="题意">题意</h1>
+<p>有一颗树，有k种不同颜色的染料给树染色。一个染色方案是合法的，当且仅当对于所有相同颜色的点对 <span class="math inline">\((x,y)\)</span>，<span class="math inline">\(x\)</span> 到 <span class="math inline">\(y\)</span> 的路径上的所有点的颜色都要与 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 相同,请统计方案数</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>易得一个节点要么涂和父节点一个颜色，要么涂没有出现过的颜色</p>
+<p>假设我们遍历到了第 <span class="math inline">\(x\)</span> 个点已经用了 <span class="math inline">\(y\)</span> 个颜色了</p>
+<p>如果要涂和父节点一个颜色，那么方案数就是前 <span class="math inline">\(x-1\)</span> 个点用了 <span class="math inline">\(y\)</span> 个颜色的方案数</p>
+<p>如果要涂和父节点不同颜色，那么方案数就是前 <span class="math inline">\(x-1\)</span> 个点用了 <span class="math inline">\(y-1\)</span> 个颜色的方案数 <span class="math inline">\(*(k-(y-1))\)</span></p>
+<p>我们发现方案数跟树长什么样并没有关系，我们完全可以转化为一个线性结构求解</p>
+<p>设 <span class="math inline">\(f[i][j]\)</span> 为前 <span class="math inline">\(i\)</span> 个节点用了 <span class="math inline">\(j\)</span> 个颜色：</p>
+<p><span class="math inline">\(f[i][j]=f[i-1][j]+f[i-1][j-1]*(k-i+1)\)</span></p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line">ll f[<span class="number">400</span>][<span class="number">400</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> n,k;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++) cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=k;j++) &#123;</span><br><span class="line">            f[i][j]=(f[i<span class="number">-1</span>][j]+f[i<span class="number">-1</span>][j<span class="number">-1</span>]*(k-j+<span class="number">1</span>))%mod;</span><br><span class="line">        &#125;</span><br><span class="line">    ll res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++) res=(res+f[n][i])%mod;</span><br><span class="line">    cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>POJ 3784. Running Median</title>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/POJ%203784/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="http://poj.org/problem?id=3784" class="uri">http://poj.org/problem?id=3784</a></p>
+<h1 id="题意">题意</h1>
+<p>给出一个长度为奇数的序列，输出前 <span class="math inline">\(1,3,5,...,m\)</span> 个数的中位数</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>对顶堆</p>
+<p>建立一个小根堆和大根堆</p>
+<p>如果当前数比小根堆堆顶大，插入小根堆</p>
+<p>如果当前数比小根堆堆顶小，插入大根堆</p>
+<p>大根堆堆顶是始终小于小根堆堆顶的</p>
+<p>当已经插入的个数为奇数时，我们要保证大根堆里的数比小根堆里的数少一个</p>
+<p>如果大根堆里的数多，则把大根堆堆顶插入小根堆</p>
+<p>如果小根堆里的数多，则把小根堆堆顶插入大根堆</p>
+<p>所以小根堆堆顶就是中位数</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">10000</span>];</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,vector&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;q1;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>&gt;q2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> t,n;</span><br><span class="line">        cin&gt;&gt;t&gt;&gt;n;</span><br><span class="line">        <span class="keyword">while</span>(q1.<span class="built_in">size</span>()) q1.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">while</span>(q2.<span class="built_in">size</span>()) q2.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;a[i];</span><br><span class="line">        cout&lt;&lt;t&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;(n+<span class="number">1</span>)/<span class="number">2</span>&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!q1.<span class="built_in">size</span>()||a[i]&gt;q1.<span class="built_in">top</span>()) q1.<span class="built_in">push</span>(a[i]);</span><br><span class="line">            <span class="keyword">else</span> q2.<span class="built_in">push</span>(a[i]);</span><br><span class="line">            <span class="keyword">if</span>(i&amp;<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(q1.<span class="built_in">size</span>()<span class="number">-1</span>&gt;q2.<span class="built_in">size</span>()) q2.<span class="built_in">push</span>(q1.<span class="built_in">top</span>()),q1.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">if</span>(q2.<span class="built_in">size</span>()+<span class="number">1</span>&gt;q1.<span class="built_in">size</span>()) q1.<span class="built_in">push</span>(q2.<span class="built_in">top</span>()),q2.<span class="built_in">pop</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(i&amp;<span class="number">1</span>) cout&lt;&lt;q1.<span class="built_in">top</span>()&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">20</span>==<span class="number">0</span>||i==n) cout&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>堆</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020牛客暑期多校训练营（第二场）A. All with Pairs</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%9C%BA%EF%BC%89A/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%202A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5667/A" class="uri">https://ac.nowcoder.com/acm/contest/5667/A</a></p>
-<span id="more"></span>
 <h1 id="题意">题意</h1>
 <p>有 <span class="math inline">\(n\)</span> 个字符串</p>
 <p>定义 <span class="math inline">\(f(s,t)\)</span> 为最大的 <span class="math inline">\(i\)</span> 满足 <span class="math inline">\(s_{1...i}=t_{|t|-i+1...|t|}\)</span></p>
 <p>求 <span class="math inline">\(\sum_{i=1}^n\sum_{j=1}^n{f(s_i,s_j)^2}\pmod{998244353}\)</span></p>
+<span id="more"></span>
 <h1 id="思路">思路</h1>
 <p>将每一个后缀 Hash ，再遍历每个字符串的前缀找相同的后缀的个数</p>
 <p>但有可能找到的后缀来自同一个字符串，又因为这些后缀都是当前字符串的前缀，所以我们可以用 KMP 算法算出 next 数组找出当前位置的最大 border，从前往后执行 <code>cnt[next[i+1]-1]-=cnt[i]</code> 即可完成去重</p>
@@ -2940,7 +3192,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第二场）B. Boundary</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%9C%BA%EF%BC%89B/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%202B/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5667/B" class="uri">https://ac.nowcoder.com/acm/contest/5667/B</a></p>
 <h1 id="题意">题意</h1>
@@ -2962,7 +3214,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第二场）C. Cover the Tree</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%9C%BA%EF%BC%89C/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%202C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5667/C" class="uri">https://ac.nowcoder.com/acm/contest/5667/C</a></p>
 <h1 id="题意">题意</h1>
@@ -2990,7 +3242,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第二场）F. Fake Maxpooling</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%9C%BA%EF%BC%89F/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%202F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5667/F" class="uri">https://ac.nowcoder.com/acm/contest/5667/F</a></p>
 <h1 id="题意">题意</h1>
@@ -3012,7 +3264,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第二场）J. Just Shuffle</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%9C%BA%EF%BC%89J/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%202J/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5667/J" class="uri">https://ac.nowcoder.com/acm/contest/5667/J</a></p>
 <h1 id="题意">题意</h1>
@@ -3057,7 +3309,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 12 J. 月月查华华的手机</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20392J/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2012J/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/392/J" class="uri">https://ac.nowcoder.com/acm/contest/392/J</a></p>
 <h1 id="题意">题意</h1>
@@ -3208,7 +3460,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛11 F. Rinne Loves Edges</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20370F/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2011F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/370/F" class="uri">https://ac.nowcoder.com/acm/contest/370/F</a></p>
 <h1 id="题意">题意</h1>
@@ -3649,7 +3901,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 23 A. 膜法记录</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204784A/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2023A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4784/A" class="uri">https://ac.nowcoder.com/acm/contest/4784/A</a></p>
 <h1 id="题意">题意</h1>
@@ -3676,7 +3928,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 23 B. 阶乘</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204784B/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2023B/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4784/B" class="uri">https://ac.nowcoder.com/acm/contest/4784/B</a></p>
 <h1 id="题意">题意</h1>
@@ -3697,7 +3949,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 23 C. 完全图</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204784C/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2023C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4784/C" class="uri">https://ac.nowcoder.com/acm/contest/4784/C</a></p>
 <h1 id="题意">题意</h1>
@@ -3719,7 +3971,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 23 G. 树上求和</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204784G/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2023G/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4784/G" class="uri">https://ac.nowcoder.com/acm/contest/4784/G</a></p>
 <h1 id="题意">题意</h1>
@@ -3805,7 +4057,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客练习赛 59 C. 装备合成</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204743C/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2059C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4743/C" class="uri">https://ac.nowcoder.com/acm/contest/4743/C</a></p>
 <h1 id="题意">题意</h1>
@@ -3831,7 +4083,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 22 C. 交换游戏</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462C/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/C" class="uri">https://ac.nowcoder.com/acm/contest/4462/C</a></p>
 <h1 id="题意">题意</h1>
@@ -3851,7 +4103,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 22 H. 货物种类</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462H/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022H/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/H" class="uri">https://ac.nowcoder.com/acm/contest/4462/H</a></p>
 <h1 id="题意">题意</h1>
@@ -3874,7 +4126,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 22 B. 树上子链</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462B/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022B/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/B" class="uri">https://ac.nowcoder.com/acm/contest/4462/B</a></p>
 <h1 id="题意">题意</h1>
@@ -3898,7 +4150,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 22 D. 收集纸片</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462D/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022D/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/D" class="uri">https://ac.nowcoder.com/acm/contest/4462/D</a></p>
 <h1 id="题意">题意</h1>
@@ -3922,7 +4174,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛 22 G. 仓库选址</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462G/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022G/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/G" class="uri">https://ac.nowcoder.com/acm/contest/4462/G</a></p>
 <h1 id="题意">题意</h1>
@@ -3969,7 +4221,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客练习赛 58 C. 矩阵消除游戏</title>
-    <url>/2021/06/09/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204090C/</url>
+    <url>/2021/06/09/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2058C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4090/C" class="uri">https://ac.nowcoder.com/acm/contest/4090/C</a></p>
 <h1 id="题意">题意</h1>
@@ -4171,7 +4423,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第一场）A. B-Suffix Array</title>
-    <url>/2021/06/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%B8%80%E5%9C%BA%EF%BC%89A/</url>
+    <url>/2021/06/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%201A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5666/A" class="uri">https://ac.nowcoder.com/acm/contest/5666/A</a></p>
 <h1 id="题意">题意</h1>
@@ -4202,7 +4454,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第一场）I. 1 or 2</title>
-    <url>/2021/06/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%B8%80%E5%9C%BA%EF%BC%89I/</url>
+    <url>/2021/06/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%201I/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5666/I" class="uri">https://ac.nowcoder.com/acm/contest/5666/I</a></p>
 <h1 id="题意">题意</h1>
@@ -4226,7 +4478,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第一场）J. Easy Integration</title>
-    <url>/2021/06/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%B8%80%E5%9C%BA%EF%BC%89J/</url>
+    <url>/2021/06/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%201J/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5666/J" class="uri">https://ac.nowcoder.com/acm/contest/5666/J</a></p>
 <h1 id="题意">题意</h1>
@@ -4247,7 +4499,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第一场）F. Infinite String Comparision</title>
-    <url>/2021/06/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%B8%80%E5%9C%BA%EF%BC%89F/</url>
+    <url>/2021/06/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%201F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5666/F" class="uri">https://ac.nowcoder.com/acm/contest/5666/F</a></p>
 <h1 id="题意">题意</h1>
@@ -4729,7 +4981,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>“科大讯飞杯”第18届上海大学程序设计联赛春季赛暨高校网络友谊赛 L. 动物森友会</title>
-    <url>/2021/06/07/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%205278L/</url>
+    <url>/2021/06/07/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E2%80%9C%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E6%9D%AF%E2%80%9D%E7%AC%AC18%E5%B1%8A%E4%B8%8A%E6%B5%B7%E5%A4%A7%E5%AD%A6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%81%94%E8%B5%9B%E6%98%A5%E5%AD%A3%E8%B5%9B%E6%9A%A8%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%8F%8B%E8%B0%8A%E8%B5%9B%20L/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5278/L" class="uri">https://ac.nowcoder.com/acm/contest/5278/L</a></p>
 <h1 id="题意">题意</h1>
@@ -4751,7 +5003,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第九场）K. The Flee Plan of Groundhog</title>
-    <url>/2021/06/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%B9%9D%E5%9C%BA%EF%BC%89K/</url>
+    <url>/2021/06/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%209K/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5674/K" class="uri">https://ac.nowcoder.com/acm/contest/5674/K</a></p>
 <h1 id="题意">题意</h1>
@@ -4797,7 +5049,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第九场）E. Groundhog Chasing Death</title>
-    <url>/2021/06/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%B9%9D%E5%9C%BA%EF%BC%89E/</url>
+    <url>/2021/06/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%209E/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5674/E" class="uri">https://ac.nowcoder.com/acm/contest/5674/E</a></p>
 <h1 id="题意">题意</h1>
@@ -4843,7 +5095,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020牛客暑期多校训练营（第三场）F. Fraction Construction Problem</title>
-    <url>/2021/06/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%B8%89%E5%9C%BA%EF%BC%89F/</url>
+    <url>/2021/06/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%203F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/5668" class="uri">https://ac.nowcoder.com/acm/contest/5668</a></p>
 <h1 id="题意">题意</h1>
@@ -5575,7 +5827,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客练习赛69 D. 火柴排队</title>
-    <url>/2021/05/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%207329D/</url>
+    <url>/2021/05/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2069D/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/7329/D" class="uri">https://ac.nowcoder.com/acm/contest/7329/D</a></p>
 <h1 id="题意">题意</h1>
@@ -5746,7 +5998,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客练习赛72 C. brz的序列</title>
-    <url>/2021/05/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%208282C/</url>
+    <url>/2021/05/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2072C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/8282/C" class="uri">https://ac.nowcoder.com/acm/contest/8282/C</a></p>
 <h1 id="题意">题意</h1>
@@ -5885,7 +6137,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020年广东工业大学第十届文远知行杯新生程序设计竞赛（同步赛）A. 肥猪的钢琴床</title>
-    <url>/2021/05/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209692A/</url>
+    <url>/2021/05/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E5%B9%B4%E5%B9%BF%E4%B8%9C%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%B1%8A%E6%96%87%E8%BF%9C%E7%9F%A5%E8%A1%8C%E6%9D%AF%E6%96%B0%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%EF%BC%88%E5%90%8C%E6%AD%A5%E8%B5%9B%EF%BC%89%20A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9692/A" class="uri">https://ac.nowcoder.com/acm/contest/9692/A</a></p>
 <h1 id="题意">题意</h1>
@@ -6094,7 +6346,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛14 A. 简单计数</title>
-    <url>/2021/04/30/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20879A/</url>
+    <url>/2021/04/30/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2014A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/879/A" class="uri">https://ac.nowcoder.com/acm/contest/879/A</a></p>
 <h1 id="题意">题意</h1>
@@ -6249,7 +6501,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛13 H. 小A的柱状图</title>
-    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20549H/</url>
+    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2013H/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/549/H" class="uri">https://ac.nowcoder.com/acm/contest/549/H</a></p>
 <h1 id="题意">题意</h1>
@@ -6321,7 +6573,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛13 F. 小A的最短路</title>
-    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20549F/</url>
+    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2013F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/549/F" class="uri">https://ac.nowcoder.com/acm/contest/549/F</a></p>
 <h1 id="题意">题意</h1>
@@ -6344,7 +6596,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客小白月赛13 E. 小A的路径</title>
-    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20549E/</url>
+    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2013E/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/549/E" class="uri">https://ac.nowcoder.com/acm/contest/549/E</a></p>
 <h1 id="题意">题意</h1>
@@ -6471,7 +6723,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客练习赛74 E. CCA的期望</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209700E/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2074E/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9700/E" class="uri">https://ac.nowcoder.com/acm/contest/9700/E</a></p>
 <h1 id="题意">题意</h1>
@@ -6497,7 +6749,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客练习赛74 D. CCA的图</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209700D/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2074D/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9700/D" class="uri">https://ac.nowcoder.com/acm/contest/9700/D</a></p>
 <h1 id="题意">题意</h1>
@@ -6519,7 +6771,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>牛客练习赛74 C. CCA的矩阵</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209700C/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2074C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9700/C" class="uri">https://ac.nowcoder.com/acm/contest/9700/C</a></p>
 <h1 id="题意">题意</h1>
@@ -6620,7 +6872,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营3 E. 买礼物</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209983E/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%203E/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9983/E" class="uri">https://ac.nowcoder.com/acm/contest/9983/E</a></p>
 <h1 id="题意">题意</h1>
@@ -6693,7 +6945,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营3 A. 模数的世界</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209983A/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%203A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9983/A" class="uri">https://ac.nowcoder.com/acm/contest/9983/A</a></p>
 <h1 id="题意">题意</h1>
@@ -6716,7 +6968,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营3 B. 内卷</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209983B/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%203B/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9983/B" class="uri">https://ac.nowcoder.com/acm/contest/9983/B</a></p>
 <h1 id="题意">题意</h1>
@@ -6821,7 +7073,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营1 H. 幂塔个位数的计算</title>
-    <url>/2021/04/17/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209981H/</url>
+    <url>/2021/04/17/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%201H/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9981/H" class="uri">https://ac.nowcoder.com/acm/contest/9981/H</a></p>
 <h1 id="题意">题意</h1>
@@ -6870,7 +7122,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营4 G. 九峰与蛇形填数</title>
-    <url>/2021/04/17/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209984G/</url>
+    <url>/2021/04/17/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%204G/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9984/G" class="uri">https://ac.nowcoder.com/acm/contest/9984/G</a></p>
 <h1 id="题意">题意</h1>
@@ -6896,7 +7148,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营4 F. 魏迟燕的自走棋</title>
-    <url>/2021/04/16/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209984F/</url>
+    <url>/2021/04/16/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%204F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9984/F" class="uri">https://ac.nowcoder.com/acm/contest/9984/F</a></p>
 <h1 id="题意">题意</h1>
@@ -7001,7 +7253,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营5 B. 比武招亲（上）</title>
-    <url>/2021/04/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209985B/</url>
+    <url>/2021/04/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%205B/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9985/B" class="uri">https://ac.nowcoder.com/acm/contest/9985/B</a></p>
 <h1 id="题意">题意</h1>
@@ -7032,7 +7284,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021年度训练联盟热身训练赛第一场 I. Full Depth Morning Show</title>
-    <url>/2021/04/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E5%B9%B4%E5%BA%A6%E8%AE%AD%E7%BB%83%E8%81%94%E7%9B%9F%E7%83%AD%E8%BA%AB%E8%AE%AD%E7%BB%83%E8%B5%9B%E7%AC%AC%E4%B8%80%E5%9C%BA%20I/</url>
+    <url>/2021/04/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E5%B9%B4%E5%BA%A6%E8%AE%AD%E7%BB%83%E8%81%94%E7%9B%9F%E7%83%AD%E8%BA%AB%E8%AE%AD%E7%BB%83%E8%B5%9B%201%20I/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/12606/I" class="uri">https://ac.nowcoder.com/acm/contest/12606/I</a></p>
 <h1 id="题意">题意</h1>
@@ -7118,7 +7370,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营6 H. 动态最小生成树</title>
-    <url>/2021/04/12/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209986H/</url>
+    <url>/2021/04/12/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%206H/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9986/H" class="uri">https://ac.nowcoder.com/acm/contest/9986/H</a></p>
 <h1 id="题意">题意</h1>
