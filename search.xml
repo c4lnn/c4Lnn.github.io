@@ -60,12 +60,12 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://codeforces.com/contest/161">VK Cup 2012 Round 1</a></td>
-<td style="text-align: center;">1/5</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">3/5</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -500,12 +500,12 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://codeforces.com/contest/1538">Codeforces Round #725 (Div. 3)</a></td>
-<td style="text-align: center;">6/7</td>
+<td style="text-align: center;">Done</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">Ø</td>
 </tr>
@@ -645,14 +645,14 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://codeforces.com/contest/1537">Codeforces Round #726 (Div. 2)</a></td>
-<td style="text-align: center;">6/7</td>
+<td style="text-align: center;">Done</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
 </tr>
 </tbody>
 </table>
@@ -909,7 +909,7 @@
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4462">牛客小白月赛23</a></td>
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4462">牛客小白月赛22</a></td>
 <td style="text-align: center;">9/10</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">Ø</td>
@@ -923,7 +923,7 @@
 <td style="text-align: center;">Ø</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4784">牛客小白月赛24</a></td>
+<td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/4784">牛客小白月赛23</a></td>
 <td style="text-align: center;">8/10</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">Ø</td>
@@ -3057,6 +3057,84 @@ x &amp; \equiv a_k \pmod {m_k}
 ]]></content>
   </entry>
   <entry>
+    <title>Codeforces Round #726 (Div. 2) F. Figure Fixing</title>
+    <url>/2021/06/27/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/CF%201547F/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://codeforces.com/contest/1537/problem/F" class="uri">https://codeforces.com/contest/1537/problem/F</a></p>
+<h1 id="题意">题意</h1>
+<p>给定一张包含 <span class="math inline">\(n\)</span> 个点 <span class="math inline">\(m\)</span> 条边的无向连通图，第 <span class="math inline">\(i\)</span> 个节点有当前权值 <span class="math inline">\(v_i\)</span> 和目标权值 <span class="math inline">\(t_i\)</span> 两种属性。</p>
+<p>每次可以选择一条边 <span class="math inline">\((i,j)\)</span>，将 <span class="math inline">\(v_i\)</span> 和 <span class="math inline">\(v_j\)</span> 都增加任意整数 <span class="math inline">\(k\)</span>。可以执行任意次上述操作。</p>
+<p>判断能否将所有节点的 <span class="math inline">\(v_i\)</span> 都变为 <span class="math inline">\(t_i\)</span>。</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>每次操作都使两个点增加了 <span class="math inline">\(k\)</span>，即 <span class="math inline">\(\sum_{i=1}^n{v_i}\)</span> 增加了 <span class="math inline">\(2k\)</span>，那么当 <span class="math inline">\(\sum_{i=1}^n{t_i-v_i}\)</span> 不是偶数时，一定无解。</p>
+<p>接下来分两种情况：</p>
+<ul>
+<li>图是二分图：每次操作都使属于不同点集的两个点增加了 <span class="math inline">\(k\)</span>，那么当两个点集的 <span class="math inline">\(\sum{t-v}\)</span> 相等时有解，否则无解；</li>
+<li>图不是二分图：我们可以将点分成两个点集，这两个点集的 <span class="math inline">\(\sum{t-v}\)</span> 奇偶性一定相同，因为不是二分图，所以肯定存在一个点集里的两个点之间有边，那么可以对这条边操作，使两个点集的 <span class="math inline">\(\sum{t-v}\)</span> 相等，即一定有解。</li>
+</ul>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">2e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> col[N],a[N],b[N];</span><br><span class="line">VI g[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        col[i]=<span class="number">-1</span>;</span><br><span class="line">        g[i].<span class="built_in">clear</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> t)</span> </span>&#123;</span><br><span class="line">    col[u]=t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> v:g[u]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(col[v]==t) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(col[v]==<span class="number">-1</span>) <span class="keyword">if</span>(!<span class="built_in">dfs</span>(v,t^<span class="number">1</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">int</span> T;cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n,m;cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        <span class="built_in">init</span>(n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;a[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cin&gt;&gt;b[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> u,v;cin&gt;&gt;u&gt;&gt;v;</span><br><span class="line">            g[u].<span class="built_in">PB</span>(v),g[v].<span class="built_in">PB</span>(u);</span><br><span class="line">        &#125;</span><br><span class="line">        LL sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) sum+=b[i]-a[i];</span><br><span class="line">        <span class="keyword">if</span>(sum&amp;<span class="number">1</span>) cout&lt;&lt;<span class="string">&quot;NO&quot;</span>&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">bool</span> f=<span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="keyword">if</span>(col[i]==<span class="number">-1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!<span class="built_in">dfs</span>(i,<span class="number">0</span>)) &#123;f=<span class="literal">true</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(f) cout&lt;&lt;<span class="string">&quot;YES&quot;</span>&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                LL sum[<span class="number">2</span>];</span><br><span class="line">                sum[<span class="number">0</span>]=sum[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) sum[col[i]]+=b[i]-a[i];</span><br><span class="line">                cout&lt;&lt;(sum[<span class="number">0</span>]==sum[<span class="number">1</span>]?<span class="string">&quot;YES&quot;</span>:<span class="string">&quot;NO&quot;</span>)&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>构造</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021 四川省大学生程序设计竞赛 E. Don’t Really Like How The Story Ends</title>
+    <url>/2021/06/27/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/CF%20103117E/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://codeforces.com/gym/103117/problem/E" class="uri">https://codeforces.com/gym/103117/problem/E</a></p>
+<h1 id="题意">题意</h1>
+<p>给定一张无向图，问最少添加多少条边，可以使得 <span class="math inline">\(1, 2,\dots, n\)</span> 是这张图的一个合法 DFS 序列。</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>从 <span class="math inline">\(1\)</span> 开始 DFS，按照与当前点相邻的点从小到大访问。</p>
+<p>当要访问 <span class="math inline">\(v\)</span> 时，存在比 <span class="math inline">\(v\)</span> 小的点还没访问，此时必须加边访问还没访问到的点，</p>
+<p>在结束 DFS 时，即在 <span class="math inline">\(1\)</span> 退出前，如果还有没访问到的点，则必须加边。</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line">VI g[N];</span><br><span class="line"><span class="keyword">int</span> n,t,cnt;</span><br><span class="line"><span class="keyword">bool</span> st[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    st[u]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> v:g[u]) <span class="keyword">if</span>(!st[v]) &#123;</span><br><span class="line">        <span class="keyword">while</span>(t&lt;v) ++cnt,<span class="built_in">dfs</span>(t++);</span><br><span class="line">        <span class="keyword">if</span>(t&gt;v) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs</span>(t++);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(u==<span class="number">1</span>) <span class="keyword">while</span>(t!=n+<span class="number">1</span>) ++cnt,<span class="built_in">dfs</span>(t++);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">int</span> T;cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> m;cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            g[i].<span class="built_in">clear</span>();</span><br><span class="line">            st[i]=<span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> u,v;cin&gt;&gt;u&gt;&gt;v;</span><br><span class="line">            g[u].<span class="built_in">PB</span>(v);</span><br><span class="line">            g[v].<span class="built_in">PB</span>(u);</span><br><span class="line">        &#125;</span><br><span class="line">        t=<span class="number">2</span>,cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">sort</span>(<span class="built_in">ALL</span>(g[i]));</span><br><span class="line">        <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">        cout&lt;&lt;cnt&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>搜索</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021 四川省大学生程序设计竞赛 F. Direction Setting</title>
+    <url>/2021/06/27/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/CF%20103117F/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://codeforces.com/gym/103117/problem/F" class="uri">https://codeforces.com/gym/103117/problem/F</a></p>
+<h1 id="题意">题意</h1>
+<p>一个 <span class="math inline">\(n\)</span> 个点 <span class="math inline">\(m\)</span> 条边的无向图，每个点有一个权值 <span class="math inline">\(a_i\)</span>。</p>
+<p>要求给所有边定向，令 <span class="math inline">\(d_i\)</span> 表示定向后 <span class="math inline">\(i\)</span> 号点的入度，要求最小化 <span class="math inline">\(\sum_{i=1}^n{\max(0,d_i-a_i)}\)</span>。</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>对于点 <span class="math inline">\(i\)</span> ，当 <span class="math inline">\(d_i\le a_i\)</span> 时，对答案没有贡献，否则 <span class="math inline">\(d_i+1\)</span>，答案 <span class="math inline">\(+1\)</span>。</p>
+<p>因此尽量让 <span class="math inline">\(d\le a\)</span> 的点作为入点。</p>
+<p>考虑最大流模型，给原图中的每条边和每个点建立一个点。</p>
+<ul>
+<li><p>源点与原图中每条边相连，流量为 <span class="math inline">\(1\)</span>；</p></li>
+<li><p>原图中每条边与该边两个端点相连，流量为 <span class="math inline">\(1\)</span>；</p></li>
+<li><p>原图中每个点与终点相连，流量为 <span class="math inline">\(a\)</span>。</p></li>
+</ul>
+<p>那么答案为 <span class="math inline">\(m-\)</span>最大流。</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">605</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> a[N],st[N],id[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MAXIMUM_FLOW</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> n,s,t,d[N],cur[N];</span><br><span class="line">    VI g[N];</span><br><span class="line">    VPII e;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) g[i].<span class="built_in">clear</span>();</span><br><span class="line">        e.<span class="built_in">clear</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        e.<span class="built_in">EB</span>(v,c);</span><br><span class="line">        e.<span class="built_in">EB</span>(u,<span class="number">0</span>);</span><br><span class="line">        g[u].<span class="built_in">PB</span>(<span class="built_in">SZ</span>(e)<span class="number">-2</span>);</span><br><span class="line">        g[v].<span class="built_in">PB</span>(<span class="built_in">SZ</span>(e)<span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) d[i]=<span class="number">0</span>;</span><br><span class="line">        queue&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">        q.<span class="built_in">push</span>(s);</span><br><span class="line">        d[s]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">SZ</span>(q)) &#123;</span><br><span class="line">            <span class="keyword">int</span> u=q.<span class="built_in">front</span>();</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> x:g[u]) &#123;</span><br><span class="line">                <span class="keyword">int</span> v=e[x].FI,c=e[x].SE;</span><br><span class="line">                <span class="keyword">if</span>(d[v]||c&lt;=<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">                d[v]=d[u]+<span class="number">1</span>;</span><br><span class="line">                q.<span class="built_in">push</span>(v);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> d[t];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(u==t) <span class="keyword">return</span> a;</span><br><span class="line">        <span class="keyword">int</span> f,flow=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> &amp;i=cur[u];i&lt;<span class="built_in">SZ</span>(g[u]);i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> v=e[g[u][i]].FI,&amp;c=e[g[u][i]].SE;</span><br><span class="line">            <span class="keyword">if</span>(d[v]!=d[u]+<span class="number">1</span>||c&lt;=<span class="number">0</span>||(f=<span class="built_in">dfs</span>(v,<span class="built_in">min</span>(a,c)))&lt;=<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            c-=f;</span><br><span class="line">            e[g[u][i]^<span class="number">1</span>].SE+=f;</span><br><span class="line">            a-=f;</span><br><span class="line">            flow+=f;</span><br><span class="line">            <span class="keyword">if</span>(a==<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flow;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">dinic</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> flow=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">bfs</span>()) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) cur[i]=<span class="number">0</span>;</span><br><span class="line">            flow+=<span class="built_in">dfs</span>(s,INF);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flow;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; mf;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">int</span> T;cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n,m;cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        mf.s=n+m+<span class="number">1</span>,mf.n=mf.t=mf.s+<span class="number">1</span>;</span><br><span class="line">        mf.<span class="built_in">init</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            cin&gt;&gt;a[i];</span><br><span class="line">            mf.<span class="built_in">add_edge</span>(m+i,mf.t,a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> u,v;cin&gt;&gt;u&gt;&gt;v;</span><br><span class="line">            mf.<span class="built_in">add_edge</span>(mf.s,i,<span class="number">1</span>);</span><br><span class="line">            mf.<span class="built_in">add_edge</span>(i,m+u,<span class="number">1</span>);</span><br><span class="line">            mf.<span class="built_in">add_edge</span>(i,m+v,<span class="number">1</span>);</span><br><span class="line">            id[i]=<span class="built_in">SZ</span>(mf.e)<span class="number">-4</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;m-mf.<span class="built_in">dinic</span>()&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) st[i]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) <span class="keyword">if</span>(!mf.e[id[i]].SE) &#123;</span><br><span class="line">            st[i]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) cout&lt;&lt;st[i];</span><br><span class="line">        cout&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>最大流</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Codeforces Round #725 (Div. 3) G. Gift Set</title>
     <url>/2021/06/18/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/CF%201538G/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
@@ -3250,7 +3328,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 5 C. 水题(water)</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%205C/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20135C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/135/C" class="uri">https://ac.nowcoder.com/acm/contest/135/C</a></p>
 <h1 id="题意">题意</h1>
@@ -3278,7 +3356,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客挑战赛10 B. 小H和游戏</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E6%8C%91%E6%88%98%E8%B5%9B%2010C/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%2072C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/72/C" class="uri">https://ac.nowcoder.com/acm/contest/72/C</a></p>
 <h1 id="题意">题意</h1>
@@ -3405,7 +3483,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客练习赛 1 B. 树</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%201B/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%202B/</url>
     <content><![CDATA[<h1 id="题目链接">题目链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/2/B" class="uri">https://ac.nowcoder.com/acm/contest/2/B</a></p>
 <h1 id="题意">题意</h1>
@@ -3601,7 +3679,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 12 J. 月月查华华的手机</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2012J/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20392J/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/392/J" class="uri">https://ac.nowcoder.com/acm/contest/392/J</a></p>
 <h1 id="题意">题意</h1>
@@ -3752,7 +3830,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛11 F. Rinne Loves Edges</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2011F/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20370F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/370/F" class="uri">https://ac.nowcoder.com/acm/contest/370/F</a></p>
 <h1 id="题意">题意</h1>
@@ -4159,7 +4237,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 23 A. 膜法记录</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2023A/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204784A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4784/A" class="uri">https://ac.nowcoder.com/acm/contest/4784/A</a></p>
 <h1 id="题意">题意</h1>
@@ -4186,7 +4264,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 23 B. 阶乘</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2023B/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204784B/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4784/B" class="uri">https://ac.nowcoder.com/acm/contest/4784/B</a></p>
 <h1 id="题意">题意</h1>
@@ -4207,7 +4285,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 23 C. 完全图</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2023C/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204784C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4784/C" class="uri">https://ac.nowcoder.com/acm/contest/4784/C</a></p>
 <h1 id="题意">题意</h1>
@@ -4229,7 +4307,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 23 G. 树上求和</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2023G/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204784G/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4784/G" class="uri">https://ac.nowcoder.com/acm/contest/4784/G</a></p>
 <h1 id="题意">题意</h1>
@@ -4315,7 +4393,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客练习赛 59 C. 装备合成</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2059C/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204743C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4743/C" class="uri">https://ac.nowcoder.com/acm/contest/4743/C</a></p>
 <h1 id="题意">题意</h1>
@@ -4341,7 +4419,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 22 C. 交换游戏</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022C/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/C" class="uri">https://ac.nowcoder.com/acm/contest/4462/C</a></p>
 <h1 id="题意">题意</h1>
@@ -4361,7 +4439,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 22 H. 货物种类</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022H/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462H/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/H" class="uri">https://ac.nowcoder.com/acm/contest/4462/H</a></p>
 <h1 id="题意">题意</h1>
@@ -4384,7 +4462,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 22 B. 树上子链</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022B/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462B/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/B" class="uri">https://ac.nowcoder.com/acm/contest/4462/B</a></p>
 <h1 id="题意">题意</h1>
@@ -4408,7 +4486,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 22 D. 收集纸片</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022D/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462D/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/D" class="uri">https://ac.nowcoder.com/acm/contest/4462/D</a></p>
 <h1 id="题意">题意</h1>
@@ -4432,7 +4510,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛 22 G. 仓库选址</title>
-    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2022G/</url>
+    <url>/2021/06/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204462G/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4462/G" class="uri">https://ac.nowcoder.com/acm/contest/4462/G</a></p>
 <h1 id="题意">题意</h1>
@@ -4479,7 +4557,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客练习赛 58 C. 矩阵消除游戏</title>
-    <url>/2021/06/09/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2058C/</url>
+    <url>/2021/06/09/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%204090C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/4090/C" class="uri">https://ac.nowcoder.com/acm/contest/4090/C</a></p>
 <h1 id="题意">题意</h1>
@@ -6085,7 +6163,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客练习赛69 D. 火柴排队</title>
-    <url>/2021/05/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2069D/</url>
+    <url>/2021/05/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%207329D/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/7329/D" class="uri">https://ac.nowcoder.com/acm/contest/7329/D</a></p>
 <h1 id="题意">题意</h1>
@@ -6256,7 +6334,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客练习赛72 C. brz的序列</title>
-    <url>/2021/05/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2072C/</url>
+    <url>/2021/05/08/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%208282C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/8282/C" class="uri">https://ac.nowcoder.com/acm/contest/8282/C</a></p>
 <h1 id="题意">题意</h1>
@@ -6395,7 +6473,7 @@ k \le n
   </entry>
   <entry>
     <title>2020年广东工业大学第十届文远知行杯新生程序设计竞赛（同步赛）A. 肥猪的钢琴床</title>
-    <url>/2021/05/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2020%E5%B9%B4%E5%B9%BF%E4%B8%9C%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%B1%8A%E6%96%87%E8%BF%9C%E7%9F%A5%E8%A1%8C%E6%9D%AF%E6%96%B0%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%EF%BC%88%E5%90%8C%E6%AD%A5%E8%B5%9B%EF%BC%89%20A/</url>
+    <url>/2021/05/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209692A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9692/A" class="uri">https://ac.nowcoder.com/acm/contest/9692/A</a></p>
 <h1 id="题意">题意</h1>
@@ -6552,7 +6630,7 @@ k \le n
   </entry>
   <entry>
     <title>第八届“图灵杯”NEUQ-ACM程序设计竞赛个人赛 A. 切蛋糕</title>
-    <url>/2021/04/30/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%AC%AC%E5%85%AB%E5%B1%8A%E2%80%9C%E5%9B%BE%E7%81%B5%E6%9D%AF%E2%80%9DNEUQ-ACM%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E4%B8%AA%E4%BA%BA%E8%B5%9B%20A/</url>
+    <url>/2021/04/30/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%2011746A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/11746/A" class="uri">https://ac.nowcoder.com/acm/contest/11746/A</a></p>
 <h1 id="题意">题意</h1>
@@ -6604,7 +6682,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛14 A. 简单计数</title>
-    <url>/2021/04/30/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2014A/</url>
+    <url>/2021/04/30/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20879A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/879/A" class="uri">https://ac.nowcoder.com/acm/contest/879/A</a></p>
 <h1 id="题意">题意</h1>
@@ -6759,7 +6837,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛13 H. 小A的柱状图</title>
-    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2013H/</url>
+    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20549H/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/549/H" class="uri">https://ac.nowcoder.com/acm/contest/549/H</a></p>
 <h1 id="题意">题意</h1>
@@ -6831,7 +6909,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛13 F. 小A的最短路</title>
-    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2013F/</url>
+    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20549F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/549/F" class="uri">https://ac.nowcoder.com/acm/contest/549/F</a></p>
 <h1 id="题意">题意</h1>
@@ -6854,7 +6932,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客小白月赛13 E. 小A的路径</title>
-    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B%2013E/</url>
+    <url>/2021/04/20/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%20549E/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/549/E" class="uri">https://ac.nowcoder.com/acm/contest/549/E</a></p>
 <h1 id="题意">题意</h1>
@@ -6981,7 +7059,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客练习赛74 E. CCA的期望</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2074E/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209700E/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9700/E" class="uri">https://ac.nowcoder.com/acm/contest/9700/E</a></p>
 <h1 id="题意">题意</h1>
@@ -7007,7 +7085,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客练习赛74 D. CCA的图</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2074D/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209700D/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9700/D" class="uri">https://ac.nowcoder.com/acm/contest/9700/D</a></p>
 <h1 id="题意">题意</h1>
@@ -7029,7 +7107,7 @@ k \le n
   </entry>
   <entry>
     <title>牛客练习赛74 C. CCA的矩阵</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B%2074C/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209700C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9700/C" class="uri">https://ac.nowcoder.com/acm/contest/9700/C</a></p>
 <h1 id="题意">题意</h1>
@@ -7130,7 +7208,7 @@ k \le n
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营3 E. 买礼物</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%203E/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209983E/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9983/E" class="uri">https://ac.nowcoder.com/acm/contest/9983/E</a></p>
 <h1 id="题意">题意</h1>
@@ -7203,7 +7281,7 @@ k \le n
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营3 A. 模数的世界</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%203A/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209983A/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9983/A" class="uri">https://ac.nowcoder.com/acm/contest/9983/A</a></p>
 <h1 id="题意">题意</h1>
@@ -7226,7 +7304,7 @@ k \le n
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营3 B. 内卷</title>
-    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%203B/</url>
+    <url>/2021/04/19/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209983B/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9983/B" class="uri">https://ac.nowcoder.com/acm/contest/9983/B</a></p>
 <h1 id="题意">题意</h1>
@@ -7331,7 +7409,7 @@ k \le n
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营1 H. 幂塔个位数的计算</title>
-    <url>/2021/04/17/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%201H/</url>
+    <url>/2021/04/17/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209981H/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9981/H" class="uri">https://ac.nowcoder.com/acm/contest/9981/H</a></p>
 <h1 id="题意">题意</h1>
@@ -7380,7 +7458,7 @@ k \le n
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营4 G. 九峰与蛇形填数</title>
-    <url>/2021/04/17/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%204G/</url>
+    <url>/2021/04/17/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209984G/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9984/G" class="uri">https://ac.nowcoder.com/acm/contest/9984/G</a></p>
 <h1 id="题意">题意</h1>
@@ -7406,7 +7484,7 @@ k \le n
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营4 F. 魏迟燕的自走棋</title>
-    <url>/2021/04/16/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%204F/</url>
+    <url>/2021/04/16/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209984F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9984/F" class="uri">https://ac.nowcoder.com/acm/contest/9984/F</a></p>
 <h1 id="题意">题意</h1>
@@ -7511,7 +7589,7 @@ k \le n
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营5 B. 比武招亲（上）</title>
-    <url>/2021/04/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%205B/</url>
+    <url>/2021/04/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209985B/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9985/B" class="uri">https://ac.nowcoder.com/acm/contest/9985/B</a></p>
 <h1 id="题意">题意</h1>
@@ -7542,7 +7620,7 @@ k \le n
   </entry>
   <entry>
     <title>2021年度训练联盟热身训练赛第一场 I. Full Depth Morning Show</title>
-    <url>/2021/04/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E5%B9%B4%E5%BA%A6%E8%AE%AD%E7%BB%83%E8%81%94%E7%9B%9F%E7%83%AD%E8%BA%AB%E8%AE%AD%E7%BB%83%E8%B5%9B%201I/</url>
+    <url>/2021/04/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%2012606I/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/12606/I" class="uri">https://ac.nowcoder.com/acm/contest/12606/I</a></p>
 <h1 id="题意">题意</h1>
@@ -7628,7 +7706,7 @@ k \le n
   </entry>
   <entry>
     <title>2021牛客寒假算法基础集训营6 H. 动态最小生成树</title>
-    <url>/2021/04/12/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A5%206H/</url>
+    <url>/2021/04/12/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/NC%209986H/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://ac.nowcoder.com/acm/contest/9986/H" class="uri">https://ac.nowcoder.com/acm/contest/9986/H</a></p>
 <h1 id="题意">题意</h1>
