@@ -3607,7 +3607,7 @@ x &amp; \equiv a_k \pmod {m_k}
 <h1 id="思路">思路</h1>
 <p>考虑每个质因数对答案的贡献，记拥有因数 <span class="math inline">\(p\)</span> 且个数正好为 <span class="math inline">\(i\)</span> 个的数的个数为 <span class="math inline">\(f_{p^i}\)</span>，可以容斥求出。</p>
 <p>对于因数 <span class="math inline">\(p^c\)</span> ，对答案的贡献为 <span class="math inline">\(p^{c\binom{f_{p^c}}{k}}\)</span>。</p>
-<p>因为模数不一定为质数，且 <span class="math inline">\(n\)</span> 较小，我们可以递推求出组合数，枚举每个质因数的指数，并用扩展欧拉定理降幂。</p>
+<p>因为模数不一定为质数，且 <span class="math inline">\(n\)</span> 较小，我们可以递推求出组合数，枚举每个质因数的指数，并用扩展欧拉定理降幂，然而这样的做法不足以通过所有数据。</p>
 <p>记拥有因数 <span class="math inline">\(p^i\)</span> 的数的个数为 <span class="math inline">\(g_{p^i}\)</span>，我们可以发现 <span class="math inline">\(p^{\binom{f_{p}}{k}}p^{2\binom{f_{p^2}}{k}}\dots p^{c\binom{f_{p^c}}{k}}=p^{\binom{g_{p}}{k}}p^{\binom{g_{p^2}}{k}}\dots p^{\binom{g_{p^c}}{k}}\)</span>。</p>
 <p>因此我们可以直接对每个质因数计算贡献，这样只用对每个质因数求一次快速幂。</p>
 <h1 id="代码">代码</h1>
