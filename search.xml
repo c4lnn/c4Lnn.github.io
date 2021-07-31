@@ -4092,8 +4092,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>AC 自动机</tag>
         <tag>搜索</tag>
+        <tag>AC 自动机</tag>
       </tags>
   </entry>
   <entry>
@@ -4130,9 +4130,9 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
+        <tag>树状数组</tag>
         <tag>DFS 序</tag>
         <tag>AC 自动机</tag>
-        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -4377,8 +4377,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>树形 DP</tag>
         <tag>贪心</tag>
+        <tag>树形 DP</tag>
       </tags>
   </entry>
   <entry>
@@ -4774,8 +4774,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>线段树</tag>
         <tag>单调栈</tag>
+        <tag>线段树</tag>
       </tags>
   </entry>
   <entry>
@@ -5625,8 +5625,8 @@ k \le n
       </categories>
       <tags>
         <tag>LCA</tag>
-        <tag>最小生成树</tag>
         <tag>树上倍增</tag>
+        <tag>最小生成树</tag>
       </tags>
   </entry>
   <entry>
@@ -6514,8 +6514,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>二分图最大匹配</tag>
         <tag>图的连通性</tag>
+        <tag>二分图最大匹配</tag>
       </tags>
   </entry>
   <entry>
@@ -6615,9 +6615,9 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
+        <tag>图的连通性</tag>
         <tag>树形 DP</tag>
         <tag>查分约束</tag>
-        <tag>图的连通性</tag>
       </tags>
   </entry>
   <entry>
@@ -7058,8 +7058,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>二维偏序</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -7666,10 +7666,10 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>重链剖分</tag>
-        <tag>LCA</tag>
-        <tag>权值线段树</tag>
         <tag>差分</tag>
+        <tag>LCA</tag>
+        <tag>重链剖分</tag>
+        <tag>权值线段树</tag>
       </tags>
   </entry>
   <entry>
@@ -7703,9 +7703,9 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>重链剖分</tag>
-        <tag>LCA</tag>
         <tag>线段树</tag>
+        <tag>LCA</tag>
+        <tag>重链剖分</tag>
       </tags>
   </entry>
   <entry>
@@ -7954,8 +7954,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>贪心</tag>
         <tag>二分</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -8176,8 +8176,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>贪心</tag>
         <tag>二分</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -8483,9 +8483,9 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>重链剖分</tag>
-        <tag>LCA</tag>
         <tag>线段树</tag>
+        <tag>LCA</tag>
+        <tag>重链剖分</tag>
       </tags>
   </entry>
   <entry>
