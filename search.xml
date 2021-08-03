@@ -2610,6 +2610,7 @@
 <th style="text-align: center;">10</th>
 <th style="text-align: center;">11</th>
 <th style="text-align: center;">12</th>
+<th style="text-align: center;">13</th>
 </tr>
 </thead>
 <tbody>
@@ -2628,6 +2629,7 @@
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://vjudge.net/article/2650">2021HDU多校2</a></td>
@@ -2644,6 +2646,7 @@
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">O</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><a href="https://vjudge.net/article/2650">2021HDU多校3</a></td>
@@ -2660,6 +2663,7 @@
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://vjudge.net/article/2650">2021HDU多校4</a></td>
@@ -2673,6 +2677,24 @@
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://vjudge.net/article/2650">2021HDU多校4</a></td>
+<td style="text-align: center;">3/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
