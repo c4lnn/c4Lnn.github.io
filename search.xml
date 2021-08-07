@@ -2528,13 +2528,13 @@
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/11254">2021牛客多校3</a></td>
-<td style="text-align: center;">2/10</td>
+<td style="text-align: center;">4/10</td>
 <td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
@@ -2544,12 +2544,12 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/11255">2021牛客多校4</a></td>
-<td style="text-align: center;">4/10</td>
+<td style="text-align: center;">5/10</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
@@ -3676,6 +3676,33 @@ x &amp; \equiv a_k \pmod {m_k}
 <li>二分注意上下界</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>2021牛客暑期多校训练营3 B. Black and white</title>
+    <url>/2021/08/06/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%203B/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://ac.nowcoder.com/acm/contest/11254/B" class="uri">https://ac.nowcoder.com/acm/contest/11254/B</a></p>
+<h1 id="题意">题意</h1>
+<p><span class="math inline">\(n*m\)</span> 的方格中，初始时每格都是白色，每格都有一个权值，代表染成黑色的花费。</p>
+<p>任意两行与任意两列的交集为四个格子，若其中三个格子已经染成黑色，那么剩下那个可以免费染成黑色。</p>
+<p>求把所有格子染成黑色的最小花费。</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>将题意转化为图论问题，将行列作为二分图的两个集合，把一个格子染成黑就是行与列连线，最终形成一张完全二分图。</p>
+<p>而在其中某些边可以是免费的，我们要求的是最小的边权和。</p>
+<p>可以发现免费的边具有传递性，即当我们满足要求可以连一条免费的边后，可能会有更多的边可以免费连。</p>
+<p>如果有两行两列连通时，即最少需要三条需要花费的边，涂黑三个格子，那么就可以免费涂一个格子。</p>
+<p>易发现这时在当前连通块中再加入一个点，这条边是需要花费的，然后就可以添加免费边使当前联通块中行列形成完全二分图。</p>
+<p>不断往连通块里加点，最终使整张图连通，那么容易得到最小花费就是最小生成树。</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="keyword">int</span> fa[<span class="number">10005</span>];</span><br><span class="line">VPII e[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x==fa[x]?x:fa[x]=<span class="built_in">find</span>(fa[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">int</span> n,m,a,b,c,d,p;cin&gt;&gt;n&gt;&gt;m&gt;&gt;a&gt;&gt;b&gt;&gt;c&gt;&gt;d&gt;&gt;p;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>,pre=<span class="number">0</span>,now=a;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> x=m*(i<span class="number">-1</span>)+j;</span><br><span class="line">            pre=now;</span><br><span class="line">            now=(<span class="number">1ll</span>*pre*pre*b%p+<span class="number">1ll</span>*pre*c%p+d)%p;</span><br><span class="line">            e[now].<span class="built_in">EB</span>(i,n+j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n+m;i++) fa[i]=i;</span><br><span class="line">    <span class="keyword">int</span> res=<span class="number">0</span>,cnt=n+m<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;p;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> x:e[i]) &#123;</span><br><span class="line">            <span class="keyword">int</span> fu=<span class="built_in">find</span>(x.FI),fv=<span class="built_in">find</span>(x.SE);</span><br><span class="line">            <span class="keyword">if</span>(fu==fv) <span class="keyword">continue</span>;</span><br><span class="line">            fa[fu]=fv;</span><br><span class="line">            res+=i;</span><br><span class="line">            --cnt;</span><br><span class="line">            <span class="keyword">if</span>(!cnt) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;res&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+      <tags>
+        <tag>最小生成树</tag>
+      </tags>
   </entry>
   <entry>
     <title>HDU 7029. Median</title>
