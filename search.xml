@@ -3747,8 +3747,9 @@ x &amp; \equiv a_k \pmod {m_k}
 <p>只可能放入前两种情况的组内，因此可以在一开始将包含小区间的大区间挑出来。</p>
 <p>将区间按左端点从小到大，右端点从大到小排序，单调栈处理出所有大区间。</p>
 <p>这些大区间放入第二种情况因为交集不变所以不需要考虑，只需要考虑单独放入空的组内。</p>
-<p>对于剩下的小区间，将左端点从小到大考虑 DP，记 <span class="math inline">\(dp_{i,j}\)</span> 为前 <span class="math inline">\(j\)</span> 个区间分为 <span class="math inline">\(i\)</span> 组的最大贡献：</p>
-<p><span class="math inline">\(dp_{i,j}=\max\{dp_{i-1,k-1}+r_t-l_j\}=\max\{dp_{i-1,t-1}+r_t\}-l_j\)</span> <span class="math inline">\((r_t&gt;l_j)\)</span></p>
+<p>对于剩下的小区间，将左端点从小到大考虑 DP，记 <span class="math inline">\(dp_{i,j}\)</span> 为前 <span class="math inline">\(j\)</span> 个区间分为 <span class="math inline">\(i\)</span> 组的最大贡献。</p>
+<p>在分配时只可能将连续的几个区间放入同个组内，因为这样才能使交集尽可能大。</p>
+<p>所以 <span class="math inline">\(dp_{i,j}=\max\{dp_{i-1,t-1}+r_t-l_j\}=\max\{dp_{i-1,t-1}+r_t\}-l_j\)</span> <span class="math inline">\((r_t&gt;l_j)\)</span></p>
 <p>可以用单调队列优化，时间复杂度为 <span class="math inline">\(O(nk)\)</span>。</p>
 <p>当 <span class="math inline">\(i&gt;j\)</span> 时，并不存在分配方案，因此将数组初始化为一个极小值，而 <span class="math inline">\(dp_{0,0}=0\)</span>。</p>
 <p>如果存在 <span class="math inline">\(k-i\)</span> 个大区间，那么可以更新答案。</p>
