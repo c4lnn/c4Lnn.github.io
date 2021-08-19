@@ -883,6 +883,18 @@
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 </tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://codeforces.com/contest/1560">Codeforces Round #739 (Div. 3)</a></td>
+<td style="text-align: center;">6/7</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+</tr>
 </tbody>
 </table>
 <table>
@@ -2831,6 +2843,23 @@
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
+<tr class="even">
+<td style="text-align: center;"><a href="https://vjudge.net/article/2650">2021“MINIEYE杯”中国大学生算法设计超级联赛（10）</a></td>
+<td style="text-align: center;">0/10</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
 </tbody>
 </table>
 ]]></content>
@@ -3836,7 +3865,7 @@ diff_i=&amp;\sum_{k=i+1}^{cnt}{len_k*(-2k+2i-1)}-\sum_{k=i}^{cnt}{len_k*(-2k+2i-
 =&amp;2\sum_{k=i+1}^{cnt}{len_k}+2len_i+len_{i-1}
 \end{aligned}
 \]</span></p>
-<p>维护 <span class="math inline">\(diff\)</span>,进而维护 <span class="math inline">\(dif\)</span>，进而维护 <span class="math inline">\(ans\)</span>。</p>
+<p>维护 <span class="math inline">\(diff\)</span>，进而维护 <span class="math inline">\(dif\)</span>，进而维护 <span class="math inline">\(ans\)</span>。</p>
 <p>时间复杂度：<span class="math inline">\(O(n)\)</span> # 代码二</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="keyword">const</span> LL MOD=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line">VI pos[<span class="number">30</span>];</span><br><span class="line">LL len[N],sum[N],diff[N],dif[N],ans[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">int</span> T;cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        string s;cin&gt;&gt;s;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++) pos[i].<span class="built_in">clear</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">SZ</span>(s);i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> x=s[i]-<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            pos[x].<span class="built_in">PB</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        LL res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++) <span class="keyword">if</span>(<span class="built_in">SZ</span>(pos[i])) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;<span class="built_in">SZ</span>(pos[i]);j++) len[j]=pos[i][j]-pos[i][j<span class="number">-1</span>];</span><br><span class="line">            len[<span class="built_in">SZ</span>(pos[i])]=<span class="built_in">SZ</span>(s)-pos[i][<span class="built_in">SZ</span>(pos[i])<span class="number">-1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="built_in">SZ</span>(pos[i]);j++) sum[j]=(sum[j<span class="number">-1</span>]+len[j])%MOD;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="built_in">SZ</span>(pos[i]);j++) diff[j]=(<span class="number">2</span>*((sum[<span class="built_in">SZ</span>(pos[i])]-sum[j]+MOD)%MOD)%MOD+<span class="number">2</span>*len[j]%MOD+len[j<span class="number">-1</span>])%MOD;</span><br><span class="line">            dif[<span class="number">1</span>]=-len[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=<span class="built_in">SZ</span>(pos[i]);j++) dif[<span class="number">1</span>]=(dif[<span class="number">1</span>]+(len[j]*(<span class="number">-2</span>*j+<span class="number">1</span>)%MOD+MOD)%MOD)%MOD;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=<span class="built_in">SZ</span>(pos[i]);j++) dif[j]=(diff[j]+dif[j<span class="number">-1</span>])%MOD;</span><br><span class="line">            ans[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="built_in">SZ</span>(pos[i]);j++) ans[<span class="number">0</span>]=(ans[<span class="number">0</span>]+len[j]*j%MOD*j%MOD)%MOD;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;<span class="built_in">SZ</span>(pos[i]);j++) ans[j]=(dif[j]+ans[j<span class="number">-1</span>])%MOD;</span><br><span class="line">            len[<span class="number">0</span>]=pos[i][<span class="number">0</span>]+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="built_in">SZ</span>(pos[i]);j++) res=(res+ans[j]*len[j]%MOD)%MOD;</span><br><span class="line">            len[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;res&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
