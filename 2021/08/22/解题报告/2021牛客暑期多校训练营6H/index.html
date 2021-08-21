@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/08/22/mXefU1SkjGMiVhF.png">
 <meta property="og:image" content="https://i.loli.net/2021/08/22/J3W7Qhdql6ytnAP.png">
 <meta property="article:published_time" content="2021-08-21T17:14:38.000Z">
-<meta property="article:modified_time" content="2021-08-21T17:31:08.249Z">
+<meta property="article:modified_time" content="2021-08-21T17:33:17.833Z">
 <meta property="article:author" content="c4Lnn">
 <meta property="article:tag" content="线段树">
 <meta name="twitter:card" content="summary">
@@ -274,7 +274,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-08-22 01:14:38 / 修改时间：01:31:08" itemprop="dateCreated datePublished" datetime="2021-08-22T01:14:38+08:00">2021-08-22</time>
+      <time title="创建时间：2021-08-22 01:14:38 / 修改时间：01:33:17" itemprop="dateCreated datePublished" datetime="2021-08-22T01:14:38+08:00">2021-08-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,7 +306,7 @@
 <span id="more"></span>
 <h1 id="思路">思路</h1>
 <p>可以发现兔子能够到达的点具有周期性：<span class="math inline">\((x+kd,y+kd)\)</span> <span class="math inline">\((0\le x,y&lt; d,k\in\mathbb{Z})\)</span>。</p>
-<p>将所有矩形平移进 <span class="math inline">\(d*d\)</span> 的正方形中，用扫描线维护，对于每行判断有没有被完全覆盖。</p>
+<p>将所有矩形平移进 <span class="math inline">\(d*d\)</span> 的正方形中，用扫描线维护，对于每列判断有没有被完全覆盖。</p>
 <p><img src="https://i.loli.net/2021/08/22/mXefU1SkjGMiVhF.png" /></p>
 <p><img src="https://i.loli.net/2021/08/22/J3W7Qhdql6ytnAP.png" /></p>
 <h1 id="代码">代码</h1>
