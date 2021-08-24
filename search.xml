@@ -1278,12 +1278,12 @@
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/946">牛客练习赛49</a></td>
-<td style="text-align: center;">3/6</td>
+<td style="text-align: center;">4/6</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">Ø</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
@@ -2811,11 +2811,11 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://vjudge.net/article/2650">2021“MINIEYE杯”中国大学生算法设计超级联赛（8）</a></td>
-<td style="text-align: center;">4/10</td>
+<td style="text-align: center;">5/10</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">O</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
@@ -3813,7 +3813,7 @@ x &amp; \equiv a_k \pmod {m_k}
 <h2 id="随机数">随机数</h2>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">mt19937 <span class="title">mt</span><span class="params">(time(<span class="number">0</span>))</span></span>;</span><br><span class="line"><span class="function">uniform_int_distribution&lt;<span class="keyword">int</span>&gt; <span class="title">rd1</span><span class="params">(<span class="number">0</span>,<span class="number">10000</span>)</span></span>; <span class="comment">//   整数</span></span><br><span class="line"><span class="function">uniform_real_distribution&lt;<span class="keyword">double</span>&gt; <span class="title">rd2</span><span class="params">(<span class="number">0</span>,<span class="number">1</span>)</span></span>; <span class="comment">// 浮点数</span></span><br><span class="line">cout&lt;&lt;<span class="built_in">rd1</span>(mt)&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;<span class="built_in">rd2</span>(mt)&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="builtin_-系列函数位运算">__builtin_ 系列函数（位运算）</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 返回最后一个为 1 的位是从后向前的第几位，比如 2(10)，返回 2</span></span><br><span class="line"><span class="keyword">int</span> __builtin_ffs(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// 返回前导 0 的个数，比如 2(10)，返回 30，x = 0 时结果未定义</span></span><br><span class="line"><span class="keyword">int</span> __builtin_clz(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// 返回末尾0的个数，比如 2(10)，返回 1，x = 0 时结果未定义</span></span><br><span class="line"><span class="keyword">int</span> __builtin_ctz(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// 返回 1 的个数</span></span><br><span class="line"><span class="keyword">int</span> __builtin_popcount(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// 返回 1 的个数模 2 的结果</span></span><br><span class="line"><span class="keyword">int</span> __builtin_parity(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// usigned long long 版本在函数名后加 ll</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 返回最低位的 1 是从后向前的第几位，比如 2(10)，返回 2</span></span><br><span class="line"><span class="keyword">int</span> __builtin_ffs(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// 返回前导 0 的个数，比如 2(10)，返回 30，x = 0 时结果未定义</span></span><br><span class="line"><span class="keyword">int</span> __builtin_clz(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// 返回末尾0的个数，比如 2(10)，返回 1，x = 0 时结果未定义</span></span><br><span class="line"><span class="keyword">int</span> __builtin_ctz(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// 返回 1 的个数</span></span><br><span class="line"><span class="keyword">int</span> __builtin_popcount(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// 返回 1 的个数模 2 的结果</span></span><br><span class="line"><span class="keyword">int</span> __builtin_parity(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span><br><span class="line"><span class="comment">// usigned long long 版本在函数名后加 ll</span></span><br></pre></td></tr></table></figure>
 <h2 id="细节处理">细节处理</h2>
 <ul>
 <li>(int)(x).size()</li>
