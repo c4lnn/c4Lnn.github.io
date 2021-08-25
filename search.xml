@@ -770,7 +770,7 @@
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><a href="https://codeforces.com/contest/1543">Codeforces Round #740 (Div. 2)</a></td>
+<td style="text-align: center;"><a href="https://codeforces.com/contest/1543">Codeforces Round #730 (Div. 2)</a></td>
 <td style="text-align: center;">4/6</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">O</td>
@@ -779,6 +779,17 @@
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><a href="https://codeforces.com/contest/1561">Codeforces Round #740 (Div. 2)</a></td>
+<td style="text-align: center;">5/7</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
 </tr>
 </tbody>
 </table>
@@ -2620,7 +2631,7 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://ac.nowcoder.com/acm/contest/11259">2021牛客暑期多校训练营8</a></td>
-<td style="text-align: center;">3/11</td>
+<td style="text-align: center;">4/11</td>
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
@@ -2631,7 +2642,7 @@
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
@@ -2828,7 +2839,7 @@
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><a href="https://vjudge.net/article/2650">2021“MINIEYE杯”中国大学生算法设计超级联赛（9）</a></td>
-<td style="text-align: center;">3/11</td>
+<td style="text-align: center;">4/11</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">O</td>
@@ -2838,7 +2849,7 @@
 <td style="text-align: center;">O</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -3840,7 +3851,8 @@ x &amp; \equiv a_k \pmod {m_k}
 <li>区间内每个数都减去 <span class="math inline">\(a_i\&amp;(-a_i)\)</span>；</li>
 <li>区间内每个数都加上 <span class="math inline">\(2^k\)</span> <span class="math inline">\((2^k\le a_i\le 2^{k+1})\)</span>。</li>
 </ol>
-<p>共有 <span class="math inline">\(q\)</span> 此操作。 <span id="more"></span></p>
+<p>共有 <span class="math inline">\(q\)</span> 次操作。</p>
+<span id="more"></span>
 <h1 id="思路">思路</h1>
 <p>对于操作 <span class="math inline">\(1\)</span>，可以用线段树查询。</p>
 <p>对于操作 <span class="math inline">\(2\)</span>，每个数最多被操作 <span class="math inline">\(log\)</span> 次，我们可以在线段树上单点修改，若变为 <span class="math inline">\(0\)</span> 了，打上 <span class="math inline">\(tag\)</span>，不再向下传递，总时间复杂度为 <span class="math inline">\(O(n\log^2{a})\)</span>。</p>
