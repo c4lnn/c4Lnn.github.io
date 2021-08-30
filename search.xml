@@ -207,12 +207,12 @@
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><a href="https://codeforces.com/contest/384">Codeforces Round #225 (Div. 2)</a></td>
-<td style="text-align: center;">0/5</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">Done</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">O</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -2200,9 +2200,9 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><a href="https://vjudge.net/article/2678">2021CPC网络赛</a></td>
-<td style="text-align: center;">4/13</td>
+<td style="text-align: center;">5/13</td>
 <td style="text-align: center;">O</td>
-<td>-</td>
+<td>Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
@@ -3944,12 +3944,15 @@ x &amp; \equiv a_k \pmod {m_k}
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://acm.hdu.edu.cn/showproblem.php?pid=6438" class="uri">https://acm.hdu.edu.cn/showproblem.php?pid=6438</a></p>
 <h1 id="题意">题意</h1>
-<p>有 <span class="math inline">\(n\)</span> 天，每天有一个值，每天可以执行一次操作，买入或卖出，当存在买入时才能卖出，求最大收益且保证操作次数最少。</p>
+<p>有 <span class="math inline">\(n\)</span> 天，每天有一个价格，每天可以执行一次操作，买入或卖出，求最大收益且保证操作次数最少。</p>
 <span id="more"></span>
 <h1 id="思路">思路</h1>
-<p>要让收益最大，那么要在最低价买入，最高价卖出，要让操作次数最少，那么要让买入个数最少。</p>
-<p>用优先队列维护，记录当前卖出价格和购买价格，按顺序枚举 <span class="math inline">\(i\)</span> ，找到之前最小的比当前小的数且存在卖出价格，更新卖出价格入队，总次数不变，如果没有卖出过的，则需加上两次操作次数。</p>
-<p>因为我们有买入必有卖出，所以我们在卖出时统计次数，因此可以强行买入所有，上述做法显然不存在某一天既买入又卖出。</p>
+<p>有一个贪心策略是：在价格低的时候买入，在可以赚钱的时候卖出。</p>
+<p>显然该策略是错误的，可以在之后能赚更多的某天卖出。</p>
+<p>设 <span class="math inline">\(a_i&lt;a_j&lt;a_k\)</span> <span class="math inline">\((i&lt;j&lt;k)\)</span>，有 <span class="math inline">\(a_k-a_i=(a_j-a_i)+(a_k-a_j)\)</span>。</p>
+<p>可以发现按照错误的贪心策略，在第 <span class="math inline">\(j\)</span> 天卖出，我们可以在更优的第 <span class="math inline">\(k\)</span> 天加上差值来更新全局最优解，而第 <span class="math inline">\(j\)</span> 天相当于中间值被消掉了，我们可以用优先队列来维护最小值，这就是反悔贪心。</p>
+<p>因为要让操作次数最少，所以我们要找的是最小且已经被卖出过的更新最优解，没有被卖出过的，则只能增加操作次数。</p>
+<p>因为我们有买入必有卖出，所以我们在卖出时统计次数，因此可以强行买入所有，即每次都会入队一次，若可以更新最优解，再入队一次，上述做法显然不存在某一天既买入又卖出。</p>
 <h1 id="代码">代码</h1>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">R</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="built_in">R</span>() &#123;&#125;</span><br><span class="line">    <span class="built_in">R</span>(<span class="keyword">int</span> x,<span class="keyword">int</span> y):<span class="built_in">x</span>(x),<span class="built_in">y</span>(y) &#123;&#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> R &amp;T) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> x&gt;T.x||x==T.x&amp;&amp;y&gt;T.y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">int</span> T;cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;cin&gt;&gt;n;</span><br><span class="line">        priority_queue&lt;R&gt; q;</span><br><span class="line">        <span class="function">VI <span class="title">a</span><span class="params">(n+<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            cin&gt;&gt;a[i];</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">SZ</span>(q)&amp;&amp;q.<span class="built_in">top</span>().x&lt;a[i]) &#123;</span><br><span class="line">                <span class="keyword">auto</span> u=q.<span class="built_in">top</span>();</span><br><span class="line">                q.<span class="built_in">pop</span>();</span><br><span class="line">                q.<span class="built_in">emplace</span>(a[i],u.y==<span class="number">0x3f3f3f3f</span>?u.x:u.y);</span><br><span class="line">            &#125;</span><br><span class="line">            q.<span class="built_in">emplace</span>(a[i],<span class="number">0x3f3f3f3f</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        pair&lt;LL,<span class="keyword">int</span>&gt; res=<span class="built_in">MP</span>(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">SZ</span>(q)) &#123;</span><br><span class="line">            <span class="keyword">auto</span> u=q.<span class="built_in">top</span>();</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">if</span>(u.x&gt;u.y) res.FI+=u.x-u.y,res.SE+=<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;res.FI&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;res.SE&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
