@@ -135,8 +135,8 @@
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><a href="https://codeforces.com/contest/220">Codeforces Round #136 (Div. 1)</a></td>
-<td style="text-align: center;">1/5</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">2/5</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
@@ -147,10 +147,10 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://codeforces.com/contest/221">Codeforces Round #136 (Div. 2)</a></td>
-<td style="text-align: center;">1/5</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">4/5</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;"></td>
@@ -2317,8 +2317,8 @@
 </tr>
 <tr class="even">
 <td style="text-align: center;"><a href="https://codeforces.com/gym/103145">东北</a></td>
-<td style="text-align: center;">5/13</td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">6/13</td>
+<td style="text-align: center;">Ø</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
 <td style="text-align: center;">-</td>
@@ -3994,6 +3994,27 @@ x &amp; \equiv a_k \pmod {m_k}
 ]]></content>
   </entry>
   <entry>
+    <title>2021CCPC东北省赛 A. Matrix</title>
+    <url>/2021/09/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B%20A/</url>
+    <content><![CDATA[<h1 id="链接">链接</h1>
+<p><a href="https://codeforces.com/gym/103145/problem/C" class="uri">https://codeforces.com/gym/103145/problem/C</a></p>
+<h1 id="题意">题意</h1>
+<p>将 <span class="math inline">\(1\sim n^2\)</span> 填进 <span class="math inline">\(n*n\)</span> 的矩阵中。</p>
+<p>记 <span class="math inline">\(a_i\)</span> 为第 <span class="math inline">\(i\)</span> 行最小的元素，<span class="math inline">\(S=\{a1,a2,...,an\}\cap\{1,2,...,n\}\)</span>。</p>
+<p>考虑所有填充方法，求 <span class="math inline">\(\sum{|S|}\)</span>。</p>
+<span id="more"></span>
+<h1 id="思路">思路</h1>
+<p>考虑每个 <span class="math inline">\(i\)</span> <span class="math inline">\((1\le i \le n)\)</span> 对答案的贡献：</p>
+<p>该行其余 <span class="math inline">\(n-1\)</span> 个数的选择为 <span class="math inline">\(\binom{n^2-i}{n-1}\)</span>，该行位置可以随便变换，乘上 <span class="math inline">\(n!\)</span>，其余 <span class="math inline">\(n-1\)</span> 行随便填，乘上 <span class="math inline">\((n^2-n)!\)</span>，该行整体可随意放，乘上 <span class="math inline">\(n\)</span>。</p>
+<p>所以 <span class="math inline">\(res=\sum_{i=1}^n\binom{n^2-i}{n-1}*n!*(n^2-n)!*n\)</span>。</p>
+<h1 id="代码">代码</h1>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="keyword">const</span> LL MOD=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">25000005</span>;</span><br><span class="line">LL fac[N],invfac[N];</span><br><span class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(LL a,LL b)</span> </span>&#123;</span><br><span class="line">    LL ret=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ret=ret*a%MOD;</span><br><span class="line">        a=a*a%MOD;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    fac[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) fac[i]=fac[i<span class="number">-1</span>]*i%MOD;</span><br><span class="line">    invfac[n]=<span class="built_in">qpow</span>(fac[n],MOD<span class="number">-2</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;~i;i--) invfac[i]=invfac[i+<span class="number">1</span>]*(i+<span class="number">1</span>)%MOD;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">binom</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fac[n]*invfac[m]%MOD*invfac[n-m]%MOD;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="built_in">init</span>(<span class="number">25000000</span>);</span><br><span class="line">    <span class="keyword">int</span> T;cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;cin&gt;&gt;n;</span><br><span class="line">        LL res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) res=(res+<span class="built_in">binom</span>(n*n-i,n<span class="number">-1</span>)*fac[n]%MOD*fac[n*n-n]%MOD*n%MOD)%MOD;</span><br><span class="line">        cout&lt;&lt;res&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>解题报告</category>
+      </categories>
+  </entry>
+  <entry>
     <title>SPOJ DQUERY. D-query</title>
     <url>/2021/09/07/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/SPOJ%20DQUERY/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
@@ -4866,8 +4887,8 @@ diff_i=&amp;\sum_{k=i+1}^{cnt}{len_k*(-2k+2i-1)}-\sum_{k=i}^{cnt}{len_k*(-2k+2i-
       </tags>
   </entry>
   <entry>
-    <title>2021 山东省大学生程序设计竞赛 C. Cat Virus</title>
-    <url>/2021/07/01/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/CF%20103118C/</url>
+    <title>2021CCPC山东省赛 C. Cat Virus</title>
+    <url>/2021/07/01/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E5%B1%B1%E4%B8%9C%E7%9C%81%E8%B5%9B%20C/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://codeforces.com/gym/103118/problem/C" class="uri">https://codeforces.com/gym/103118/problem/C</a></p>
 <h1 id="题意">题意</h1>
@@ -4979,8 +5000,8 @@ diff_i=&amp;\sum_{k=i+1}^{cnt}{len_k*(-2k+2i-1)}-\sum_{k=i}^{cnt}{len_k*(-2k+2i-
       </tags>
   </entry>
   <entry>
-    <title>2021 四川省大学生程序设计竞赛 J. Ants</title>
-    <url>/2021/06/29/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/CF%20103117J/</url>
+    <title>2021CCPC四川省赛 J. Ants</title>
+    <url>/2021/06/29/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E5%9B%9B%E5%B7%9D%E7%9C%81%E8%B5%9B%20J/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://codeforces.com/gym/103117/problem/J" class="uri">https://codeforces.com/gym/103117/problem/J</a></p>
 <h1 id="题意">题意</h1>
@@ -5027,8 +5048,8 @@ diff_i=&amp;\sum_{k=i+1}^{cnt}{len_k*(-2k+2i-1)}-\sum_{k=i}^{cnt}{len_k*(-2k+2i-
       </tags>
   </entry>
   <entry>
-    <title>2021 四川省大学生程序设计竞赛 E. Don’t Really Like How The Story Ends</title>
-    <url>/2021/06/27/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/CF%20103117E/</url>
+    <title>2021CCPC四川省赛 E. Don’t Really Like How The Story Ends</title>
+    <url>/2021/06/27/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E5%9B%9B%E5%B7%9D%E7%9C%81%E8%B5%9B%20E/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://codeforces.com/gym/103117/problem/E" class="uri">https://codeforces.com/gym/103117/problem/E</a></p>
 <h1 id="题意">题意</h1>
@@ -5049,8 +5070,8 @@ diff_i=&amp;\sum_{k=i+1}^{cnt}{len_k*(-2k+2i-1)}-\sum_{k=i}^{cnt}{len_k*(-2k+2i-
       </tags>
   </entry>
   <entry>
-    <title>2021 四川省大学生程序设计竞赛 F. Direction Setting</title>
-    <url>/2021/06/27/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/CF%20103117F/</url>
+    <title>2021CCPC四川省赛 F. Direction Setting</title>
+    <url>/2021/06/27/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E5%9B%9B%E5%B7%9D%E7%9C%81%E8%B5%9B%20F/</url>
     <content><![CDATA[<h1 id="链接">链接</h1>
 <p><a href="https://codeforces.com/gym/103117/problem/F" class="uri">https://codeforces.com/gym/103117/problem/F</a></p>
 <h1 id="题意">题意</h1>
