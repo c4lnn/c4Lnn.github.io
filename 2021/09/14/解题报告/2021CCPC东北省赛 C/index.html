@@ -20,27 +20,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
 <meta name="hexo-config" content="{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;/&quot;,&quot;images&quot;:&quot;/images&quot;,&quot;scheme&quot;:&quot;Muse&quot;,&quot;version&quot;:&quot;8.3.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;width&quot;:250,&quot;display&quot;:&quot;always&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;gitalk&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null,&quot;activeClass&quot;:&quot;gitalk&quot;},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;/search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}">
-<meta name="description" content="链接 https:&#x2F;&#x2F;codeforces.com&#x2F;gym&#x2F;103145&#x2F;problem&#x2F;C 题意 将 \(1\sim n^2\) 填进 \(n*n\) 的矩阵中。 记 \(a_i\) 为第 \(i\) 行最小的元素，\(S&#x3D;\{a1,a2,...,an\}\cap\{1,2,...,n\}\)。 考虑所有填充方法，求 \(\sum{|S|}\)。">
+<meta name="description" content="链接 https:&#x2F;&#x2F;codeforces.com&#x2F;gym&#x2F;103145&#x2F;problem&#x2F;C 题意 树上删除一个点集使剩下的节点没有孤立点，求方案数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2021CCPC东北省赛 A. Matrix">
-<meta property="og:url" content="http://example.com/2021/09/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B%20A/index.html">
+<meta property="og:title" content="2021CCPC东北省赛 C. Vertex Deletion">
+<meta property="og:url" content="http://example.com/2021/09/14/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B%20C/index.html">
 <meta property="og:site_name" content="c4Lnn 的个人博客">
-<meta property="og:description" content="链接 https:&#x2F;&#x2F;codeforces.com&#x2F;gym&#x2F;103145&#x2F;problem&#x2F;C 题意 将 \(1\sim n^2\) 填进 \(n*n\) 的矩阵中。 记 \(a_i\) 为第 \(i\) 行最小的元素，\(S&#x3D;\{a1,a2,...,an\}\cap\{1,2,...,n\}\)。 考虑所有填充方法，求 \(\sum{|S|}\)。">
+<meta property="og:description" content="链接 https:&#x2F;&#x2F;codeforces.com&#x2F;gym&#x2F;103145&#x2F;problem&#x2F;C 题意 树上删除一个点集使剩下的节点没有孤立点，求方案数。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-13T14:40:49.000Z">
-<meta property="article:modified_time" content="2021-09-13T16:01:21.558Z">
+<meta property="article:published_time" content="2021-09-13T16:01:12.000Z">
+<meta property="article:modified_time" content="2021-09-13T16:28:36.276Z">
 <meta property="article:author" content="c4Lnn">
-<meta property="article:tag" content="组合数学">
+<meta property="article:tag" content="树形 DP">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/09/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B%20A/">
+<link rel="canonical" href="http://example.com/2021/09/14/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B%20C/">
 
 
 
 <meta name="hexo-config-page" content="{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;}">
 <meta name="hexo-config-calendar" content="">
-<title>2021CCPC东北省赛 A. Matrix | c4Lnn 的个人博客</title><script data-pjax src="/js/load-config.js"></script>
+<title>2021CCPC东北省赛 C. Vertex Deletion | c4Lnn 的个人博客</title><script data-pjax src="/js/load-config.js"></script>
   
 
   <script>
@@ -243,7 +243,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B%20A/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/14/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B%20C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -256,7 +256,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          2021CCPC东北省赛 A. Matrix
+          2021CCPC东北省赛 C. Vertex Deletion
         </h1>
 
         <div class="post-meta-container">
@@ -269,16 +269,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-09-13 22:40:49" itemprop="dateCreated datePublished" datetime="2021-09-13T22:40:49+08:00">2021-09-13</time>
+      <time title="创建时间：2021-09-14 00:01:12 / 修改时间：00:28:36" itemprop="dateCreated datePublished" datetime="2021-09-14T00:01:12+08:00">2021-09-14</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-09-14 00:01:21" itemprop="dateModified" datetime="2021-09-14T00:01:21+08:00">2021-09-14</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -303,16 +297,21 @@
         <h1 id="链接">链接</h1>
 <p><a target="_blank" rel="noopener" href="https://codeforces.com/gym/103145/problem/C" class="uri">https://codeforces.com/gym/103145/problem/C</a></p>
 <h1 id="题意">题意</h1>
-<p>将 <span class="math inline">\(1\sim n^2\)</span> 填进 <span class="math inline">\(n*n\)</span> 的矩阵中。</p>
-<p>记 <span class="math inline">\(a_i\)</span> 为第 <span class="math inline">\(i\)</span> 行最小的元素，<span class="math inline">\(S=\{a1,a2,...,an\}\cap\{1,2,...,n\}\)</span>。</p>
-<p>考虑所有填充方法，求 <span class="math inline">\(\sum{|S|}\)</span>。</p>
+<p>树上删除一个点集使剩下的节点没有孤立点，求方案数。</p>
 <span id="more"></span>
 <h1 id="思路">思路</h1>
-<p>考虑每个 <span class="math inline">\(i\)</span> <span class="math inline">\((1\le i \le n)\)</span> 对答案的贡献：</p>
-<p>该行其余 <span class="math inline">\(n-1\)</span> 个数的选择为 <span class="math inline">\(\binom{n^2-i}{n-1}\)</span>，该行位置可以随便变换，乘上 <span class="math inline">\(n!\)</span>，其余 <span class="math inline">\(n-1\)</span> 行随便填，乘上 <span class="math inline">\((n^2-n)!\)</span>，该行整体可随意放，乘上 <span class="math inline">\(n\)</span>。</p>
-<p>所以 <span class="math inline">\(res=\sum_{i=1}^n\binom{n^2-i}{n-1}*n!*(n^2-n)!*n\)</span>。</p>
+<p>以 1 为根节点，</p>
+<p>记 <span class="math inline">\(dp_{i,0}\)</span> 为节点 <span class="math inline">\(i\)</span> 的子树中 删除 <span class="math inline">\(i\)</span> 后合法的方案数；</p>
+<p>记 <span class="math inline">\(dp_{i,1}\)</span> 为节点 <span class="math inline">\(i\)</span> 的子树中 保留 <span class="math inline">\(i\)</span> 且 <span class="math inline">\(i\)</span> 为孤立点的方案数；</p>
+<p>记 <span class="math inline">\(dp_{i,2}\)</span> 为节点 <span class="math inline">\(i\)</span> 的子树中 保留 <span class="math inline">\(i\)</span> 后合法的方案数。</p>
+<p><span class="math display">\[\begin{cases}
+dp_{i,0}=\prod_{j\in son(i)}{dp_{j,0}+dp_{j,2}}\\
+dp_{i,1}=\prod_{j\in son(i)}{dp_{j,0}}\\
+dp_{i,2}=-dp_{i,1}+\prod_{j\in son(i)}{dp_{j,0}+dp_{j,1}+dp_{j,2}}\\
+\end{cases}\]</span></p>
+<p><span class="math inline">\(dp_{i,0}+dp_{i,1}\)</span> 就是答案。</p>
 <h1 id="代码">代码</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="keyword">const</span> LL MOD=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">25000005</span>;</span><br><span class="line">LL fac[N],invfac[N];</span><br><span class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(LL a,LL b)</span> </span>&#123;</span><br><span class="line">    LL ret=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ret=ret*a%MOD;</span><br><span class="line">        a=a*a%MOD;</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    fac[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) fac[i]=fac[i<span class="number">-1</span>]*i%MOD;</span><br><span class="line">    invfac[n]=<span class="built_in">qpow</span>(fac[n],MOD<span class="number">-2</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;~i;i--) invfac[i]=invfac[i+<span class="number">1</span>]*(i+<span class="number">1</span>)%MOD;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">binom</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fac[n]*invfac[m]%MOD*invfac[n-m]%MOD;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="built_in">init</span>(<span class="number">25000000</span>);</span><br><span class="line">    <span class="keyword">int</span> T;cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;cin&gt;&gt;n;</span><br><span class="line">        LL res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) res=(res+<span class="built_in">binom</span>(n*n-i,n<span class="number">-1</span>)*fac[n]%MOD*fac[n*n-n]%MOD*n%MOD)%MOD;</span><br><span class="line">        cout&lt;&lt;res&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="keyword">const</span> LL MOD=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line">LL dp[N][<span class="number">3</span>];</span><br><span class="line">VI g[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> fa)</span> </span>&#123;</span><br><span class="line">    dp[u][<span class="number">0</span>]=dp[u][<span class="number">1</span>]=dp[u][<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> v:g[u]) <span class="keyword">if</span>(v!=fa) &#123;</span><br><span class="line">        <span class="built_in">dfs</span>(v,u);</span><br><span class="line">        dp[u][<span class="number">0</span>]=dp[u][<span class="number">0</span>]*(dp[v][<span class="number">0</span>]+dp[v][<span class="number">2</span>])%MOD;</span><br><span class="line">        dp[u][<span class="number">1</span>]=dp[u][<span class="number">1</span>]*dp[v][<span class="number">0</span>]%MOD;</span><br><span class="line">        dp[u][<span class="number">2</span>]=dp[u][<span class="number">2</span>]*(dp[v][<span class="number">0</span>]+dp[v][<span class="number">1</span>]+dp[v][<span class="number">2</span>])%MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    dp[u][<span class="number">2</span>]=(dp[u][<span class="number">2</span>]-dp[u][<span class="number">1</span>]+MOD)%MOD;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">int</span> T;cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;cin&gt;&gt;n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) g[i].<span class="built_in">clear</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> u,v;cin&gt;&gt;u&gt;&gt;v;</span><br><span class="line">            g[u].<span class="built_in">PB</span>(v),g[v].<span class="built_in">PB</span>(u);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">        cout&lt;&lt;(dp[<span class="number">1</span>][<span class="number">0</span>]+dp[<span class="number">1</span>][<span class="number">2</span>])%MOD&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -322,21 +321,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 组合数学</a>
+              <a href="/tags/%E6%A0%91%E5%BD%A2-DP/" rel="tag"><i class="fa fa-tag"></i> 树形 DP</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/09/07/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/SPOJ%20DQUERY/" rel="prev" title="SPOJ DQUERY. D-query">
-                  <i class="fa fa-chevron-left"></i> SPOJ DQUERY. D-query
+                <a href="/2021/09/13/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B%20A/" rel="prev" title="2021CCPC东北省赛 A. Matrix">
+                  <i class="fa fa-chevron-left"></i> 2021CCPC东北省赛 A. Matrix
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/09/14/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/2021CCPC%E4%B8%9C%E5%8C%97%E7%9C%81%E8%B5%9B%20C/" rel="next" title="2021CCPC东北省赛 C. Vertex Deletion">
-                  2021CCPC东北省赛 C. Vertex Deletion <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -432,7 +428,7 @@ NexT.utils.loadComments('.gitalk-container', () => {
       repo        : 'c4Lnn.github.io',
       owner       : 'c4Lnn',
       admin       : ['c4Lnn'],
-      id          : 'd06a129a18ef56a494d63cb55de9b3a5',
+      id          : 'fc878dfeb0f1ccf558f47886df9303b1',
       proxy       : 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
         language: 'zh-CN',
       distractionFreeMode: true
