@@ -4140,7 +4140,7 @@ x &amp; \equiv a_k \pmod {m_k}
 <li><span class="math inline">\(2\le n\le 1e5,1\le q\le 1e5,0\le a_i,b_i\le 1e9\)</span>。</li>
 </ul>
 <p><strong>思路：</strong></p>
-<p>记 <span class="math inline">\(c_i=b_i-a_i\)</span>，若 c_i 为正，表示需要给a_i 加，若 c_i 为负，表示需要给b_i 加，记c 的前缀和 为s</p>
+<p>记 <span class="math inline">\(c_i=b_i-a_i\)</span>，若 <span class="math inline">\(c_i\)</span> 为正，表示需要给 <span class="math inline">\(a_i\)</span> 加，若 <span class="math inline">\(c_i\)</span> 为负，表示需要给 <span class="math inline">\(b_i\)</span> 加，记 <span class="math inline">\(c\)</span> 的前缀和为 <span class="math inline">\(s\)</span>：</p>
 <ul>
 <li>因为每次只能选偶数个 <span class="math inline">\(pos\)</span>，所以给 <span class="math inline">\(a\)</span> 加的值等于给 <span class="math inline">\(b\)</span> 加的值，那么 <span class="math inline">\(s_r-s_{l-1}\neq 0\)</span> 时，无解。</li>
 <li>当 <span class="math inline">\(s_i-s_{l-1}&lt;0\)</span> 时，说明到当前位置要给 <span class="math inline">\(b\)</span> 加的操作数大于给 <span class="math inline">\(a\)</span> 加，那么此时操作必须以给 <span class="math inline">\(b\)</span> 加为开头，不符合操作，无解。</li>
