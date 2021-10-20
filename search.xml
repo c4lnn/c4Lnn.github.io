@@ -3495,7 +3495,7 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 前置模板：龟速乘</span></span><br><span class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(LL a,LL b,LL m)</span> </span>&#123;</span><br><span class="line">    LL ret=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b&amp;<span class="number">1</span>) ret=<span class="built_in">qmul</span>(ret,a,m);</span><br><span class="line">        a=<span class="built_in">qmul</span>(a,a,m);</span><br><span class="line">        b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="miller-rabin-素性测试">Miller-Rabin 素性测试</h2>
 <ul>
-<li>二次探测定理：如果 p 是奇素数，则 <span class="math inline">\(x^2\equiv 1\pmod p\)</span> 的解为 <span class="math inline">\(x\equiv 1 \pmod p\)</span> 或者 <span class="math inline">\(x\equiv p-1 \pmod p\)</span></li>
+<li>二次探测定理：如果 <span class="math inline">\(p\)</span> 是奇素数，则 <span class="math inline">\(x^2\equiv 1\pmod p\)</span> 的解为 <span class="math inline">\(x\equiv 1 \pmod p\)</span> 或者 <span class="math inline">\(x\equiv p-1 \pmod p\)</span></li>
 <li>int 范围内只需检查 <span class="math inline">\(2, 7, 61\)</span></li>
 <li>long long 范围内 <span class="math inline">\(2, 325, 9375, 28178, 450775, 9780504, 1795265022\)</span></li>
 <li><span class="math inline">\(3e15\)</span> 内 <span class="math inline">\(2, 2570940, 880937, 610386380, 4130785767\)</span></li>
@@ -4046,7 +4046,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2020-2021 ICPC Asia Shanghai Regional Contest</title>
-    <url>/2021/10/20/%E5%A5%97%E9%A2%98/2020-2021%20ICPC%20Asia%20Shanghai%20Regional%20Contest/</url>
+    <url>/2021/10/20/%E5%A5%97%E9%A2%98/The%202020%20ICPC%20Asia%20Shanghai%20Regional%20Contest/</url>
     <content><![CDATA[<table>
 <thead>
 <tr class="header">
@@ -4132,8 +4132,8 @@ x &amp; \equiv a_k \pmod {m_k}
 <p>当 <span class="math inline">\(f_i,f_j\)</span> 中至少有一个偶数时，<span class="math inline">\(g(f_i,f_j)=1\)</span>，才会对答案产生贡献。</p>
 <p>斐波那契数前 <span class="math inline">\(n\)</span> 项有 <span class="math inline">\(k=\lfloor \frac n 3\rfloor\)</span> 个偶数。</p>
 <ul>
-<li><p>当 f_i 为奇数时：f_j 必须为偶数，总贡献为：<span class="math inline">\(k*(k+1)\)</span>。</p></li>
-<li><p>当 f_i 为偶数时：f_j 奇偶无所谓，总贡献为：<span class="math inline">\(k*(n-3)+\frac{3k(k-1)}{2}\)</span>。</p></li>
+<li><p>当 <span class="math inline">\(f_i\)</span> 为奇数时：<span class="math inline">\(f_j\)</span> 必须为偶数，总贡献为：<span class="math inline">\(k*(k+1)\)</span>。</p></li>
+<li><p>当 <span class="math inline">\(f_i\)</span> 为偶数时：<span class="math inline">\(f_j\)</span> 奇偶无所谓，总贡献为：<span class="math inline">\(k*(n-3)+\frac{3k(k-1)}{2}\)</span>。</p></li>
 </ul>
 <p><strong>代码：</strong></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">//head</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;E:/OneDrive/IO/in.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">    LL n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">    LL k=n/<span class="number">3</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,k*(k<span class="number">-2</span>+n)-k*(k<span class="number">-1</span>)/<span class="number">2</span>*<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -4159,8 +4159,8 @@ x &amp; \equiv a_k \pmod {m_k}
       </tags>
   </entry>
   <entry>
-    <title>2021中国大学生程序设计竞赛（CCPC）- 网络选拔赛（重赛）</title>
-    <url>/2021/10/11/%E5%A5%97%E9%A2%98/2021%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%EF%BC%88CCPC%EF%BC%89-%20%E7%BD%91%E7%BB%9C%E9%80%89%E6%8B%94%E8%B5%9B%EF%BC%88%E9%87%8D%E8%B5%9B%EF%BC%89/</url>
+    <title>2021 CCPC Regionals Online Contest (II)</title>
+    <url>/2021/10/11/%E5%A5%97%E9%A2%98/The%202021%20CCPC%20Regionals%20Online%20Contest%20(II)/</url>
     <content><![CDATA[<table>
 <thead>
 <tr class="header">
@@ -4354,7 +4354,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>2021 Xinjiang Provincial Collegiate Programming Contest</title>
-    <url>/2021/10/04/%E5%A5%97%E9%A2%98/2021%20Xinjiang%20Provincial%20Collegiate%20Programming%20Contest/</url>
+    <url>/2021/10/04/%E5%A5%97%E9%A2%98/The%202021%20CCPC%20Xinjiang%20Provincial%20Contest/</url>
     <content><![CDATA[<table>
 <thead>
 <tr class="header">
