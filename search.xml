@@ -4135,10 +4135,10 @@ x &amp; \equiv a_k \pmod {m_k}
         <category>套题</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>二分</tag>
-        <tag>并查集</tag>
         <tag>STL</tag>
+        <tag>DP</tag>
+        <tag>并查集</tag>
       </tags>
   </entry>
   <entry>
@@ -4249,10 +4249,10 @@ x &amp; \equiv a_k \pmod {m_k}
         <category>套题</category>
       </categories>
       <tags>
-        <tag>二分</tag>
-        <tag>树形 DP</tag>
         <tag>数位 DP</tag>
+        <tag>二分</tag>
         <tag>Trie</tag>
+        <tag>树形 DP</tag>
       </tags>
   </entry>
   <entry>
@@ -4353,7 +4353,7 @@ x &amp; \equiv a_k \pmod {m_k}
       </tags>
   </entry>
   <entry>
-    <title>2021 Xinjiang Provincial Collegiate Programming Contest</title>
+    <title>The 2021 CCPC Xinjiang Provincial Contest</title>
     <url>/2021/10/04/%E5%A5%97%E9%A2%98/The%202021%20CCPC%20Xinjiang%20Provincial%20Contest/</url>
     <content><![CDATA[<table>
 <thead>
@@ -5205,8 +5205,8 @@ dp4_{v,j}=&amp;dp4_{u,j-w}-dp2_{v,j-2w}-[w==j-w]+[w==i]+dp2_{v,j}
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>树状数组</tag>
         <tag>Trie</tag>
+        <tag>树状数组</tag>
       </tags>
   </entry>
   <entry>
@@ -6388,8 +6388,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>贪心</tag>
         <tag>树形 DP</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -7169,8 +7169,8 @@ k \le n
       <tags>
         <tag>差分</tag>
         <tag>枚举</tag>
-        <tag>前缀和</tag>
         <tag>状态压缩</tag>
+        <tag>前缀和</tag>
       </tags>
   </entry>
   <entry>
@@ -8626,8 +8626,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>图的连通性</tag>
         <tag>树形 DP</tag>
+        <tag>图的连通性</tag>
         <tag>差分约束</tag>
       </tags>
   </entry>
@@ -9678,8 +9678,8 @@ k \le n
       </categories>
       <tags>
         <tag>差分</tag>
-        <tag>LCA</tag>
         <tag>重链剖分</tag>
+        <tag>LCA</tag>
         <tag>权值线段树</tag>
       </tags>
   </entry>
@@ -9715,8 +9715,8 @@ k \le n
       </categories>
       <tags>
         <tag>线段树</tag>
-        <tag>LCA</tag>
         <tag>重链剖分</tag>
+        <tag>LCA</tag>
       </tags>
   </entry>
   <entry>
@@ -10439,8 +10439,8 @@ k \le n
         <category>解题报告</category>
       </categories>
       <tags>
-        <tag>贪心</tag>
         <tag>并查集</tag>
+        <tag>贪心</tag>
       </tags>
   </entry>
   <entry>
@@ -10495,8 +10495,8 @@ k \le n
       </categories>
       <tags>
         <tag>线段树</tag>
-        <tag>LCA</tag>
         <tag>重链剖分</tag>
+        <tag>LCA</tag>
       </tags>
   </entry>
   <entry>
