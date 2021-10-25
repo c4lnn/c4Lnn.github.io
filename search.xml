@@ -4047,6 +4047,57 @@ x &amp; \equiv a_k \pmod {m_k}
 ]]></content>
   </entry>
   <entry>
+    <title>2021 Jiangxi Provincial Collegiate Programming Contest</title>
+    <url>/2021/10/26/%E5%A5%97%E9%A2%98/2021%20Jiangxi%20Provincial%20Collegiate%20Programming%20Contest/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">4/12</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">O</td>
+</tr>
+</tbody>
+</table>
+<h1 id="题目链接">题目链接</h1>
+<p><a href="https://codeforces.com/gym/103366" class="uri">https://codeforces.com/gym/103366</a></p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>套题</category>
+      </categories>
+      <tags>
+        <tag>线段树</tag>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Codeforces Round #741 (Div. 2)</title>
     <url>/2021/10/25/%E5%A5%97%E9%A2%98/Codeforces%20Round%20741%20(Div.%202)/</url>
     <content><![CDATA[<table>
@@ -4076,7 +4127,7 @@ x &amp; \equiv a_k \pmod {m_k}
 </tbody>
 </table>
 <h1 id="题目链接">题目链接</h1>
-<p>https://codeforces.com/contest/1562</p>
+<p><a href="https://codeforces.com/contest/1562" class="uri">https://codeforces.com/contest/1562</a></p>
 <span id="more"></span>
 <h1 id="problem-a.-the-miracle-and-the-sleeper">Problem A. The Miracle and the Sleeper</h1>
 <p><strong>题意：</strong></p>
@@ -4545,8 +4596,8 @@ x &amp; \equiv a_k \pmod {m_k}
       </tags>
   </entry>
   <entry>
-    <title>The 2021 CCPC Xinjiang Provincial Contest</title>
-    <url>/2021/10/04/%E5%A5%97%E9%A2%98/The%202021%20CCPC%20Xinjiang%20Provincial%20Contest/</url>
+    <title>2021 Xinjiang Provincial Collegiate Programming Contest</title>
+    <url>/2021/10/04/%E5%A5%97%E9%A2%98/2021%20Xinjiang%20Provincial%20Collegiate%20Programming%20Contest/</url>
     <content><![CDATA[<table>
 <thead>
 <tr class="header">
