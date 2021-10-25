@@ -28,7 +28,7 @@
 <meta property="og:description" content="Solved A B C D1 D2 E F     5&#x2F;7 Ø Ø Ø Ø Ø - -    题目链接 https:&#x2F;&#x2F;codeforces.com&#x2F;contest&#x2F;1562">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-25T08:59:13.000Z">
-<meta property="article:modified_time" content="2021-10-25T08:59:52.598Z">
+<meta property="article:modified_time" content="2021-10-25T09:21:41.823Z">
 <meta property="article:author" content="c4Lnn">
 <meta name="twitter:card" content="summary">
 
@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem"><span class="nav-number">2.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-b.-scenes-from-a-memory"><span class="nav-number">3.</span> <span class="nav-text">Problem B. Scenes From a Memory</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-c.-rings"><span class="nav-number">4.</span> <span class="nav-text">Problem C. Rings</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-d.-two-hundred-twenty-one"><span class="nav-number">5.</span> <span class="nav-text">Problem D. Two Hundred Twenty One</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-a.-the-miracle-and-the-sleeper"><span class="nav-number">2.</span> <span class="nav-text">Problem A. The Miracle and the Sleeper</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-b.-scenes-from-a-memory"><span class="nav-number">3.</span> <span class="nav-text">Problem B. Scenes From a Memory</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-c.-rings"><span class="nav-number">4.</span> <span class="nav-text">Problem C. Rings</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problem-d.-two-hundred-twenty-one"><span class="nav-number">5.</span> <span class="nav-text">Problem D. Two Hundred Twenty One</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -270,7 +270,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-10-25 16:59:13 / 修改时间：16:59:52" itemprop="dateCreated datePublished" datetime="2021-10-25T16:59:13+08:00">2021-10-25</time>
+      <time title="创建时间：2021-10-25 16:59:13 / 修改时间：17:21:41" itemprop="dateCreated datePublished" datetime="2021-10-25T16:59:13+08:00">2021-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -322,12 +322,14 @@
 <h1 id="题目链接">题目链接</h1>
 <p>https://codeforces.com/contest/1562</p>
 <span id="more"></span>
-<h1 id="problem">Problem</h1>
+<h1 id="problem-a.-the-miracle-and-the-sleeper">Problem A. The Miracle and the Sleeper</h1>
 <p><strong>题意：</strong></p>
 <p>已知 <span class="math inline">\(l,r\)</span>，求 <span class="math inline">\(a\bmod b\)</span> <span class="math inline">\((l\le b\le a\le r)\)</span> 的最大结果。</p>
 <p><strong>思路：</strong></p>
+<p><span class="math inline">\(\begin{cases} b\ge l\\ b+b-1\le r \end{cases}\rightarrow l\le b\le\lfloor\frac{r+1}{2}\rfloor\)</span></p>
 <ul>
-<li>如果 <span class="math inline">\(b&gt;r/2\)</span></li>
+<li>当 <span class="math inline">\(l\le b\le\lfloor\frac{r+1}{2}\rfloor\)</span> 时，<span class="math inline">\(b=\lfloor\frac{r+1}{2}\rfloor,a=2*b-1\)</span>。</li>
+<li>否则，<span class="math inline">\(b=l,a=r\)</span>。</li>
 </ul>
 <p><strong>代码：</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ALL(x) (x).begin(),(x).end()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SE second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="keyword">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;LL&gt; VLL;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">int</span> T;cin&gt;&gt;T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> a,b;cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">        <span class="keyword">if</span>(b/<span class="number">2</span>+<span class="number">1</span>&gt;=a) cout&lt;&lt;b%(b/<span class="number">2</span>+<span class="number">1</span>)&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        <span class="keyword">else</span> cout&lt;&lt;b%a&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
