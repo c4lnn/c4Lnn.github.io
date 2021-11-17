@@ -3957,7 +3957,7 @@ x &amp; \equiv a_k \pmod {m_k}
 <h3 id="归并排序">归并排序</h3>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a[N],temp[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> mid,<span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=l,j=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> t=l;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid&amp;&amp;j&lt;=r) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=a[j]) temp[t++]=a[i++];</span><br><span class="line">        <span class="keyword">else</span> temp[t++]=a[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid) temp[t++]=a[i++];</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=r) temp[t++]=a[j++];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=l;i&lt;=r;i++) a[i]=temp[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&lt;r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">merge_sort</span>(l,mid);</span><br><span class="line">        <span class="built_in">merge_sort</span>(mid+<span class="number">1</span>,r);</span><br><span class="line">        <span class="built_in">merge</span>(l,mid,r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="快速排序">快速排序</h3>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&lt;r) &#123;</span><br><span class="line">        <span class="keyword">int</span> i=l,j=r;</span><br><span class="line">        <span class="keyword">int</span> key=a[l];</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j) &#123;</span><br><span class="line">            <span class="keyword">while</span>(i&lt;j&amp;&amp;a[j]&gt;key) j--;</span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) a[i++]=a[j];</span><br><span class="line">            <span class="keyword">while</span>(i&lt;j&amp;&amp;a[i]&lt;key) i++;</span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) a[j--]=a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        a[i]=key;</span><br><span class="line">        <span class="built_in">quick_ort</span>(l,i<span class="number">-1</span>);</span><br><span class="line">        <span class="built_in">quick_ort</span>(i+<span class="number">1</span>,r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l&lt;r) &#123;</span><br><span class="line">        <span class="keyword">int</span> i=l,j=r;</span><br><span class="line">        <span class="keyword">int</span> key=a[l];</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j) &#123;</span><br><span class="line">            <span class="keyword">while</span>(i&lt;j&amp;&amp;a[j]&gt;=key) j--;</span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) a[i++]=a[j];</span><br><span class="line">            <span class="keyword">while</span>(i&lt;j&amp;&amp;a[i]&lt;=key) i++;</span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) a[j--]=a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        a[i]=key;</span><br><span class="line">        <span class="built_in">quick_ort</span>(l,i<span class="number">-1</span>);</span><br><span class="line">        <span class="built_in">quick_ort</span>(i+<span class="number">1</span>,r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="离散化">离散化</h2>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) b.<span class="built_in">PB</span>(a[i]);</span><br><span class="line"><span class="built_in">sort</span>(<span class="built_in">ALL</span>(b));</span><br><span class="line">b.<span class="built_in">resize</span>(<span class="built_in">unique</span>(<span class="built_in">ALL</span>(b))-b.<span class="built_in">begin</span>());</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) a[i]=<span class="built_in">lower_bound</span>(<span class="built_in">ALL</span>(b),a[i])-b.<span class="built_in">begin</span>()+<span class="number">1</span>; <span class="comment">// 最小值为1</span></span><br></pre></td></tr></table></figure>
 <h2 id="二分">二分</h2>
@@ -4050,6 +4050,114 @@ x &amp; \equiv a_k \pmod {m_k}
 ]]></content>
   </entry>
   <entry>
+    <title>The 2020 ICPC Asia Shenyang Regional Contest</title>
+    <url>/2021/11/18/%E5%A5%97%E9%A2%98/The%202020%20ICPC%20Asia%20Shenyang%20Regional%20Contest/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+<th style="text-align: center;">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">3/13</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Ø</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<h1 id="题目链接">题目链接</h1>
+<p><a href="https://codeforces.com/gym/103202" class="uri">https://codeforces.com/gym/103202</a></p>
+<span id="more"></span>
+<h1 id="problem-i.-rise-of-shadows">Problem I. Rise of Shadows</h1>
+<p><strong>题意：</strong></p>
+<p><strong>思路：</strong></p>
+<p>分针的速度：<span class="math inline">\(\frac{2\pi}{M}\)</span>。</p>
+<p>时针的速度：<span class="math inline">\(\frac{2\pi}{HM}\)</span>。</p>
+<p>分针时针速度差：<span class="math inline">\(\frac{2\pi(H-1)}{HM}\)</span>。</p>
+<p>那么 <span class="math inline">\(\frac{2\pi(H-1)(t\pmod {HM})}{HM}\le\frac{2\pi A}{HM}\)</span> 或 <span class="math inline">\(2\pi-\frac{2\pi(H-1)(t\pmod {HM})}{HM}\le\frac{2\pi A}{HM}\)</span>。</p>
+<p>得：<span class="math inline">\((H-1)t \pmod {HM}\le A\)</span> 或 <span class="math inline">\((H-1)t \pmod {HM}\ge HM-A\)</span>。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>套题</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>The 2021 ICPC Asia Jinan Regional Contest</title>
+    <url>/2021/11/17/%E5%A5%97%E9%A2%98/The%202021%20ICPC%20Asia%20Jinan%20Regional%20Contest/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Solved</th>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+<th style="text-align: center;">E</th>
+<th style="text-align: center;">F</th>
+<th style="text-align: center;">G</th>
+<th style="text-align: center;">H</th>
+<th style="text-align: center;">I</th>
+<th style="text-align: center;">J</th>
+<th style="text-align: center;">K</th>
+<th style="text-align: center;">L</th>
+<th style="text-align: center;">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1/</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+</tbody>
+</table>
+<h1 id="题目链接">题目链接</h1>
+<p><a href="https://pintia.cn/problem-sets/1459829212832296960/problems/type/7" class="uri">https://pintia.cn/problem-sets/1459829212832296960/problems/type/7</a></p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>套题</category>
+      </categories>
+  </entry>
+  <entry>
     <title>2021 CCPC 女生赛</title>
     <url>/2021/11/09/%E5%A5%97%E9%A2%98/2021%20CCPC%20%E5%A5%B3%E7%94%9F%E8%B5%9B/</url>
     <content><![CDATA[<table>
@@ -4114,7 +4222,7 @@ x &amp; \equiv a_k \pmod {m_k}
 <p><strong>思路：</strong></p>
 <p>如果某家公司开的连锁店数量不超过 <span class="math inline">\(1\)</span>，那么可以无视 “每家公司的红包只能领一份” 这个限制，这是因为任何一条路线都无法访问多次该公司开的商店。</p>
 <p>如果某家公司开的连锁店数量至少为 <span class="math inline">\(2\)</span>，那么这样的公司数最多为 <span class="math inline">\(\frac n 2 \le 18\)</span>。</p>
-<p>由于第二类公司数量并不多，因此可以使用状态压缩动态规划来求解这个问题。</p>
+<p>由于第二类公司数量并不多，因此可以使用状压 DP 来求解这个问题。</p>
 <p>设 <span class="math inline">\(dp_{i,S}\)</span> 表示从 <span class="math inline">\(1\)</span> 出发到达了 <span class="math inline">\(i\)</span> 点，一路上访问过的第二类公司集合为 <span class="math inline">\(S\)</span> 时，访问过的红包总价值最大是多少，枚举下一个景点进行转移。</p>
 <p>时间复杂度 <span class="math inline">\(O(n^22^\frac n 2)\)</span>。</p>
 <p><strong>代码：</strong></p>
