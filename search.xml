@@ -20,13 +20,13 @@
 <li>[2021.11.14] (2/13) <a href="https://c4lnn.github.io/2021/11/17/%E5%A5%97%E9%A2%98/The%202021%20ICPC%20Asia%20Jinan%20Regional%20Contest/">The 2021 ICPC Asia Jinan Regional Contest</a></li>
 <li>[2021.11.21] (3/13) <a href="https://c4lnn.github.io/2021/11/24/%E5%A5%97%E9%A2%98/The%202021%20CCPC%20Weihai%20Regional%20Contest/">The 2021 CCPC Weihai Regional Contest</a></li>
 <li>[2021.11.28] (4/13) <a href="https://c4lnn.github.io/2021/12/06/%E5%A5%97%E9%A2%98/The%202021%20ICPC%20Asia%20Shanghai%20Regional%20Contest/">The 2021 ICPC Shanghai Regional Contest</a></li>
-<li>[2021.11.30] (3/4) <a href="https://c4lnn.github.io/2021/12/06/%E5%A5%97%E9%A2%98/LeetCode/LeetCode%20%E7%AC%AC%20269%20%E5%9C%BA%E5%91%A8%E8%B5%9B/">LeetCode 第 269 场周赛</a></li>
+<li>[2021.11.30] (Done) <a href="https://c4lnn.github.io/2021/12/06/%E5%A5%97%E9%A2%98/LeetCode/LeetCode%20%E7%AC%AC%20269%20%E5%9C%BA%E5%91%A8%E8%B5%9B/">LeetCode 第 269 场周赛</a></li>
 <li>[2021.12.01] (3/6) <a href="https://c4lnn.github.io/2021/12/06/%E5%A5%97%E9%A2%98/Educational%20Codeforces%20Round%20118%20(Rated%20for%20Div.%202)/">Educational Codeforces Round 118 (Rated for Div. 2)</a></li>
 <li>[2021.12.11] (3/7) <a href="">Codeforces Round #758 (Div.1 + Div. 2)</a></li>
 <li>[2021.12.18] (3/7) <a href="">Educational Codeforces Round 119 (Rated for Div. 2)</a></li>
 <li>[2021.12.19] (4/9) <a href="">上海市大学生程序设计竞赛 - 十二月赛</a></li>
 <li>[2021.12.19] (4/7) <a href="">AtCoder Beginner Contest 232</a></li>
-<li>[2021.12.20] (4/8) <a href="">Codeforces Round #762 (Div. 3)</a></li>
+<li>[2021.12.20] (4/8) <a href="https://c4lnn.github.io/2021/12/28/%E5%A5%97%E9%A2%98/AtCoder/Codeforces/Codeforces%20Round%20762%20(Div.%203)/#more">Codeforces Round #762 (Div. 3)</a></li>
 </ul>
 ]]></content>
   </entry>
@@ -4050,7 +4050,7 @@ x &amp; \equiv a_k \pmod {m_k}
   </entry>
   <entry>
     <title>Codeforces Round 762 (Div. 3)</title>
-    <url>/2021/12/28/%E5%A5%97%E9%A2%98/AtCoder/Codeforces/Codeforces%20Round%20#762%20(Div.%203)/</url>
+    <url>/2021/12/28/%E5%A5%97%E9%A2%98/AtCoder/Codeforces/Codeforces%20Round%20762%20(Div.%203)/</url>
     <content><![CDATA[<table>
 <thead>
 <tr class="header">
@@ -4080,7 +4080,7 @@ x &amp; \equiv a_k \pmod {m_k}
 </tbody>
 </table>
 <h1 id="题目链接">题目链接</h1>
-<p><a href="https://codeforces.com/contest/1622" class="uri">https://codeforces.com/contest/1622</a></p>
+<p><a href="https://codeforces.com/contest/1619" class="uri">https://codeforces.com/contest/1619</a></p>
 <span id="more"></span>
 <h1 id="problem-a.-construct-a-rectangle">Problem A. Construct a Rectangle</h1>
 <p><strong>题意：</strong></p>
