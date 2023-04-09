@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Solved A B C D    Done Ø Ø Ø Ø   题目链接https:&#x2F;&#x2F;leetcode-cn.com&#x2F;contest&#x2F;weekly-contest-269&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 第 269 场周赛">
+<meta property="og:url" content="http://example.com/2021/12/06/%E5%A5%97%E9%A2%98/LeetCode/LeetCode%20%E7%AC%AC%20269%20%E5%9C%BA%E5%91%A8%E8%B5%9B/index.html">
+<meta property="og:site_name" content="c4Lnn 的个人博客">
+<meta property="og:description" content="Solved A B C D    Done Ø Ø Ø Ø   题目链接https:&#x2F;&#x2F;leetcode-cn.com&#x2F;contest&#x2F;weekly-contest-269&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-05T17:50:12.000Z">
+<meta property="article:modified_time" content="2022-01-07T16:03:59.310Z">
+<meta property="article:author" content="c4Lnn">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/12/06/%E5%A5%97%E9%A2%98/LeetCode/LeetCode%20%E7%AC%AC%20269%20%E5%9C%BA%E5%91%A8%E8%B5%9B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/12/06/%E5%A5%97%E9%A2%98/LeetCode/LeetCode%20%E7%AC%AC%20269%20%E5%9C%BA%E5%91%A8%E8%B5%9B/","path":"2021/12/06/套题/LeetCode/LeetCode 第 269 场周赛/","title":"LeetCode 第 269 场周赛"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>LeetCode 第 269 场周赛 | c4Lnn 的个人博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?f7cb2b1476d95c63da4b0abb7b0eb0a5"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">c4Lnn 的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-A-%E6%89%BE%E5%87%BA%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%90%8E%E7%9A%84%E7%9B%AE%E6%A0%87%E4%B8%8B%E6%A0%87"><span class="nav-number">2.</span> <span class="nav-text">Problem A. 找出数组排序后的目标下标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-B-%E5%8D%8A%E5%BE%84%E4%B8%BA-k-%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%E5%B9%B3%E5%9D%87%E5%80%BC"><span class="nav-number">3.</span> <span class="nav-text">Problem B. 半径为 k 的子数组平均值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-C-%E4%BB%8E%E6%95%B0%E7%BB%84%E4%B8%AD%E7%A7%BB%E9%99%A4%E6%9C%80%E5%A4%A7%E5%80%BC%E5%92%8C%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="nav-number">4.</span> <span class="nav-text">Problem C. 从数组中移除最大值和最小值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-D-%E6%89%BE%E5%87%BA%E7%9F%A5%E6%99%93%E7%A7%98%E5%AF%86%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%93%E5%AE%B6"><span class="nav-number">5.</span> <span class="nav-text">Problem D. 找出知晓秘密的所有专家</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="c4Lnn"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">c4Lnn</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">250</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">83</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/c4Lnn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;c4Lnn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://oi-wiki.org/" title="https:&#x2F;&#x2F;oi-wiki.org&#x2F;" rel="noopener" target="_blank">OI Wiki</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://paste.ubuntu.com/" title="https:&#x2F;&#x2F;paste.ubuntu.com" rel="noopener" target="_blank">Pastebin</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://csacademy.com/app/graph_editor" title="https:&#x2F;&#x2F;csacademy.com&#x2F;app&#x2F;graph_editor" rel="noopener" target="_blank">Gragph Editor</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://www.desmos.com/?lang=zh-CN" title="https:&#x2F;&#x2F;www.desmos.com&#x2F;?lang&#x3D;zh-CN" rel="noopener" target="_blank">Desmos</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/06/%E5%A5%97%E9%A2%98/LeetCode/LeetCode%20%E7%AC%AC%20269%20%E5%9C%BA%E5%91%A8%E8%B5%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="c4Lnn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="c4Lnn 的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="LeetCode 第 269 场周赛 | c4Lnn 的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode 第 269 场周赛
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-06 01:50:12" itemprop="dateCreated datePublished" datetime="2021-12-06T01:50:12+08:00">2021-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-08 00:03:59" itemprop="dateModified" datetime="2022-01-08T00:03:59+08:00">2022-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%A5%97%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">套题</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <table>
+<thead>
+<tr>
+<th align="center">Solved</th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">D</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Done</td>
+<td align="center">Ø</td>
+<td align="center">Ø</td>
+<td align="center">Ø</td>
+<td align="center">Ø</td>
+</tr>
+</tbody></table>
+<h1 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h1><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/contest/weekly-contest-269/">https://leetcode-cn.com/contest/weekly-contest-269/</a></p>
+<span id="more"></span>
+
+<h1 id="Problem-A-找出数组排序后的目标下标"><a href="#Problem-A-找出数组排序后的目标下标" class="headerlink" title="Problem A. 找出数组排序后的目标下标"></a>Problem A. 找出数组排序后的目标下标</h1><p><strong>题意：</strong></p>
+<p><strong>思路：</strong></p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">targetIndices</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ret;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i] == n) &#123;</span><br><span class="line">                ret.<span class="built_in">push_back</span>(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Problem-B-半径为-k-的子数组平均值"><a href="#Problem-B-半径为-k-的子数组平均值" class="headerlink" title="Problem B. 半径为 k 的子数组平均值"></a>Problem B. 半径为 k 的子数组平均值</h1><p><strong>题意：</strong></p>
+<p><strong>思路：</strong></p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">getAverages</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; a, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">sum</span><span class="params">(a.size())</span></span>;</span><br><span class="line">        sum[<span class="number">0</span>] = a[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; a.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            sum[i] = sum[i - <span class="number">1</span>] + a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ret;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; a.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i - k &lt; <span class="number">0</span> || i + k &gt;= a.<span class="built_in">size</span>()) &#123;</span><br><span class="line">                ret.<span class="built_in">push_back</span>(<span class="number">-1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (i - k == <span class="number">0</span>) &#123;</span><br><span class="line">                ret.<span class="built_in">push_back</span>(sum[i + k] / (<span class="number">2</span> * k + <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                ret.<span class="built_in">push_back</span>((sum[i + k] - sum[i - k - <span class="number">1</span>]) / (<span class="number">2</span> * k + <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Problem-C-从数组中移除最大值和最小值"><a href="#Problem-C-从数组中移除最大值和最小值" class="headerlink" title="Problem C. 从数组中移除最大值和最小值"></a>Problem C. 从数组中移除最大值和最小值</h1><p><strong>题意：</strong></p>
+<p><strong>思路：</strong></p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minimumDeletions</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; x)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> mn = INT_MAX, mx = INT_MIN, a, b;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; x.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (x[i] &lt; mn) &#123;</span><br><span class="line">                mn = x[i];</span><br><span class="line">                a = i;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (x[i] &gt; mx) &#123;</span><br><span class="line">                mx = x[i];</span><br><span class="line">                b = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">            <span class="built_in">swap</span>(a, b);</span><br><span class="line">        &#125;</span><br><span class="line">        ++a;</span><br><span class="line">        ++b;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(&#123;b, (<span class="type">int</span>)x.<span class="built_in">size</span>()- a + <span class="number">1</span>, a + (<span class="type">int</span>)x.<span class="built_in">size</span>() - b + <span class="number">1</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Problem-D-找出知晓秘密的所有专家"><a href="#Problem-D-找出知晓秘密的所有专家" class="headerlink" title="Problem D. 找出知晓秘密的所有专家"></a>Problem D. 找出知晓秘密的所有专家</h1><p><strong>题意：</strong></p>
+<p>有 $n$ 个专家从 $0$ 到 $n - 1$ 编号，$meetings[i] &#x3D; [xi, yi, timei]$ 表示专家 $x_i$ 和专家 $y_i$ 在时间 $time_i$ 要开一场会。一个专家可以同时参加多场会议 。最后，给你一个整数 $firstPerson$ 。</p>
+<p>专家 $0$ 有一个秘密 ，最初，他在时间 $0$ 将这个秘密分享给了专家 $firstPerson$。</p>
+<p>每次会议，如果专家 $x_i$ 在时间 $time_i$ 时知晓这个秘密，那么他将会与专家 $y_i$ 分享这个秘密，反之亦然。</p>
+<p>秘密共享是瞬时发生的。也就是说，在同一时间，一个专家不光可以接收到秘密，还能在其他会议上与其他专家分享。</p>
+<p>在所有会议都结束之后，返回所有知晓这个秘密的专家列表。</p>
+<p><strong>思路：</strong></p>
+<p>将会议按时间排序，同一时间内从知晓秘密的专家出发 BFS。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// #include &lt;bits/stdc++.h&gt;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SZ(x) (int)(x).size()</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ALL(x) (x).begin(), (x).end()</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PB push_back</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EB emplace_back</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MP make_pair</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> FI first</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SE second</span></span><br><span class="line"><span class="comment">// using namespace std;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">double</span> DB;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">double</span> LD;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> LL;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> ULL;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;<span class="type">int</span>&gt; VI;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;LL&gt; VLL;</span><br><span class="line"><span class="keyword">typedef</span> vector&lt;PII&gt; VPII;</span><br><span class="line"><span class="comment">// head</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="type">bool</span> vis[N], st[N];</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    VPII c[N];</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">findAllPeople</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; a, <span class="type">int</span> s)</span> </span>&#123;</span><br><span class="line">        VI ret, b;</span><br><span class="line">        <span class="built_in">memset</span>(vis, <span class="literal">false</span>, <span class="keyword">sizeof</span> vis);</span><br><span class="line">        <span class="built_in">memset</span>(st, <span class="literal">false</span>, <span class="keyword">sizeof</span> st);</span><br><span class="line">        st[<span class="number">0</span>] = st[s] = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : a) &#123;</span><br><span class="line">            b.<span class="built_in">PB</span>(x[<span class="number">2</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(<span class="built_in">ALL</span>(b));</span><br><span class="line">        b.<span class="built_in">resize</span>(<span class="built_in">unique</span>(<span class="built_in">ALL</span>(b)) - b.<span class="built_in">begin</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : a) &#123;</span><br><span class="line">            c[<span class="built_in">lower_bound</span>(<span class="built_in">ALL</span>(b), x[<span class="number">2</span>]) - b.<span class="built_in">begin</span>()].<span class="built_in">EB</span>(x[<span class="number">0</span>], x[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">SZ</span>(b); i++) &#123;</span><br><span class="line">            queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">            unordered_set&lt;<span class="type">int</span>&gt; t;</span><br><span class="line">            unordered_map&lt;<span class="type">int</span>, VI&gt; g;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> x : c[i]) &#123;</span><br><span class="line">                t.<span class="built_in">insert</span>(x.FI);</span><br><span class="line">                t.<span class="built_in">insert</span>(x.SE);</span><br><span class="line">                g[x.FI].<span class="built_in">PB</span>(x.SE);</span><br><span class="line">                g[x.SE].<span class="built_in">PB</span>(x.FI);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> x : t) &#123;</span><br><span class="line">                <span class="keyword">if</span> (st[x]) &#123;</span><br><span class="line">                    vis[x] = <span class="literal">true</span>;</span><br><span class="line">                    q.<span class="built_in">push</span>(x);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    vis[x] = <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (<span class="built_in">SZ</span>(q)) &#123;</span><br><span class="line">                <span class="type">int</span> u = q.<span class="built_in">front</span>();</span><br><span class="line">                q.<span class="built_in">pop</span>();</span><br><span class="line">                st[u] = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">auto</span> v : g[u]) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!vis[v]) &#123;</span><br><span class="line">                        vis[v] = <span class="literal">true</span>;</span><br><span class="line">                        q.<span class="built_in">push</span>(v);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (st[i]) &#123;</span><br><span class="line">                ret.<span class="built_in">PB</span>(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// int main() &#123;</span></span><br><span class="line"><span class="comment">//     ios::sync_with_stdio(false);</span></span><br><span class="line"><span class="comment">//     cin.tie(nullptr);</span></span><br><span class="line"><span class="comment">//     Solution::;</span></span><br><span class="line"><span class="comment">//     return 0;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/24/%E5%A5%97%E9%A2%98/The%202021%20CCPC%20Weihai%20Regional%20Contest/" rel="prev" title="The 2021 CCPC Weihai Regional Contest">
+                  <i class="fa fa-chevron-left"></i> The 2021 CCPC Weihai Regional Contest
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/12/06/%E5%A5%97%E9%A2%98/The%202021%20ICPC%20Asia%20Shanghai%20Regional%20Contest/" rel="next" title="The 2021 ICPC Asia Shanghai Regional Contest">
+                  The 2021 ICPC Asia Shanghai Regional Contest <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c4Lnn</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"c4Lnn","repo":"c4Lnn.github.io","client_id":"c28f33d7cdbaa0b55dfc","client_secret":"a5a9a820c766b6294a8d197661b0931f1c8255e8","admin_user":"c4Lnn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"19e668692f77e47650e2aa9e60099a55"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="积性函数">
+<meta property="og:url" content="http://example.com/2021/04/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="c4Lnn 的个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-10T13:45:20.000Z">
+<meta property="article:modified_time" content="2021-05-25T14:59:40.318Z">
+<meta property="article:author" content="c4Lnn">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/04/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/04/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0/","path":"2021/04/10/算法学习笔记/积性函数/","title":"积性函数"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>积性函数 | c4Lnn 的个人博客</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?f7cb2b1476d95c63da4b0abb7b0eb0a5"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">c4Lnn 的个人博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">积性函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">1.4.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dirichlet-%E5%8D%B7%E7%A7%AF"><span class="nav-number">2.</span> <span class="nav-text">Dirichlet 卷积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8-1"><span class="nav-number">2.2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-1"><span class="nav-number">2.3.</span> <span class="nav-text">定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-1"><span class="nav-number">2.4.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">欧拉函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-2"><span class="nav-number">3.1.</span> <span class="nav-text">定理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">莫比乌斯函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="nav-number">4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-3"><span class="nav-number">4.2.</span> <span class="nav-text">定理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="c4Lnn"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">c4Lnn</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">250</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">83</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/c4Lnn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;c4Lnn" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://oi-wiki.org/" title="https:&#x2F;&#x2F;oi-wiki.org&#x2F;" rel="noopener" target="_blank">OI Wiki</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://paste.ubuntu.com/" title="https:&#x2F;&#x2F;paste.ubuntu.com" rel="noopener" target="_blank">Pastebin</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://csacademy.com/app/graph_editor" title="https:&#x2F;&#x2F;csacademy.com&#x2F;app&#x2F;graph_editor" rel="noopener" target="_blank">Gragph Editor</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://www.desmos.com/?lang=zh-CN" title="https:&#x2F;&#x2F;www.desmos.com&#x2F;?lang&#x3D;zh-CN" rel="noopener" target="_blank">Desmos</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/10/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="c4Lnn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="c4Lnn 的个人博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="积性函数 | c4Lnn 的个人博客">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          积性函数
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-04-10 21:45:20" itemprop="dateCreated datePublished" datetime="2021-04-10T21:45:20+08:00">2021-04-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-05-25 22:59:40" itemprop="dateModified" datetime="2021-05-25T22:59:40+08:00">2021-05-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="积性函数"><a href="#积性函数" class="headerlink" title="积性函数"></a>积性函数</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>若函数 $f(n)$ 满足 $f(1)&#x3D;1$ 且 $\forall x,y \in \mathbb{N}^+,\gcd(x,y)&#x3D;1$ 都有 $f(xy)&#x3D;f(x)f(y)$，则 $f(n)$ 为积性函数。</p>
+<p>若函数 $f(n)$ 满足 $f(1)&#x3D;1$ 且 $\forall x,y \in \mathbb{N}^+$ 都有 $f(xy)&#x3D;f(x)f(y)$，则 $f(n)$ 为完全积性函数。</p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>若 $f(x)$ 和 $g(x)$ 均为积性函数，则以下函数也为积性函数：</p>
+<ul>
+<li>$h(x)&#x3D;f(x^p)$</li>
+<li>$h(x)&#x3D;f^p(x)$</li>
+<li>$h(x)&#x3D;f(x)g(x)$</li>
+<li>$h(x)&#x3D;\sum_{d \mid x}f(x)g(\frac{x}{d})$</li>
+</ul>
+<p>设 $x&#x3D;\prod p_i^{k_i}$，</p>
+<ul>
+<li>若 $F(x)$ 为积性函数，则有 $F(x)&#x3D;\prod F(p_i^{k_i})$。</li>
+<li>若 $F(x)$ 为完全积性函数，则有 $F(x)&#x3D;\prod F(p_i)^{k_i}$。</li>
+</ul>
+<h2 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h2><p><strong>定理 1.1：</strong></p>
+<p>如果 $f$ 是积性函数，那么 $F(n)&#x3D;\sum_{d\mid n}f(d)$ 也是积性函数。</p>
+<p><strong>证明：</strong></p>
+<p>当 $\gcd(n,m)&#x3D;1$ 时，$nm$ 的因子必能写成 $n$ 的因子 $d_1$ 与 $m$ 的因子 $d_2$ 之积，</p>
+<p>所以 $F(nm)&#x3D;\sum_{i\mid n}\sum_{j\mid m}f(ij)&#x3D;\sum_{i\mid n}f(i)\sum_{j\mid m}f(j)&#x3D;F(n)F(m)$。</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><ul>
+<li>单位函数：$\varepsilon(n)&#x3D;[n&#x3D;1]$（完全积性）</li>
+<li>恒等函数：$\operatorname{id}_k(n)&#x3D;n^k$，$\operatorname{id}_1(n)$ 通常简记作 $\operatorname{id}(n)$（完全积性）</li>
+<li>常数函数：$1(n)&#x3D;1$（完全积性）</li>
+<li>除数函数：$\sigma_{k}(n)&#x3D;\sum_{d\mid n}d^k$，$\sigma_{0}(n)$ 通常简记为 $\operatorname{d}(n)$ 或 $\tau(n)$，$\sigma_{1}(n)$ 通常简记为 $\sigma(n)$</li>
+<li>欧拉函数：$\varphi(n)&#x3D;\sum_{i&#x3D;1}^n[\gcd(i,n)&#x3D;1]$</li>
+<li>莫比乌斯函数：$\mu(n)&#x3D;\begin{cases}<br>1 &amp; n&#x3D;1 \<br>0 &amp; \exists d&gt;1,d^2\mid n \<br>(-1)^k &amp; k;为;n;的不同质因子个数<br>\end{cases}$</li>
+</ul>
+<h1 id="Dirichlet-卷积"><a href="#Dirichlet-卷积" class="headerlink" title="Dirichlet 卷积"></a>Dirichlet 卷积</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p>对于两个数论函数 $f(x)$ 和 $g(x)$，则它们的 Dirichlet 卷积得到的结果 $h(x)$ 定义为：</p>
+<p>$$h(x)&#x3D;\sum_{d\mid x}f(d)g(x&#x2F;d)&#x3D;\sum_{ab&#x3D;x}f(a)g(b)$$</p>
+<p>简记为：$h&#x3D;f*g$。</p>
+<h2 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h2><ul>
+<li>交换律：$f<em>g&#x3D;g</em>f$。</li>
+<li>结合律：$(f<em>g)<em>h&#x3D;f</em>(g</em>h)$。</li>
+<li>分配律：$(f+g)<em>h&#x3D;f</em>h+g*h$。</li>
+<li>等式的性质：$f&#x3D;g$ 的充要条件是 $f<em>g&#x3D;g</em>h$，其中数论函数 $h(x)$ 要满足 $h(1)\neq 0$。</li>
+<li>单位元：单位函数 $\varepsilon$ 是 Dirichlet 卷积运算中的单位元，即对于任何数论函数 $f$，都有 $f*\varepsilon&#x3D;f$。</li>
+</ul>
+<h2 id="定理-1"><a href="#定理-1" class="headerlink" title="定理"></a>定理</h2><p><strong>定理 2.1：</strong></p>
+<p>两个积性函数的 Dirichlet 卷积也是积性函数。</p>
+<p><strong>证明：</strong></p>
+<p>设两个积性函数为 $f(x)$ 和 $g(x)$，再记 $h&#x3D;f*g$。</p>
+<p>设 $\gcd(a,b)&#x3D;1$，则 $h(a)&#x3D;\sum_{d_1\mid a}f(a)g(a&#x2F;d_1),h(b)&#x3D;\sum_{d_2\mid b}f(b)g(b&#x2F;d_2)$，</p>
+<p>所以 $h(a)h(b)&#x3D;\sum_{d_1\mid a}f(a)g(a&#x2F;d_1)\sum_{d_2\mid b}f(b)g(b&#x2F;d_2)&#x3D;\sum_{d\mid ab}f(d)g(ab&#x2F;d)&#x3D;h(ab)$。</p>
+<h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><ul>
+<li>$\varepsilon&#x3D;\mu *1\iff\varepsilon(n)&#x3D;\sum_{d\mid n}\mu(d)$</li>
+<li>$d&#x3D;1*1\iff d(n)&#x3D;\sum_{d\mid n}1$</li>
+<li>$\sigma&#x3D;\operatorname{id}*1\iff \sigma(n)&#x3D;\sum_{d\mid n}d$</li>
+<li>$\varphi&#x3D;\mu*\operatorname{id}\iff\varphi(n)&#x3D;\sum_{d\mid n}{d\cdot\mu(n&#x2F;d)}$</li>
+</ul>
+<h1 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h1><h2 id="定理-2"><a href="#定理-2" class="headerlink" title="定理"></a>定理</h2><p><strong>定理 3.1：</strong></p>
+<p>$n&#x3D;\sum_{d\mid n} \varphi(d)$。</p>
+<p><strong>证明：</strong></p>
+<p>$f(n)&#x3D;\sum_{d\mid n} \varphi(d)$ 为积性函数。</p>
+<p>证明：当 $\gcd(n,m)&#x3D;1$ 时，</p>
+<p>$\begin{aligned}<br>&amp; f(n)f(m) \<br>&#x3D; &amp; \sum_{i\mid n}\varphi(i)\sum_{j\mid m}\varphi(j) \<br>&#x3D; &amp; \sum_{i\mid n}\sum_{j\mid m}(\varphi(i)\varphi(j)) \<br>&#x3D; &amp; \sum_{i\mid n}\sum_{j\mid m}\varphi(ij) \<br>&#x3D; &amp; \sum_{d\mid nm}\varphi(d) \<br>&#x3D; &amp; f(nm)<br>\end{aligned}$</p>
+<p>证毕。</p>
+<p>那么根据算术基本定理 $n&#x3D;p_1^{c_1}p_2^{c_2}\cdots p_k^{c_k}$，</p>
+<p>由 $f$ 是积性函数可知 $f(n)&#x3D;f(p_1^{c_1})f(p_2^{c_2})\cdots f(p_k^{c_k})$，</p>
+<p>又因为 $f(p^c)&#x3D;\varphi(1)+\varphi(p)+\varphi(p^2)+\cdots+\varphi(p^c)&#x3D;1+(p-1)+(p^2-p)+\cdots+(p^c-p^{c-1})&#x3D;p^c$，</p>
+<p>所以 $f(n)&#x3D;f(p_1^{c_1})f(p_2^{c_2})\cdots f(p_k^{c_k})&#x3D;p_1^{c_1}p_2^{c_2}\cdots p_k^{c_k}&#x3D;n$。</p>
+<p><strong>定理 3.2：</strong></p>
+<p>$\varphi(n)&#x3D;\sum_{d\mid n}(\mu(d)(n&#x2F;d))$。</p>
+<p><strong>证明：</strong></p>
+<p>根据定理 3.1 可得 $\varphi<em>1&#x3D;\operatorname{id}\iff \varphi</em>\varepsilon&#x3D;\operatorname{id}*\mu\iff \varphi(n)&#x3D;\sum_{d\mid n}(\mu(d)(n&#x2F;d))$。</p>
+<h1 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h1><h2 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h2><p>$\mu$ 为莫比乌斯函数，定义为：</p>
+<p>$$\mu(n)&#x3D;<br>\begin{cases} 1 &amp; n&#x3D;1 \<br>0 &amp; \exists d&gt;1,d^2\mid n \<br>(-1)^k &amp; k;为;n;的不同质因子个数<br>\end{cases}$$</p>
+<h2 id="定理-3"><a href="#定理-3" class="headerlink" title="定理"></a>定理</h2><p><strong>定理 4.1：</strong></p>
+<p>$\mu(n)$ 是积性函数。</p>
+<p><strong>证明：</strong></p>
+<p>假设 $\gcd(n,m)&#x3D;1$</p>
+<ul>
+<li>当 $n&#x3D;1$ 或 $m&#x3D;1$ 时，若 $n&#x3D;1$，$\mu(nm)&#x3D;\mu(n)\mu(m)&#x3D;\mu(m)$，$m&#x3D;1$ 时同理；</li>
+<li>当 $n$ 和 $m$ 中至少有一个数含有平方质因子时，$nm$ 也有平方质因子，$\mu(nm)&#x3D;\mu(n)\mu(m)&#x3D;0$；</li>
+<li>当 $n,m$ 都没有平方质因子且都不为 $1$ 时，假设 $n$ 有 $p$ 个不同质因子个数，$m$ 有 $q$ 个不同质因子个数，$\mu(nm)&#x3D;(-1)^{p+q}&#x3D;(-1)^p+(-1)^q&#x3D;\mu(n)\mu(m)$。</li>
+</ul>
+<p><strong>定理 4.2：</strong></p>
+<p>$F(n)&#x3D;\sum_{d \mid n}{\mu(d)}&#x3D;\begin{cases}1 &amp; n&#x3D;1 \0 &amp; n&gt;1\end{cases}&#x3D;\varepsilon(n)&#x3D;[n&#x3D;1]$</p>
+<p><strong>证明：</strong></p>
+<ul>
+<li><p>当 $n&#x3D;1$ 时，$F(1)&#x3D;\sum_{d \mid 1}{\mu(d)}&#x3D;\mu(1)&#x3D;1$；</p>
+</li>
+<li><p>当 $n&gt;1$ 时，因为 $\mu(n)$ 是积性函数，所以 $\mu(n)$ 的因数和函数 $F(n)&#x3D;\sum_{d \mid n}{\mu(d)}$ 也是积性函数,</p>
+<p>  现在假设 $p$ 是质数，$F(n)&#x3D;F(p_1^{k_1})F(p_2^{k_2})\cdots F(p_t^{k_t})$，</p>
+<p>  而 $F(p^k)&#x3D;\sum_{d \mid p^k}{\mu(d)}&#x3D;\mu(1)+\mu(p)+\mu(p^2)+\cdots+\mu(p^k)&#x3D;1+(-1)+0+\cdots+0&#x3D;0$，</p>
+<p>  所以 $F(n)&#x3D;0$。</p>
+</li>
+</ul>
+<p><strong>定理 4.3：</strong></p>
+<p>若 $f$ 是数论函数，$F(n)&#x3D;\sum_{d \mid n}{f(d)}$，则 $f(n)&#x3D;\sum_{d \mid n}\mu(d)F(n&#x2F;d)$。</p>
+<p><strong>证明：</strong></p>
+<p>$\sum_{d \mid n}\mu(d)F(n&#x2F;d)&#x3D;\sum_{d \mid n}\mu(d)\sum_{e \mid (n&#x2F;d)}{f(e)}&#x3D;\sum_{e \mid n}f(e)\sum_{d \mid (n&#x2F;e)}{\mu(d)}$，</p>
+<p>根据定理 4.2，当 $e&#x3D;n$ 时，$\sum_{d \mid (n&#x2F;e)}{\mu(d)}&#x3D;1$，否则为 $0$，</p>
+<p>所以 $\sum_{e \mid n}(f(e)\sum_{d \mid (n&#x2F;e)}{\mu(d)})&#x3D;f(n)$。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://oi-wiki.org/math/mobius/">OI Wiki</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/skywalkert/article/details/50500009">浅谈一类积性函数的前缀和</a></p>
+<p>初等数论及其应用（原书第 6 版）</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/04/10/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/POJ%202886/" rel="next" title="POJ 2886. Who Gets the Most Candies?">
+                  POJ 2886. Who Gets the Most Candies? <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c4Lnn</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"c4Lnn","repo":"c4Lnn.github.io","client_id":"c28f33d7cdbaa0b55dfc","client_secret":"a5a9a820c766b6294a8d197661b0931f1c8255e8","admin_user":"c4Lnn","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"cef50889bafc4861042151c5cfeeb3d7"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
